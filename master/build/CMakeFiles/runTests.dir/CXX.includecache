@@ -20,21 +20,9 @@ cppconn/statement.h
 cppconn/prepared_statement.h
 -
 
-../dbConnection/tests/DatabaseConnectorTests.h
+/media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnection.cpp
 DatabaseConnector.h
+/media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.h
+sstream
 -
-math.h
--
-limits
--
-gtest/gtest.h
--
-cstddef
--
-iostream
--
-
-/media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
-DatabaseConnectorTests.h
-/media/sf_Documents/Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
 

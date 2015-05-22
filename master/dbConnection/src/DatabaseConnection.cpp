@@ -7,18 +7,23 @@ DatabaseConnector::DatabaseConnector(std::string hostName, std::string userName,
 {
 }
 
-void DatabaseConnector::connect(std::string hostName, std::string userName,
-    std::string userPassword, std::string database)
+DatabaseConnector::~DatabaseConnector()
+{
+}
+
+void DatabaseConnector::connect(const std::string hostName,
+        const std::string userName, const std::string userPassword,
+        const std::string database)
 {
     con = driver->connect(hostName, userName, userPassword);
 
     /* Use the right database*/
     std::stringstream useQuery;
     useQuery << "USE " << database;
-    bool success = execute(useQuery.str());
+    execute(useQuery.str());
 }
 
-bool DatabaseConnector::execute(std::string query)
+bool DatabaseConnector::execute(const std::string query)
 {
     sql::Statement* stmt = con->createStatement();
     return stmt->execute(query);

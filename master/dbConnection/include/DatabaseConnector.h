@@ -12,13 +12,15 @@ class DatabaseConnector
 {
     public:
         DatabaseConnector();
-        DatabaseConnector(std::string hostName, std::string userName,
-            std::string userPassword, std::string database);
-        bool execute(std::string query);
+        ~DatabaseConnector();
+        DatabaseConnector(const std::string hostName,
+            const std::string userName, const std::string userPassword,
+            const std::string database);
+        bool execute(const std::string query);
 
     private:
-        void connect(std::string hostName, std::string userName,
-            std::string userPassword, std::string database);
+        void connect(const std::string hostName, const std::string userName,
+            const std::string userPassword, const std::string database);
         sql::Driver* driver;
         sql::Connection* con;
 };
