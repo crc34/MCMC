@@ -1,0 +1,4 @@
+Scanning dependencies of target runTests
+[100%] Building CXX object CMakeFiles/runTests.dir/main/src/main.cpp.o
+Linking CXX executable runTests
+[100%] Built target runTests

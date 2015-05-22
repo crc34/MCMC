@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../dbConnection/include/DatabaseConnector.h
+
+../dbConnection/tests/DatabaseConnectorTests.h
+DatabaseConnector.h
+-
+math.h
+-
+limits
+-
+gtest/gtest.h
+-
+cstddef
+-
+iostream
+-
+
+/media/sf_Documents/Files/Code/MCMC_Library/master/main/src/main.cpp
+DatabaseConnectorTests.h
+/media/sf_Documents/Files/Code/MCMC_Library/master/main/src/DatabaseConnectorTests.h
+
