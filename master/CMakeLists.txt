@@ -10,8 +10,8 @@ include_directories(dbConnection/tests)
 include_directories(dbConnection/include)
  
 # Link runTests with what we want to test and the GTest and pthread library
-add_executable(runTests main/src/main.cpp)
-target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
+add_executable(runTests main/src/main.cpp dbConnection/src/DatabaseConnection.cpp)
+target_link_libraries(runTests ${GTEST_LIBRARIES} pthread mysqlcppconn)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "-std=c++11 -g")

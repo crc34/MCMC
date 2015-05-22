@@ -12,9 +12,11 @@
               <in>CMakeCXXCompilerId.cpp</in>
             </df>
           </df>
-          <df name="CMakeTmp">
-          </df>
           <df name="runTests.dir">
+            <df name="dbConnection">
+              <df name="src">
+              </df>
+            </df>
             <df name="main">
               <df name="src">
               </df>
@@ -25,8 +27,6 @@
       <df name="Chain">
         <df name="include">
           <in>Chain.h</in>
-        </df>
-        <df name="src">
         </df>
         <df name="tests">
           <in>ChainTests.h</in>
@@ -43,8 +43,6 @@
         </df>
       </df>
       <df name="main">
-        <df name="include">
-        </df>
         <df name="src">
           <in>main.cpp</in>
         </df>

@@ -50,6 +50,11 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="dbConnection/src/DatabaseConnection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="main/src/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>

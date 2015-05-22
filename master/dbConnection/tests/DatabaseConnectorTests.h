@@ -12,3 +12,15 @@ TEST(DatabaseConnector, DefaultConstructor)
     delete(dbConnection);
     ASSERT_EQ(1, 1);
 }
+
+TEST(DatabaseConnector, FullConstructor)
+{
+    std::string hostName = "localhost";
+    std::string userName = "user";
+    std::string userPassword = "password";
+    std::string database = "tmp";
+    auto dbConnection =
+        new DatabaseConnector(hostName, userName, userPassword, database);
+    delete(dbConnection);
+    ASSERT_EQ(1, 1);
+}

@@ -7,6 +7,18 @@
 #IncludeRegexTransform: 
 
 ../dbConnection/include/DatabaseConnector.h
+mysql_connection.h
+../dbConnection/include/mysql_connection.h
+cppconn/driver.h
+-
+cppconn/exception.h
+-
+cppconn/resultset.h
+-
+cppconn/statement.h
+-
+cppconn/prepared_statement.h
+-
 
 ../dbConnection/tests/DatabaseConnectorTests.h
 DatabaseConnector.h
@@ -22,7 +34,7 @@ cstddef
 iostream
 -
 
-/media/sf_Documents/Files/Code/MCMC_Library/master/main/src/main.cpp
+/media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
 DatabaseConnectorTests.h
-/media/sf_Documents/Files/Code/MCMC_Library/master/main/src/DatabaseConnectorTests.h
+/media/sf_Documents/Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
 

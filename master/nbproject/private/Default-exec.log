@@ -1,17 +1,17 @@
 called: /usr/bin/g++
-	/media/sf_Documents/Files/Code/MCMC_Library/master/build
+	/media/sf_Documents/Files/Code/MCMC/master/build
 	/usr/bin/g++
 	-std=c++11
 	-g
-	-I/media/sf_Documents/Files/Code/MCMC_Library/master/Chain/include
-	-I/media/sf_Documents/Files/Code/MCMC_Library/master/Chain/tests
+	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/include
+	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/tests
 	-o
 	CMakeFiles/runTests.dir/main/src/main.cpp.o
 	-c
-	/media/sf_Documents/Files/Code/MCMC_Library/master/main/src/main.cpp
+	/media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
 
 called: /usr/bin/g++
-	/media/sf_Documents/Files/Code/MCMC_Library/master/build
+	/media/sf_Documents/Files/Code/MCMC/master/build
 	/usr/bin/g++
 	-std=c++11
 	-g
@@ -26,7 +26,7 @@ called: /usr/bin/g++
 	-lpthread
 
 called: /usr/bin/ld
-	/media/sf_Documents/Files/Code/MCMC_Library/master/build
+	/media/sf_Documents/Files/Code/MCMC/master/build
 	/usr/bin/ld
 	--sysroot=/
 	--build-id
