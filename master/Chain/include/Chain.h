@@ -29,7 +29,7 @@ template<typename paramType> class Chain
             return std::log(rnd) < logProposal - logCurrent;
         }
 
-        /** updates proposedVal with a proposal */ 
+        /** updates proposedVal with a proposal */
         std::shared_ptr<paramType> (*proposalFunction) (
             const std::shared_ptr<paramType> currentVal); // proposal function
         /** returns the log posterior of Theta */

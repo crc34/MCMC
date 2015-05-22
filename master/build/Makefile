@@ -111,29 +111,29 @@ runTests/fast:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
-dbConnection/src/DatabaseConnection.o: dbConnection/src/DatabaseConnection.cpp.o
-.PHONY : dbConnection/src/DatabaseConnection.o
+dbConnection/src/DatabaseConnector.o: dbConnection/src/DatabaseConnector.cpp.o
+.PHONY : dbConnection/src/DatabaseConnector.o
 
 # target to build an object file
-dbConnection/src/DatabaseConnection.cpp.o:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o
-.PHONY : dbConnection/src/DatabaseConnection.cpp.o
+dbConnection/src/DatabaseConnector.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o
+.PHONY : dbConnection/src/DatabaseConnector.cpp.o
 
-dbConnection/src/DatabaseConnection.i: dbConnection/src/DatabaseConnection.cpp.i
-.PHONY : dbConnection/src/DatabaseConnection.i
+dbConnection/src/DatabaseConnector.i: dbConnection/src/DatabaseConnector.cpp.i
+.PHONY : dbConnection/src/DatabaseConnector.i
 
 # target to preprocess a source file
-dbConnection/src/DatabaseConnection.cpp.i:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.i
-.PHONY : dbConnection/src/DatabaseConnection.cpp.i
+dbConnection/src/DatabaseConnector.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.i
+.PHONY : dbConnection/src/DatabaseConnector.cpp.i
 
-dbConnection/src/DatabaseConnection.s: dbConnection/src/DatabaseConnection.cpp.s
-.PHONY : dbConnection/src/DatabaseConnection.s
+dbConnection/src/DatabaseConnector.s: dbConnection/src/DatabaseConnector.cpp.s
+.PHONY : dbConnection/src/DatabaseConnector.s
 
 # target to generate assembly for a file
-dbConnection/src/DatabaseConnection.cpp.s:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.s
-.PHONY : dbConnection/src/DatabaseConnection.cpp.s
+dbConnection/src/DatabaseConnector.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.s
+.PHONY : dbConnection/src/DatabaseConnector.cpp.s
 
 main/src/main.o: main/src/main.cpp.o
 .PHONY : main/src/main.o
@@ -168,9 +168,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... runTests"
-	@echo "... dbConnection/src/DatabaseConnection.o"
-	@echo "... dbConnection/src/DatabaseConnection.i"
-	@echo "... dbConnection/src/DatabaseConnection.s"
+	@echo "... dbConnection/src/DatabaseConnector.o"
+	@echo "... dbConnection/src/DatabaseConnector.i"
+	@echo "... dbConnection/src/DatabaseConnector.s"
 	@echo "... main/src/main.o"
 	@echo "... main/src/main.i"
 	@echo "... main/src/main.s"

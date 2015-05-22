@@ -72,39 +72,39 @@ CMakeFiles/runTests.dir/main/src/main.cpp.o.provides: CMakeFiles/runTests.dir/ma
 
 CMakeFiles/runTests.dir/main/src/main.cpp.o.provides.build: CMakeFiles/runTests.dir/main/src/main.cpp.o
 
-CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o: CMakeFiles/runTests.dir/flags.make
-CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o: ../dbConnection/src/DatabaseConnection.cpp
+CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o: CMakeFiles/runTests.dir/flags.make
+CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o: ../dbConnection/src/DatabaseConnector.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_Documents/Files/Code/MCMC/master/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o -c /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o -c /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp
 
-CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnection.cpp > CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.i
+CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp > CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.i
 
-CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnection.cpp -o CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.s
+CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp -o CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.s
 
-CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o.requires:
-.PHONY : CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o.requires
+CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.requires:
+.PHONY : CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.requires
 
-CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o.provides: CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o.requires
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o.provides.build
-.PHONY : CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o.provides
+CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.provides: CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.requires
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.provides.build
+.PHONY : CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.provides
 
-CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o.provides.build: CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o
+CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.provides.build: CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o
 
 # Object files for target runTests
 runTests_OBJECTS = \
 "CMakeFiles/runTests.dir/main/src/main.cpp.o" \
-"CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o"
+"CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o"
 
 # External object files for target runTests
 runTests_EXTERNAL_OBJECTS =
 
 runTests: CMakeFiles/runTests.dir/main/src/main.cpp.o
-runTests: CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o
+runTests: CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o
 runTests: CMakeFiles/runTests.dir/build.make
 runTests: /usr/lib/libgtest.a
 runTests: CMakeFiles/runTests.dir/link.txt
@@ -116,7 +116,7 @@ CMakeFiles/runTests.dir/build: runTests
 .PHONY : CMakeFiles/runTests.dir/build
 
 CMakeFiles/runTests.dir/requires: CMakeFiles/runTests.dir/main/src/main.cpp.o.requires
-CMakeFiles/runTests.dir/requires: CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnection.cpp.o.requires
+CMakeFiles/runTests.dir/requires: CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.requires
 .PHONY : CMakeFiles/runTests.dir/requires
 
 CMakeFiles/runTests.dir/clean:

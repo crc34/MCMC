@@ -12,8 +12,6 @@
               <in>CMakeCXXCompilerId.cpp</in>
             </df>
           </df>
-          <df name="Progress">
-          </df>
           <df name="runTests.dir">
             <df name="dbConnection">
               <df name="src">
@@ -33,6 +31,8 @@
         <df name="tests">
           <in>ChainTests.h</in>
         </df>
+      </df>
+      <df name="DatabaseSchemas">
       </df>
       <df name="dbConnection">
         <df name="include">

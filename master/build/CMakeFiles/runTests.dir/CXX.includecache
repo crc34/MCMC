@@ -20,7 +20,7 @@ cppconn/statement.h
 cppconn/prepared_statement.h
 -
 
-/media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnection.cpp
+/media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp
 DatabaseConnector.h
 /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.h
 sstream
