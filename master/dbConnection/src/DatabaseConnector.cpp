@@ -24,8 +24,8 @@ void DatabaseConnector::connect(const std::string hostName,
     execute(useQuery.str());
 }
 
-bool DatabaseConnector::execute(const std::string query)
+void DatabaseConnector::execute(const std::string query)
 {
     sql::Statement* stmt = con->createStatement();
-    return stmt->execute(query);
+    stmt->execute(query);
 }

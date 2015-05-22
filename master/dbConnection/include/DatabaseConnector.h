@@ -16,7 +16,7 @@ class DatabaseConnector
         DatabaseConnector(const std::string hostName,
             const std::string userName, const std::string userPassword,
             const std::string database);
-        bool execute(const std::string query);
+        void execute(const std::string query);
     private:
         void connect(const std::string hostName, const std::string userName,
             const std::string userPassword, const std::string database);
