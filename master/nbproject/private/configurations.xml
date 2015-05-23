@@ -12,6 +12,8 @@
               <in>CMakeCXXCompilerId.cpp</in>
             </df>
           </df>
+          <df name="Progress">
+          </df>
           <df name="runTests.dir">
             <df name="dbConnection">
               <df name="src">

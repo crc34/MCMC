@@ -11,7 +11,7 @@
 class DatabaseConnector
 {
     public:
-        DatabaseConnector();
+        DatabaseConnector() = delete;
         ~DatabaseConnector();
         DatabaseConnector(const std::string hostName,
             const std::string userName, const std::string userPassword,

@@ -1,6 +1,6 @@
 #include "DatabaseConnector.h"
 #include <sstream>
-DatabaseConnector::DatabaseConnector(){}
+
 DatabaseConnector::DatabaseConnector(std::string hostName, std::string userName,
     std::string userPassword, std::string database) :
     driver(get_driver_instance())

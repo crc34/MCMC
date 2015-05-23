@@ -6,13 +6,6 @@
 #include <cstddef>
 #include <iostream>
 
-TEST(DatabaseConnector, DefaultConstructor)
-{
-    auto dbConnection = new DatabaseConnector();
-    delete(dbConnection);
-    ASSERT_EQ(1, 1);
-}
-
 TEST(DatabaseConnector, FullConstructor)
 {
     std::string hostName = "localhost";
