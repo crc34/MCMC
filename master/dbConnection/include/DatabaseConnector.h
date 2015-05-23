@@ -8,18 +8,17 @@
 #include <cppconn/statement.h>
 #include <cppconn/prepared_statement.h>
 
-class DatabaseConnector
-{
-    public:
-        DatabaseConnector() = delete;
-        ~DatabaseConnector();
-        DatabaseConnector(const std::string hostName,
+class DatabaseConnector {
+public:
+    DatabaseConnector() = delete;
+    ~DatabaseConnector();
+    DatabaseConnector(const std::string hostName,
             const std::string userName, const std::string userPassword,
             const std::string database);
-        void execute(const std::string query);
-    private:
-        void connect(const std::string hostName, const std::string userName,
+    void execute(const std::string query);
+private:
+    void connect(const std::string hostName, const std::string userName,
             const std::string userPassword, const std::string database);
-        sql::Driver* driver;
-        sql::Connection* con;
+    sql::Driver* driver;
+    sql::Connection* con;
 };

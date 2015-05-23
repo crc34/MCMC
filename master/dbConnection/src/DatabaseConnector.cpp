@@ -2,8 +2,8 @@
 #include <sstream>
 
 DatabaseConnector::DatabaseConnector(std::string hostName, std::string userName,
-    std::string userPassword, std::string database) :
-    driver(get_driver_instance())
+        std::string userPassword, std::string database) :
+driver(get_driver_instance())
 {
     connect(hostName, userName, userPassword, database);
 }
