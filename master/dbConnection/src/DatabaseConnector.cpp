@@ -29,3 +29,13 @@ void DatabaseConnector::execute(const std::string query)
     sql::Statement* stmt = con->createStatement();
     stmt->execute(query);
 }
+
+std::shared_ptr<sql::ResultSet> DatabaseConnector::executeFetchQuery(std::string query)
+{
+    sql::Statement *stmt = con->createStatement();
+    sql::ResultSet* result = stmt->executeQuery(query);
+    std::shared_ptr<sql::ResultSet> resultPointer;
+    resultPointer.reset(result);
+    return resultPointer;
+}
+

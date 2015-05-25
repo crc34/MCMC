@@ -5,8 +5,6 @@ CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o
  ../dbConnection/include/DatabaseConnector.h
  /media/sf_Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp
 CMakeFiles/runTests.dir/main/src/main.cpp.o
- ../Chain/include/Chain.h
- ../Chain/tests/ChainTests.h
  ../dbConnection/include/DatabaseConnector.h
  ../dbConnection/tests/DatabaseConnectorTests.h
  ../main/include/testingIncludes.h

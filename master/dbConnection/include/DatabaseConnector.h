@@ -17,6 +17,7 @@ class DatabaseConnector
             const std::string userName, const std::string userPassword,
             const std::string database);
         void execute(const std::string query);
+        std::shared_ptr<sql::ResultSet> executeFetchQuery(std::string query);
     private:
         void connect(const std::string hostName, const std::string userName,
             const std::string userPassword, const std::string database);

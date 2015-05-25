@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../Chain/include/Chain.h
-random
--
-memory
--
-iostream
--
-
-../Chain/tests/ChainTests.h
-Chain.h
--
-testingIncludes.h
-../Chain/tests/testingIncludes.h
-
 ../dbConnection/include/DatabaseConnector.h
 mysql_connection.h
 ../dbConnection/include/mysql_connection.h
@@ -52,15 +38,7 @@ math.h
 iostream
 -
 
-/media/sf_Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp
-DatabaseConnector.h
-/media/sf_Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.h
-sstream
--
-
 /media/sf_Files/Code/MCMC/master/main/src/main.cpp
-ChainTests.h
-/media/sf_Files/Code/MCMC/master/main/src/ChainTests.h
 DatabaseConnectorTests.h
 /media/sf_Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
 

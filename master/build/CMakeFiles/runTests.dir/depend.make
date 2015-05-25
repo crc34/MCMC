@@ -4,8 +4,6 @@
 CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o: ../dbConnection/include/DatabaseConnector.h
 CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o: ../dbConnection/src/DatabaseConnector.cpp
 
-CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/include/Chain.h
-CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/tests/ChainTests.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../dbConnection/include/DatabaseConnector.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../dbConnection/tests/DatabaseConnectorTests.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../main/include/testingIncludes.h

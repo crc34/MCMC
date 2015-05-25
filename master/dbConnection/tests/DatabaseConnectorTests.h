@@ -26,3 +26,28 @@ TEST(DatabaseConnector, executeQuery) {
     delete(dbConnection);
     ASSERT_EQ(1, 1);
 }
+
+TEST(DatabaseConnector, executFetchQuery) {
+    std::string hostName = "localhost";
+    std::string userName = "user";
+    std::string userPassword = "password";
+    std::string database = "tmp";
+    auto dbConnection =
+            new DatabaseConnector(hostName, userName, userPassword, database);
+    std::stringstream useQuery;
+    useQuery << "select min(runId) from samples;";
+    auto results = dbConnection->executeFetchQuery(useQuery.str());
+    delete(dbConnection);
+    
+    results->next();
+    auto queryResult = results->getInt(1);
+    ASSERT_EQ(queryResult, 1);
+}
+
+
+
+
+
+
+
+
