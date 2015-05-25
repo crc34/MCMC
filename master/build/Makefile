@@ -111,29 +111,53 @@ runTests/fast:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
-dbConnection/src/DatabaseConnector.o: dbConnection/src/DatabaseConnector.cpp.o
-.PHONY : dbConnection/src/DatabaseConnector.o
+DatabaseConnector/src/DatabaseConnector.o: DatabaseConnector/src/DatabaseConnector.cpp.o
+.PHONY : DatabaseConnector/src/DatabaseConnector.o
 
 # target to build an object file
-dbConnection/src/DatabaseConnector.cpp.o:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o
-.PHONY : dbConnection/src/DatabaseConnector.cpp.o
+DatabaseConnector/src/DatabaseConnector.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.o
+.PHONY : DatabaseConnector/src/DatabaseConnector.cpp.o
 
-dbConnection/src/DatabaseConnector.i: dbConnection/src/DatabaseConnector.cpp.i
-.PHONY : dbConnection/src/DatabaseConnector.i
+DatabaseConnector/src/DatabaseConnector.i: DatabaseConnector/src/DatabaseConnector.cpp.i
+.PHONY : DatabaseConnector/src/DatabaseConnector.i
 
 # target to preprocess a source file
-dbConnection/src/DatabaseConnector.cpp.i:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.i
-.PHONY : dbConnection/src/DatabaseConnector.cpp.i
+DatabaseConnector/src/DatabaseConnector.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.i
+.PHONY : DatabaseConnector/src/DatabaseConnector.cpp.i
 
-dbConnection/src/DatabaseConnector.s: dbConnection/src/DatabaseConnector.cpp.s
-.PHONY : dbConnection/src/DatabaseConnector.s
+DatabaseConnector/src/DatabaseConnector.s: DatabaseConnector/src/DatabaseConnector.cpp.s
+.PHONY : DatabaseConnector/src/DatabaseConnector.s
 
 # target to generate assembly for a file
-dbConnection/src/DatabaseConnector.cpp.s:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.s
-.PHONY : dbConnection/src/DatabaseConnector.cpp.s
+DatabaseConnector/src/DatabaseConnector.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.s
+.PHONY : DatabaseConnector/src/DatabaseConnector.cpp.s
+
+MCMCDatabaseConnection/src/MCMCDatabaseConnector.o: MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o
+.PHONY : MCMCDatabaseConnection/src/MCMCDatabaseConnector.o
+
+# target to build an object file
+MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o
+.PHONY : MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o
+
+MCMCDatabaseConnection/src/MCMCDatabaseConnector.i: MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.i
+.PHONY : MCMCDatabaseConnection/src/MCMCDatabaseConnector.i
+
+# target to preprocess a source file
+MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.i
+.PHONY : MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.i
+
+MCMCDatabaseConnection/src/MCMCDatabaseConnector.s: MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.s
+.PHONY : MCMCDatabaseConnection/src/MCMCDatabaseConnector.s
+
+# target to generate assembly for a file
+MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.s
+.PHONY : MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.s
 
 main/src/main.o: main/src/main.cpp.o
 .PHONY : main/src/main.o
@@ -168,9 +192,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... runTests"
-	@echo "... dbConnection/src/DatabaseConnector.o"
-	@echo "... dbConnection/src/DatabaseConnector.i"
-	@echo "... dbConnection/src/DatabaseConnector.s"
+	@echo "... DatabaseConnector/src/DatabaseConnector.o"
+	@echo "... DatabaseConnector/src/DatabaseConnector.i"
+	@echo "... DatabaseConnector/src/DatabaseConnector.s"
+	@echo "... MCMCDatabaseConnection/src/MCMCDatabaseConnector.o"
+	@echo "... MCMCDatabaseConnection/src/MCMCDatabaseConnector.i"
+	@echo "... MCMCDatabaseConnection/src/MCMCDatabaseConnector.s"
 	@echo "... main/src/main.o"
 	@echo "... main/src/main.i"
 	@echo "... main/src/main.s"

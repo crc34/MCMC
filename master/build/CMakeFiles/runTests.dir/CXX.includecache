@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-../dbConnection/include/DatabaseConnector.h
+../DatabaseConnector/include/DatabaseConnector.h
 mysql_connection.h
-../dbConnection/include/mysql_connection.h
+../DatabaseConnector/include/mysql_connection.h
 cppconn/driver.h
 -
 cppconn/exception.h
@@ -20,11 +20,25 @@ cppconn/statement.h
 cppconn/prepared_statement.h
 -
 
-../dbConnection/tests/DatabaseConnectorTests.h
+../DatabaseConnector/tests/DatabaseConnectorTests.h
 DatabaseConnector.h
 -
 testingIncludes.h
-../dbConnection/tests/testingIncludes.h
+../DatabaseConnector/tests/testingIncludes.h
+
+../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
+iostream
+-
+memory
+-
+DatabaseConnector.h
+-
+
+../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
+testingIncludes.h
+-
+MCMCDatabaseConnector.h
+-
 
 ../main/include/testingIncludes.h
 limits
@@ -38,7 +52,19 @@ math.h
 iostream
 -
 
+/media/sf_Files/Code/MCMC/master/DatabaseConnector/src/DatabaseConnector.cpp
+DatabaseConnector.h
+/media/sf_Files/Code/MCMC/master/DatabaseConnector/src/DatabaseConnector.h
+sstream
+-
+
+/media/sf_Files/Code/MCMC/master/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
+MCMCDatabaseConnector.h
+-
+
 /media/sf_Files/Code/MCMC/master/main/src/main.cpp
 DatabaseConnectorTests.h
 /media/sf_Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
+MCMCDatabaseConnectorTests.h
+/media/sf_Files/Code/MCMC/master/main/src/MCMCDatabaseConnectorTests.h
 

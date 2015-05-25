@@ -38,7 +38,6 @@ TEST(DatabaseConnector, executFetchQuery) {
     useQuery << "select min(runId) from samples;";
     auto results = dbConnection->executeFetchQuery(useQuery.str());
     delete(dbConnection);
-    
     results->next();
     auto queryResult = results->getInt(1);
     ASSERT_EQ(queryResult, 1);

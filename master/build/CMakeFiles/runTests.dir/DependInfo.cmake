@@ -4,7 +4,8 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/media/sf_Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp" "/media/sf_Files/Code/MCMC/master/build/CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o"
+  "/media/sf_Files/Code/MCMC/master/DatabaseConnector/src/DatabaseConnector.cpp" "/media/sf_Files/Code/MCMC/master/build/CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.o"
+  "/media/sf_Files/Code/MCMC/master/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp" "/media/sf_Files/Code/MCMC/master/build/CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o"
   "/media/sf_Files/Code/MCMC/master/main/src/main.cpp" "/media/sf_Files/Code/MCMC/master/build/CMakeFiles/runTests.dir/main/src/main.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
@@ -18,8 +19,10 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../main/include"
   "../Chain/include"
   "../Chain/tests"
-  "../dbConnection/tests"
-  "../dbConnection/include"
+  "../MCMCDatabaseConnection/tests"
+  "../MCMCDatabaseConnection/include"
+  "../DatabaseConnector/tests"
+  "../DatabaseConnector/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

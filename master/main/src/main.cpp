@@ -1,6 +1,8 @@
 
 //#include "ChainTests.h"
 #include "DatabaseConnectorTests.h"
+#include "MCMCDatabaseConnectorTests.h"
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);

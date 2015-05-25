@@ -1,6 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/runTests.dir/main/src/main.cpp.o"
-  "CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o"
+  "CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o"
+  "CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.o"
   "runTests.pdb"
   "runTests"
 )
