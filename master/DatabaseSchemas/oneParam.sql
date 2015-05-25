@@ -2,9 +2,8 @@ DROP TABLE IF EXISTS samples;
 
 DROP TABLE IF EXISTS run;
 CREATE TABLE run (
-    runId INT,
-    runName varchar(255),
-    params blob
+    runId INT KEY AUTO_INCREMENT,
+    runName varchar(255)
 );
 
 DROP TABLE IF EXISTS samples;
