@@ -11,6 +11,7 @@ class MCMCDatabaseConnector
         MCMCDatabaseConnector(const std::string hostName,
             const std::string userName, const std::string userPassword,
             const std::string database);
+        int createRun(std::string runName);
     private:
         std::unique_ptr<DatabaseConnector> m_connection;
 };

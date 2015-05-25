@@ -14,4 +14,7 @@ MCMCDatabaseConnector::~MCMCDatabaseConnector()
 
 }
 
-
+int MCMCDatabaseConnector::createRun(std::string runName)
+{
+    return -1;
+}
