@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/sf_Documents/Files/Code/MCMC/master
+CMAKE_SOURCE_DIR = /media/sf_Files/Code/MCMC/master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/sf_Documents/Files/Code/MCMC/master/build
+CMAKE_BINARY_DIR = /media/sf_Files/Code/MCMC/master/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/runTests.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/runTests.dir/flags.make
 
 CMakeFiles/runTests.dir/main/src/main.cpp.o: CMakeFiles/runTests.dir/flags.make
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../main/src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_Documents/Files/Code/MCMC/master/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_Files/Code/MCMC/master/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/runTests.dir/main/src/main.cpp.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/main/src/main.cpp.o -c /media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/main/src/main.cpp.o -c /media/sf_Files/Code/MCMC/master/main/src/main.cpp
 
 CMakeFiles/runTests.dir/main/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/main/src/main.cpp.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp > CMakeFiles/runTests.dir/main/src/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /media/sf_Files/Code/MCMC/master/main/src/main.cpp > CMakeFiles/runTests.dir/main/src/main.cpp.i
 
 CMakeFiles/runTests.dir/main/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/main/src/main.cpp.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp -o CMakeFiles/runTests.dir/main/src/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /media/sf_Files/Code/MCMC/master/main/src/main.cpp -o CMakeFiles/runTests.dir/main/src/main.cpp.s
 
 CMakeFiles/runTests.dir/main/src/main.cpp.o.requires:
 .PHONY : CMakeFiles/runTests.dir/main/src/main.cpp.o.requires
@@ -74,17 +74,17 @@ CMakeFiles/runTests.dir/main/src/main.cpp.o.provides.build: CMakeFiles/runTests.
 
 CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o: CMakeFiles/runTests.dir/flags.make
 CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o: ../dbConnection/src/DatabaseConnector.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_Documents/Files/Code/MCMC/master/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_Files/Code/MCMC/master/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o -c /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o -c /media/sf_Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp
 
 CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp > CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /media/sf_Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp > CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.i
 
 CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp -o CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /media/sf_Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp -o CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.s
 
 CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.requires:
 .PHONY : CMakeFiles/runTests.dir/dbConnection/src/DatabaseConnector.cpp.o.requires
@@ -124,6 +124,6 @@ CMakeFiles/runTests.dir/clean:
 .PHONY : CMakeFiles/runTests.dir/clean
 
 CMakeFiles/runTests.dir/depend:
-	cd /media/sf_Documents/Files/Code/MCMC/master/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/sf_Documents/Files/Code/MCMC/master /media/sf_Documents/Files/Code/MCMC/master /media/sf_Documents/Files/Code/MCMC/master/build /media/sf_Documents/Files/Code/MCMC/master/build /media/sf_Documents/Files/Code/MCMC/master/build/CMakeFiles/runTests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /media/sf_Files/Code/MCMC/master/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/sf_Files/Code/MCMC/master /media/sf_Files/Code/MCMC/master /media/sf_Files/Code/MCMC/master/build /media/sf_Files/Code/MCMC/master/build /media/sf_Files/Code/MCMC/master/build/CMakeFiles/runTests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/runTests.dir/depend
 

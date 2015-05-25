@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/sf_Documents/Files/Code/MCMC/master
+CMAKE_SOURCE_DIR = /media/sf_Files/Code/MCMC/master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/sf_Documents/Files/Code/MCMC/master/build
+CMAKE_BINARY_DIR = /media/sf_Files/Code/MCMC/master/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/runTests.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /media/sf_Documents/Files/Code/MCMC/master/build
 CMakeFiles/runTests.dir/all:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/depend
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_Documents/Files/Code/MCMC/master/build/CMakeFiles  1 2
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_Files/Code/MCMC/master/build/CMakeFiles  1 2
 	@echo "Built target runTests"
 .PHONY : CMakeFiles/runTests.dir/all
 
@@ -69,9 +69,9 @@ all: CMakeFiles/runTests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/runTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Documents/Files/Code/MCMC/master/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Files/Code/MCMC/master/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/runTests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Documents/Files/Code/MCMC/master/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Files/Code/MCMC/master/build/CMakeFiles 0
 .PHONY : CMakeFiles/runTests.dir/rule
 
 # Convenience name for target.

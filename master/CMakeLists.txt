@@ -4,6 +4,7 @@ project (MCMC)
 # Locate GTest
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
+include_directories(main/include)
 include_directories(Chain/include)
 include_directories(Chain/tests)
 include_directories(dbConnection/tests)

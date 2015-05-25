@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+../Chain/include/Chain.h
+random
+-
+memory
+-
+iostream
+-
+
+../Chain/tests/ChainTests.h
+Chain.h
+-
+testingIncludes.h
+../Chain/tests/testingIncludes.h
+
 ../dbConnection/include/DatabaseConnector.h
 mysql_connection.h
 ../dbConnection/include/mysql_connection.h
@@ -23,24 +37,30 @@ cppconn/prepared_statement.h
 ../dbConnection/tests/DatabaseConnectorTests.h
 DatabaseConnector.h
 -
-math.h
--
+testingIncludes.h
+../dbConnection/tests/testingIncludes.h
+
+../main/include/testingIncludes.h
 limits
 -
 gtest/gtest.h
 -
 cstddef
 -
+math.h
+-
 iostream
 -
 
-/media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp
+/media/sf_Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.cpp
 DatabaseConnector.h
-/media/sf_Documents/Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.h
+/media/sf_Files/Code/MCMC/master/dbConnection/src/DatabaseConnector.h
 sstream
 -
 
-/media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
+/media/sf_Files/Code/MCMC/master/main/src/main.cpp
+ChainTests.h
+/media/sf_Files/Code/MCMC/master/main/src/ChainTests.h
 DatabaseConnectorTests.h
-/media/sf_Documents/Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
+/media/sf_Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
 

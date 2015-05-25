@@ -1,10 +1,6 @@
 #pragma once
 #include <DatabaseConnector.h>
-#include <math.h>
-#include <limits>
-#include <gtest/gtest.h>
-#include <cstddef>
-#include <iostream>
+#include "testingIncludes.h"
 
 TEST(DatabaseConnector, FullConstructor) {
     std::string hostName = "localhost";

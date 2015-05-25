@@ -1,14 +1,10 @@
 
 #pragma once
 #include <Chain.h>
-#include <math.h>
-#include <limits>
-#include <gtest/gtest.h>
-#include <cstddef>
-#include <iostream>
+#include "testingIncludes.h"
 
-#define tolerance 0.005
-#define n 10
+double tolerance = 0.005;
+int n = 9000000000;
 
 
 TEST(Chain, DefaultConstructor)
