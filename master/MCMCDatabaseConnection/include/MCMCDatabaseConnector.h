@@ -16,6 +16,7 @@ class MCMCDatabaseConnector
         // Gets a runId associated with a runName
         // returns -1 if it doesn't exist
         int getRunId(std::string runName);
+        void insertSample(int runId, int iteration, double theta);
     private:
         std::unique_ptr<DatabaseConnector> m_connection;
 };

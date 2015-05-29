@@ -32,3 +32,24 @@ TEST(MCMCDatabaseConnector, createRun) {
     delete(dbConnection);
     ASSERT_NE(runId, -1);
 }
+
+TEST(MCMCDatabaseConnector, insertSample) {
+    auto mcmcConnection =
+            new MCMCDatabaseConnector(hostName, userName, userPassword, database);
+    auto dbConnection =
+            new DatabaseConnector(hostName, userName, userPassword, database);
+
+    dbConnection->execute("delete from run");
+    dbConnection->execute("delete from samples");
+
+    std::string runName = "firstRun";
+    int runId = mcmcConnection->createRun(runName);
+
+    mcmcConnection->insertSample(runId, 1, 1.0);
+
+
+    delete(mcmcConnection);
+    delete(dbConnection);
+    ASSERT_NE(runId, -1);
+}
+

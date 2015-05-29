@@ -2,11 +2,13 @@
 #include <DatabaseConnector.h>
 #include "testingIncludes.h"
 
+namespace DatabaseConnectorTest{
+std::string hostName = "localhost";
+std::string userName = "user";
+std::string userPassword = "password";
+std::string database = "tmp";
+
 TEST(DatabaseConnector, FullConstructor) {
-    std::string hostName = "localhost";
-    std::string userName = "user";
-    std::string userPassword = "password";
-    std::string database = "tmp";
     auto dbConnection =
             new DatabaseConnector(hostName, userName, userPassword, database);
     delete(dbConnection);
@@ -14,39 +16,26 @@ TEST(DatabaseConnector, FullConstructor) {
 }
 
 TEST(DatabaseConnector, executeQuery) {
-    std::string hostName = "localhost";
-    std::string userName = "user";
-    std::string userPassword = "password";
-    std::string database = "tmp";
     auto dbConnection =
             new DatabaseConnector(hostName, userName, userPassword, database);
-    std::stringstream useQuery;
-    useQuery << "insert into samples values(NULL, 1, 3.5);";
-    dbConnection->execute(useQuery.str());
+    std::stringstream selectQuery;
+    selectQuery << "insert into samples values(NULL, 1, 3.5);";
+    dbConnection->execute(selectQuery.str());
     delete(dbConnection);
     ASSERT_EQ(1, 1);
 }
 
 TEST(DatabaseConnector, executFetchQuery) {
-    std::string hostName = "localhost";
-    std::string userName = "user";
-    std::string userPassword = "password";
-    std::string database = "tmp";
     auto dbConnection =
             new DatabaseConnector(hostName, userName, userPassword, database);
-    std::stringstream useQuery;
-    useQuery << "select min(runId) from samples;";
-    auto results = dbConnection->executeFetchQuery(useQuery.str());
+
+    dbConnection->execute("delete from run");
+    dbConnection->execute("delete from samples");
+    dbConnection->execute("insert into samples values(14, 1, 3.5);");
+    auto results = dbConnection->executeFetchQuery("select min(runId) from samples;");
     delete(dbConnection);
     results->next();
     auto queryResult = results->getInt(1);
-    ASSERT_EQ(queryResult, 1);
+    ASSERT_EQ(queryResult, 14);
 }
-
-
-
-
-
-
-
-
+}
