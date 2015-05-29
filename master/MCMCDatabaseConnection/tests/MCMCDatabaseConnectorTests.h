@@ -2,22 +2,21 @@
 #include <testingIncludes.h>
 #include <MCMCDatabaseConnector.h>
 
+const std::string hostName = "localhost";
+const std::string userName = "user";
+const std::string userPassword = "password";
+const std::string database = "tmp";
+ 
+
+
 TEST(MCMCDatabaseConnector, FullConstructor) {
-    std::string hostName = "localhost";
-    std::string userName = "user";
-    std::string userPassword = "password";
-    std::string database = "tmp";
-    auto dbConnection =
+   auto dbConnection =
             new MCMCDatabaseConnector(hostName, userName, userPassword, database);
     delete(dbConnection);
     ASSERT_EQ(1, 1);
 }
 
 TEST(MCMCDatabaseConnector, createRun) {
-    std::string hostName = "localhost";
-    std::string userName = "user";
-    std::string userPassword = "password";
-    std::string database = "tmp";
     auto mcmcConnection =
             new MCMCDatabaseConnector(hostName, userName, userPassword, database);
     auto dbConnection =
@@ -31,9 +30,5 @@ TEST(MCMCDatabaseConnector, createRun) {
 
     delete(mcmcConnection);
     delete(dbConnection);
-    ASSERT_EQ(runId, 1);
+    ASSERT_NE(runId, -1);
 }
-
-
-
-

@@ -18,8 +18,26 @@ MCMCDatabaseConnector::~MCMCDatabaseConnector()
 
 int MCMCDatabaseConnector::createRun(std::string runName)
 {
-    boost::format queryFormat("Entity_%s");
-    auto query = boost::str(queryFormat % runName);
+    boost::format createRunQueryFormat("insert into run values(NULL, \"%s\")");
+    auto query = boost::str(createRunQueryFormat % runName);
     m_connection->execute(query);
-    return -1;
+    return getRunId(runName);
 }
+
+
+int MCMCDatabaseConnector::getRunId(std::string runName)
+{
+    boost::format createRunQueryFormat("select runId from run where runName =  \"%s\";");
+    auto query = boost::str(createRunQueryFormat % runName);
+    auto results = m_connection->executeFetchQuery(query);
+    results->next();
+    auto runId = results->getInt(1);
+    return runId;
+}
+
+
+
+
+
+
+
