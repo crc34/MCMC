@@ -4,15 +4,16 @@
 #include <iostream>
 
 template<typename paramType> class Chain {
+using proposalFunctionTemplate =  std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)> ;
+using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
 public:
 
     Chain() {
     }
 
     Chain(
-            std::shared_ptr<paramType> (*_proposalFunction) (
-            const std::shared_ptr<paramType> currentVal),
-            double (*_logPosterior) (const std::shared_ptr<paramType> Theta),
+            proposalFunctionTemplate _proposalFunction,
+            logPosteriorFunctionTemplate _logPosterior,
             std::shared_ptr<paramType> initialValue
             ) : proposalFunction(_proposalFunction),
     logPosterior(_logPosterior) {
@@ -28,10 +29,10 @@ public:
     }
 
     /** updates proposedVal with a proposal */
-    std::shared_ptr<paramType> (*proposalFunction) (
-            const std::shared_ptr<paramType> currentVal); // proposal function
+    proposalFunctionTemplate proposalFunction;
+   
     /** returns the log posterior of Theta */
-    double (*logPosterior) (const std::shared_ptr<paramType> Theta); // proposal function
+    logPosteriorFunctionTemplate logPosterior;
 
     /** iterates the markov chain according to MH and returns true if the proposal was accepted */
     void step() {
