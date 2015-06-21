@@ -1,6 +1,14 @@
 cmake_minimum_required(VERSION 2.6)
 project (MCMC)
 
+IF (MY_COMPILER_OPTION STREQUAL "Intel")
+  MESSAGE(STATUS "** Compiling with Intel settings **")
+  SET(CMAKE_CXX_COMPILER "/opt/intel/bin/icpc")
+  SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -w")
+  SET(CMAKE_CXX_FLAGS_DEBUG "-g")
+ENDIF ()
+
+
 # Locate GTest
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
@@ -19,6 +27,6 @@ add_executable(runTests main/src/main.cpp MCMCDatabaseConnection/src/MCMCDatabas
 target_link_libraries(runTests ${GTEST_LIBRARIES} pthread mysqlcppconn)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
-    set(CMAKE_CXX_FLAGS "-std=c++11 -g")
+    set(CMAKE_CXX_FLAGS "-std=gnu++0x -g")
     set(CMAKE_EXE_LINKER_FLAGS "-s")
 endif()
