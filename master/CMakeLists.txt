@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 2.6)
 project (MCMC)
 
-IF (MY_COMPILER_OPTION STREQUAL "Intel")
+#IF (MY_COMPILER_OPTION STREQUAL "Intel")
   MESSAGE(STATUS "** Compiling with Intel settings **")
   SET(CMAKE_CXX_COMPILER "/opt/intel/bin/icpc")
   SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -w")
   SET(CMAKE_CXX_FLAGS_DEBUG "-g")
-ENDIF ()
+#ENDIF ()
 
 
 # Locate GTest
