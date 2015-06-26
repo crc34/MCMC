@@ -1,5 +1,5 @@
-//#include "ChainTests.h"
-#include "ChainRunnerTests.h"
+#include "ChainTests.h"
+//#include "ChainRunnerTests.h"
 #include "DatabaseConnectorTests.h"
 #include "MCMCDatabaseConnectorTests.h"
 

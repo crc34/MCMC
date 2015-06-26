@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 #include <random>
 #include <memory>
 #include <iostream>
@@ -27,8 +27,7 @@ public:
 
     /** returns true if this proposal is accepted */
     bool accept(const double logCurrent, const double logProposal) {
-        std::uniform_real_distribution<> dis(0, 1);
-        auto rnd = static_cast<double>rand()/Rstatic_cast<double>RAND_MAX;
+        auto rnd = static_cast<double>(rand())/static_cast<double>(RAND_MAX);
         return std::log(rnd) < logProposal - logCurrent;
     }
 
