@@ -27,7 +27,8 @@ set(CMAKE_CXX_FLAGS "${CMAXE_CXX_FLAGS} -Wall -std=c++0x")
 
 # Link runTests with what we want to test and the GTest and pthread library
 add_executable(runTests main/src/main.cpp MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp DatabaseConnector/src/DatabaseConnector.cpp)
-target_link_libraries(runTests ${GTEST_LIBRARIES} gmock pthread mysqlcppconn)
+target_link_libraries(runTests ${GTEST_LIBRARIES} gmock pthread mysqlcppconn
+-lgsl -lgslcblas)
 
 
 if(CMAKE_COMPILER_IS_GNUCXX)
