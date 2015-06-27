@@ -14,13 +14,11 @@ class ChainTest : public Test
 	double tolerance = 0.0001;
 	double trueMean = 15.5;
 	double trueVariance = 4;
-	const int n = 1000000000;
-	const gsl_rng_type* T = gsl_rng_default;
-	gsl_rng * r = gsl_rng_alloc (T);
-	
+	const int n = 100000000;
+
         virtual void SetUp()
         {
-	    gsl_rng_env_setup();
+
         }
 
 
@@ -73,16 +71,19 @@ TEST_F(ChainTest, AcceptFunction)
 }
 
 
-/**TEST_F(ChainTest, testConvergence)
+TEST_F(ChainTest, testConvergence)
 {
+    gsl_rng_env_setup();
+    const gsl_rng_type* T = gsl_rng_default;
+    gsl_rng * r = gsl_rng_alloc (T);
+
     constexpr double testVal = 0.0;
     std::shared_ptr<double> initialValue(new double(testVal));
     auto proposalFunction =
-	[&](std::shared_ptr<double> Theta)
+	[&T, &r](std::shared_ptr<double> Theta)
 	{
             double draw = *Theta + gsl_ran_gaussian(r, 1);
 	    std::shared_ptr<double> proposal(new double(draw));
-	    free(r);
 	    return proposal;
 	};
     
@@ -113,4 +114,4 @@ TEST_F(ChainTest, AcceptFunction)
     ASSERT_LE(mean - trueMean, tolerance);
     ASSERT_LE(variance - trueVariance, tolerance);
     delete(chain);
-}*/
+}
