@@ -15,13 +15,14 @@ class ChainTest : public Test
 	double trueMean = 15.5;
 	double trueVariance = 4;
 	const int n = 100000000;
+        std::unique_ptr<gsl_rng> r;
+        const gsl_rng_type* T = gsl_rng_default;
 
         virtual void SetUp()
         {
-
+            gsl_rng_env_setup();
+            r.reset(gsl_rng_alloc (T));
         }
-
-
 };
 
 TEST_F(ChainTest, DefaultConstructor)
