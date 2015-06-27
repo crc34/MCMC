@@ -18,7 +18,7 @@ using proposalFunctionTemplate =  std::function<std::shared_ptr<paramType> (cons
 using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
 public:
 
-    Chain() = delete;
+    Chain(){};
 
     Chain(
             proposalFunctionTemplate _proposalFunction,
