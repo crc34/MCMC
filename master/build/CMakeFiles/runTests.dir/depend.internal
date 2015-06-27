@@ -11,10 +11,6 @@ CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o
 CMakeFiles/runTests.dir/main/src/main.cpp.o
  ../Chain/include/Chain.h
  ../Chain/tests/ChainTests.h
- ../DatabaseConnector/include/DatabaseConnector.h
- ../DatabaseConnector/tests/DatabaseConnectorTests.h
- ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
- ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
  ../main/include/testingIncludes.h
  /media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
  /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-actions.h

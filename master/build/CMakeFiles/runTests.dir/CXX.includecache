@@ -25,6 +25,8 @@ random
 -
 cmath
 -
+gtest/gtest_prod.h
+-
 
 ../Chain/tests/ChainTests.h
 gsl/gsl_rng.h
@@ -52,24 +54,12 @@ cppconn/statement.h
 cppconn/prepared_statement.h
 -
 
-../DatabaseConnector/tests/DatabaseConnectorTests.h
-DatabaseConnector.h
--
-testingIncludes.h
-../DatabaseConnector/tests/testingIncludes.h
-
 ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
 iostream
 -
 memory
 -
 DatabaseConnector.h
--
-
-../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
-testingIncludes.h
--
-MCMCDatabaseConnector.h
 -
 
 ../main/include/testingIncludes.h
@@ -103,10 +93,6 @@ MCMCDatabaseConnector.h
 /media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
 ChainTests.h
 /media/sf_Documents/Files/Code/MCMC/master/main/src/ChainTests.h
-DatabaseConnectorTests.h
-/media/sf_Documents/Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
-MCMCDatabaseConnectorTests.h
-/media/sf_Documents/Files/Code/MCMC/master/main/src/MCMCDatabaseConnectorTests.h
 
 /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-actions.h
 errno.h

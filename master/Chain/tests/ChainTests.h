@@ -25,13 +25,6 @@ class ChainTest : public Test
         }
 };
 
-TEST_F(ChainTest, DefaultConstructor)
-{
-    auto chain = new Chain<int>();
-    delete(chain);
-    ASSERT_EQ(1, 1);
-}
-
 TEST_F(ChainTest, fullConstructor)
 {
     constexpr double testVal = 12.3;
@@ -110,7 +103,6 @@ TEST_F(ChainTest, testConvergence)
     {
 	auto currentVal = *(chain->currentTheta);
 	chain->step();
-
         #pragma omp critical
 	mean += currentVal;
 	secondMoment += std::pow(currentVal, 2);
