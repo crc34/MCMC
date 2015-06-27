@@ -62,9 +62,13 @@ TEST_F(ChainTest, AcceptFunction)
     auto llProposal = std::log(0.25);
     auto expectedProportion = 0.5;
     double proportionAccepted = 0;
+
+    #pragma omp parallel shared(proportionAccepted) 
     for (int i = 0; i < n; i++)
     {
-	proportionAccepted += chain->accept(llCurrent, llProposal);
+        auto val = chain->accept(llCurrent, llProposal);
+        #pragma omp critical
+	proportionAccepted += val;
     }
     proportionAccepted /= n;
     ASSERT_LE(std::abs(proportionAccepted - expectedProportion), tolerance);
@@ -100,12 +104,16 @@ TEST_F(ChainTest, testConvergence)
 	new Chain<double>(proposalFunction, logPosterior, initialValue);
     double mean = 0.0;
     double secondMoment = 0.0;
+
+    #pragma omp parallel shared(proportionAccepted) 
     for (int i = 0; i < n; i++)
     {
 	auto currentVal = *(chain->currentTheta);
+	chain->step();
+
+        #pragma omp critical
 	mean += currentVal;
 	secondMoment += std::pow(currentVal, 2);
-	chain->step();
     }
     mean /= n;
     secondMoment /= n;

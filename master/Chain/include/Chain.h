@@ -8,7 +8,10 @@
 #include <map>
 #include <random>
 #include <cmath>
-template<typename paramType> class Chain {
+template<typename paramType> class Chain
+{
+
+
 using proposalFunctionTemplate =  std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)> ;
 using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
 public:
