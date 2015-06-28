@@ -74,6 +74,9 @@ TEST_F(ChainTest, testConvergence)
 
     constexpr double testVal = 0.0;
     std::shared_ptr<double> initialValue(new double(testVal));
+
+    //TODO: create a vector of std normal rv's either using open mp
+    // or the mkl rng so that these can be drawn faster
     auto proposalFunction =
 	[this](std::shared_ptr<double> Theta)
 	{
@@ -95,12 +98,10 @@ TEST_F(ChainTest, testConvergence)
     double mean = 0.0;
     double secondMoment = 0.0;
 
-    #pragma omp parallel shared(proportionAccepted) 
     for (int i = 0; i < n; i++)
     {
 	auto currentVal = *(chain->currentTheta);
 	chain->step();
-        #pragma omp critical
 	mean += currentVal;
 	secondMoment += std::pow(currentVal, 2);
     }
