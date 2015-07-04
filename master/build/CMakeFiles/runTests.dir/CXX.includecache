@@ -39,6 +39,8 @@ testingIncludes.h
 ../Chain/tests/testingIncludes.h
 gmock/gmock.h
 ../Chain/tests/gmock/gmock.h
+mkl_vsl.h
+../Chain/tests/mkl_vsl.h
 
 ../DatabaseConnector/include/DatabaseConnector.h
 mysql_connection.h

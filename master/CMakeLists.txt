@@ -23,15 +23,13 @@ include_directories(DatabaseConnector/tests)
 include_directories(DatabaseConnector/include)
 include_directories($ENV{GMOCK_HOME}/include)
 link_directories($ENV{GMOCK_HOME}/build)
-set(CMAKE_CXX_FLAGS "${CMAXE_CXX_FLAGS} -Wall -std=c++0x") # -fopenmp"
+set(CMAKE_CXX_FLAGS "${CMAXE_CXX_FLAGS} -Wall -std=c++0x")
 
 # Link runTests with what we want to test and the GTest and pthread library
 add_executable(runTests main/src/main.cpp MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp DatabaseConnector/src/DatabaseConnector.cpp)
-target_link_libraries(runTests ${GTEST_LIBRARIES} gmock pthread mysqlcppconn
--lgsl -lgslcblas)
-
+target_link_libraries(runTests ${GTEST_LIBRARIES} gmock pthread mysqlcppconn -lgsl -lgslcblas)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
-    set(CMAKE_CXX_FLAGS "-std=gnu++0x -g")
+    set(CMAKE_CXX_FLAGS "-std=gnu++0x -g -mkl:parallel -static-intel")
     set(CMAKE_EXE_LINKER_FLAGS "-s")
 endif()

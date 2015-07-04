@@ -6,22 +6,73 @@
 #include "testingIncludes.h"
 #include "gmock/gmock.h"
 
+#define MKL
+
+#ifdef MKL
+#include "mkl_vsl.h"
+#endif
+
 using namespace ::testing;
+
+#define BRNG VSL_BRNG_MCG31
+#define METHOD VSL_RNG_METHOD_GAUSSIAN_ICDF
+#define SEED 1
 
 class ChainTest : public Test
 {
     public:
-	double tolerance = 0.0001;
-	double trueMean = 15.5;
-	double trueVariance = 4;
-	const int n = 100000000;
+	double tolerance = 0.009;
+	double trueMean = 4;
+	double trueVariance = 5;
+	const int nSamples = 9000000;
         std::unique_ptr<gsl_rng> r;
         const gsl_rng_type* T = gsl_rng_default;
+        VSLStreamStatePtr stream;
+
+        // vector of normally distributed random variables.
+        // initialized by populateNormalRv() which is called
+        // in setup. It is size normalRvSize;
+        int normalRvSize = 9000000;
+        std::unique_ptr<double> normalRv;
+        int normalRvIndex = 0;
+        // Populates the elements of normalRv
+        // with draws from the standard normal distribution.
+        void setupNormalRv(int n)
+        {
+
+            #ifdef MKL
+            vdRngGaussian(METHOD, stream, n, normalRv.get(), 0, 1);
+            #else
+            for (int i = 0; i < n; i++)
+            {
+                normalRv.get()[i] = gsl_ran_gaussian(r.get(), 1);
+            }
+            #endif
+        }
+        // returns the next element of normalRvVec.
+        // repopulates it if your at the last element.
+        double getStdNormal()
+        {
+            if(normalRvIndex == normalRvSize - 1)
+            {
+                normalRvIndex = 0;
+                setupNormalRv(normalRvSize);
+            }
+            normalRvIndex++;
+            return normalRv.get()[(normalRvIndex)%normalRvSize];
+        }
 
         virtual void SetUp()
         {
             gsl_rng_env_setup();
             r.reset(gsl_rng_alloc (T));
+            
+            #ifdef MKL
+            auto errcode = vslNewStream( &stream, BRNG, SEED );
+            #endif
+
+            normalRv.reset((double*)calloc(normalRvSize, sizeof(double)));
+            setupNormalRv(normalRvSize);
         }
 };
 
@@ -56,14 +107,12 @@ TEST_F(ChainTest, AcceptFunction)
     auto expectedProportion = 0.5;
     double proportionAccepted = 0;
 
-    #pragma omp parallel shared(proportionAccepted) 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < nSamples; i++)
     {
         auto val = chain->accept(llCurrent, llProposal);
-        #pragma omp critical
 	proportionAccepted += val;
     }
-    proportionAccepted /= n;
+    proportionAccepted /= nSamples;
     ASSERT_LE(std::abs(proportionAccepted - expectedProportion), tolerance);
     delete(chain);
 }
@@ -80,7 +129,7 @@ TEST_F(ChainTest, testConvergence)
     auto proposalFunction =
 	[this](std::shared_ptr<double> Theta)
 	{
-            double draw = *Theta + gsl_ran_gaussian(r.get(), 1);
+            double draw = *Theta + getStdNormal();
 	    std::shared_ptr<double> proposal(new double(draw));
 	    return proposal;
 	};
@@ -98,15 +147,15 @@ TEST_F(ChainTest, testConvergence)
     double mean = 0.0;
     double secondMoment = 0.0;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < nSamples; i++)
     {
 	auto currentVal = *(chain->currentTheta);
 	chain->step();
 	mean += currentVal;
 	secondMoment += std::pow(currentVal, 2);
     }
-    mean /= n;
-    secondMoment /= n;
+    mean /= nSamples;
+    secondMoment /= nSamples;
     double variance = secondMoment - std::pow(mean, 2);
     std::cout << "mean = " <<  mean << std::endl;
     std::cout << "variance = " <<  variance << std::endl;
