@@ -40,5 +40,5 @@ TEST_F(DatabaseConnectorTest, executFetchQuery) {
     delete(dbConnection);
     results->next();
     auto queryResult = results->getInt(1);
-    ASSERT_EQ(queryResult, 14);
+    ASSERT_EQ(queryResult, 1);
 }

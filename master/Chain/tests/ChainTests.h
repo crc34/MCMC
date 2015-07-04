@@ -34,7 +34,7 @@ class ChainTest : public Test
         // vector of normally distributed random variables.
         // initialized by populateNormalRv() which is called
         // in setup. It is size normalRvSize;
-        int normalRvSize = 9000000;
+        int normalRvSize = 9000;
         std::unique_ptr<double> normalRv;
         int normalRvIndex = 0;
         // Populates the elements of normalRv
