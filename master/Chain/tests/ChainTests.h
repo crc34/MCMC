@@ -1,12 +1,14 @@
 
 #pragma once
+
+#include <globals.h>
+
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 #include <Chain.h>
 #include "testingIncludes.h"
 #include "gmock/gmock.h"
 
-#define MKL
 
 #ifdef MKL
 #include "mkl_vsl.h"

@@ -22,6 +22,7 @@ include_directories(MCMCDatabaseConnection/include)
 include_directories(DatabaseConnector/tests)
 include_directories(DatabaseConnector/include)
 include_directories($ENV{GMOCK_HOME}/include)
+include_directories(global)
 link_directories($ENV{GMOCK_HOME}/build)
 set(CMAKE_CXX_FLAGS "${CMAXE_CXX_FLAGS} -Wall -std=c++0x")
 

@@ -2,20 +2,24 @@
 #include <DatabaseConnector.h>
 #include "testingIncludes.h"
 
-namespace DatabaseConnectorTest{
-std::string hostName = "localhost";
-std::string userName = "user";
-std::string userPassword = "password";
-std::string database = "tmp";
+class DatabaseConnectorTest : public Test
+{
+public:
+	std::string hostName = "localhost";
+	std::string userName = "user";
+	std::string userPassword = "password";
+	std::string database = "tmp";
+};
 
-TEST(DatabaseConnector, FullConstructor) {
+
+TEST_F(DatabaseConnectorTest, FullConstructor) {
     auto dbConnection =
             new DatabaseConnector(hostName, userName, userPassword, database);
     delete(dbConnection);
     ASSERT_EQ(1, 1);
 }
 
-TEST(DatabaseConnector, executeQuery) {
+TEST_F(DatabaseConnectorTest, executeQuery) {
     auto dbConnection =
             new DatabaseConnector(hostName, userName, userPassword, database);
     std::stringstream selectQuery;
@@ -25,7 +29,7 @@ TEST(DatabaseConnector, executeQuery) {
     ASSERT_EQ(1, 1);
 }
 
-TEST(DatabaseConnector, executFetchQuery) {
+TEST_F(DatabaseConnectorTest, executFetchQuery) {
     auto dbConnection =
             new DatabaseConnector(hostName, userName, userPassword, database);
 
@@ -37,5 +41,4 @@ TEST(DatabaseConnector, executFetchQuery) {
     results->next();
     auto queryResult = results->getInt(1);
     ASSERT_EQ(queryResult, 14);
-}
 }
