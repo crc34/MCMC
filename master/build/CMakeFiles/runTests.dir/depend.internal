@@ -10,8 +10,16 @@ CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o
  /media/sf_Documents/Files/Code/MCMC/master/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
 CMakeFiles/runTests.dir/main/src/main.cpp.o
  ../Chain/include/Chain.h
- ../Chain/tests/ChainTests.h
+ ../Chain/tests/ChainTest.h
+ ../ChainRunner/include/ChainRunner.h
+ ../ChainRunner/tests/ChainRunnerTests.h
+ ../DatabaseConnector/include/DatabaseConnector.h
+ ../DatabaseConnector/tests/DatabaseConnectorTests.h
+ ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
+ ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
+ ../global/globals.h
  ../main/include/testingIncludes.h
+ ../testing/MCMCTest.h
  /media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
  /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-actions.h
  /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-cardinalities.h

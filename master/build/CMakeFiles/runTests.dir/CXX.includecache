@@ -28,19 +28,27 @@ cmath
 gtest/gtest_prod.h
 -
 
-../Chain/tests/ChainTests.h
-gsl/gsl_rng.h
+../Chain/tests/ChainTest.h
+MCMCTest.h
 -
-gsl/gsl_randist.h
+
+../ChainRunner/include/ChainRunner.h
+random
+-
+memory
+-
+iostream
+-
+MCMCDatabaseConnector.h
 -
 Chain.h
 -
+
+../ChainRunner/tests/ChainRunnerTests.h
+ChainRunner.h
+-
 testingIncludes.h
-../Chain/tests/testingIncludes.h
-gmock/gmock.h
-../Chain/tests/gmock/gmock.h
-mkl_vsl.h
-../Chain/tests/mkl_vsl.h
+../ChainRunner/tests/testingIncludes.h
 
 ../DatabaseConnector/include/DatabaseConnector.h
 mysql_connection.h
@@ -55,6 +63,14 @@ cppconn/statement.h
 -
 cppconn/prepared_statement.h
 -
+gtest/gtest_prod.h
+-
+
+../DatabaseConnector/tests/DatabaseConnectorTests.h
+DatabaseConnector.h
+-
+testingIncludes.h
+../DatabaseConnector/tests/testingIncludes.h
 
 ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
 iostream
@@ -63,6 +79,18 @@ memory
 -
 DatabaseConnector.h
 -
+gtest/gtest_prod.h
+-
+
+../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
+testingIncludes.h
+-
+MCMCDatabaseConnector.h
+-
+gmock/gmock.h
+../MCMCDatabaseConnection/tests/gmock/gmock.h
+
+../global/globals.h
 
 ../main/include/testingIncludes.h
 limits
@@ -75,6 +103,22 @@ math.h
 -
 iostream
 -
+
+../testing/MCMCTest.h
+globals.h
+-
+gsl/gsl_rng.h
+-
+gsl/gsl_randist.h
+-
+Chain.h
+-
+testingIncludes.h
+../testing/testingIncludes.h
+gmock/gmock.h
+../testing/gmock/gmock.h
+mkl_vsl.h
+../testing/mkl_vsl.h
 
 /media/sf_Documents/Files/Code/MCMC/master/DatabaseConnector/src/DatabaseConnector.cpp
 DatabaseConnector.h
@@ -93,8 +137,14 @@ MCMCDatabaseConnector.h
 -
 
 /media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
-ChainTests.h
-/media/sf_Documents/Files/Code/MCMC/master/main/src/ChainTests.h
+ChainTest.h
+/media/sf_Documents/Files/Code/MCMC/master/main/src/ChainTest.h
+ChainRunnerTests.h
+/media/sf_Documents/Files/Code/MCMC/master/main/src/ChainRunnerTests.h
+DatabaseConnectorTests.h
+/media/sf_Documents/Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
+MCMCDatabaseConnectorTests.h
+/media/sf_Documents/Files/Code/MCMC/master/main/src/MCMCDatabaseConnectorTests.h
 
 /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-actions.h
 errno.h

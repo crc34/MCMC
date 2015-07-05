@@ -9,8 +9,16 @@ CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o: 
 CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o: ../MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
 
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/include/Chain.h
-CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/tests/ChainTests.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/tests/ChainTest.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../ChainRunner/include/ChainRunner.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../ChainRunner/tests/ChainRunnerTests.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../DatabaseConnector/include/DatabaseConnector.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../DatabaseConnector/tests/DatabaseConnectorTests.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../global/globals.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../main/include/testingIncludes.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../testing/MCMCTest.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../main/src/main.cpp
 CMakeFiles/runTests.dir/main/src/main.cpp.o: /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-actions.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-cardinalities.h

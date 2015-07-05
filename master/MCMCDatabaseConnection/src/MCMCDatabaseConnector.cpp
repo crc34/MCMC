@@ -24,7 +24,6 @@ int MCMCDatabaseConnector::createRun(std::string runName)
     return getRunId(runName);
 }
 
-
 int MCMCDatabaseConnector::getRunId(std::string runName)
 {
     boost::format createRunQueryFormat("select runId from run where runName =  \"%s\";");

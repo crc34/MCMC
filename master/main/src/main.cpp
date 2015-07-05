@@ -1,4 +1,4 @@
-#include "ChainTests.h"
+#include "ChainTest.h"
 #include "ChainRunnerTests.h"
 #include "DatabaseConnectorTests.h"
 #include "MCMCDatabaseConnectorTests.h"

@@ -21,7 +21,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../MCMCDatabaseConnection/include"
   "../DatabaseConnector/tests"
   "../DatabaseConnector/include"
+  "../testing"
   "/media/sf_Documents/Files/libraries/gmock-1.7.0/include"
+  "../global"
   )
 
 # Targets to which this target links.

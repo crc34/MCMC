@@ -10,15 +10,13 @@
 #include <cmath>
 #include <gtest/gtest_prod.h>
 
-template<typename paramType> class Chain
-{
-
-
-using proposalFunctionTemplate =  std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)> ;
-using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
+template<typename paramType> class Chain {
+    using proposalFunctionTemplate = std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)>;
+    using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
 public:
 
-    Chain(){};
+    Chain() {
+    };
 
     Chain(
             proposalFunctionTemplate _proposalFunction,
@@ -40,11 +38,13 @@ public:
         }
     }
 
-    private:
+    void getCurrentTheta() {return currentTheta;}
+
+private:
 
     /** returns true if this proposal is accepted */
     bool accept(const double logCurrent, const double logProposal) {
-        auto rnd = static_cast<double>(rand())/static_cast<double>(RAND_MAX);
+        auto rnd = static_cast<double> (rand()) / static_cast<double> (RAND_MAX);
         return std::log(rnd) < logProposal - logCurrent;
     }
 
@@ -53,10 +53,10 @@ public:
 
     //updates proposedVal with a proposal
     proposalFunctionTemplate proposalFunction;
-   
+
     /** returns the log posterior of Theta */
     logPosteriorFunctionTemplate logPosterior;
-    
+
     FRIEND_TEST(ChainTest, fullConstructor);
     FRIEND_TEST(ChainTest, AcceptFunction);
     FRIEND_TEST(ChainTest, testConvergence);
