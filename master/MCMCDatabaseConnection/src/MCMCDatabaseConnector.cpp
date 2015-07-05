@@ -8,9 +8,9 @@ MCMCDatabaseConnector::MCMCDatabaseConnector(const std::string hostName,
 {
     m_connection.reset(new DatabaseConnector(hostName, userName,
         userPassword, database));
-    createRunQueryFormat.reset(new boost::format("insert into run values(NULL, \"%s\")"));
-    selectRunIdQueryFormat.reset(new boost::format("select runId from run where runName =  \"%s\";"));
-    insertSamplesQueryFormat.reset(new boost::format("insert into samples values(%i, %i, %f)"));
+    createRunQueryFormat.reset(new boost::format(createRunQueryString));
+    selectRunIdQueryFormat.reset(new boost::format(selectRunIdQueryString));
+    insertSamplesQueryFormat.reset(new boost::format(insertSamplesQueryString));
 }
 
 MCMCDatabaseConnector::~MCMCDatabaseConnector()

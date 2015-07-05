@@ -21,7 +21,10 @@ class MCMCDatabaseConnector
         void insertSample(int runId, int iteration, double theta);
     private:
         std::unique_ptr<DatabaseConnector> m_connection;
+        std::string createRunQueryString = "insert into run values(NULL, \"%s\")";
         std::unique_ptr<boost::format> createRunQueryFormat;
+        std::string selectRunIdQueryString = "select runId from run where runName =  \"%s\";";
         std::unique_ptr<boost::format> selectRunIdQueryFormat;
+        std::string insertSamplesQueryString ="insert into samples values(%i, %i, %f)";
         std::unique_ptr<boost::format> insertSamplesQueryFormat;
 };
