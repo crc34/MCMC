@@ -1,23 +1,16 @@
 #pragma once
 #include <MCMCDatabaseConnector.h>
-
-class MCMCDatabaseConnectorTest : public DatabaseTest
+#include <DatabaseConnectorTests.h>
+class MCMCDatabaseConnectorTest : public DatabaseConnectorTest
 {
     public:
-    std::string runName = "firstRun";
-    std::string clearDatabaseQuery = "delete from run; delete from samples;";
-    std::shared_ptr<DatabaseConnector> dbConnection;
     std::shared_ptr<MCMCDatabaseConnector> mcmcConnection;
-    void clearDatabase(){dbConnection.get()->execute(clearDatabaseQuery);}
     void SetUp()
     {
-        DatabaseTest::SetUp();
-        dbConnection.reset(
-        new DatabaseConnector(hostName, userName, userPassword, database));
+        DatabaseConnectorTest::SetUp();
         mcmcConnection.reset(
             new MCMCDatabaseConnector(
                 hostName, userName, userPassword, database));
-        clearDatabase();
     }
 };
 

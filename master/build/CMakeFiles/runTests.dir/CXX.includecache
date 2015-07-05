@@ -87,6 +87,8 @@ gtest/gtest_prod.h
 ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
 MCMCDatabaseConnector.h
 -
+DatabaseConnectorTests.h
+-
 
 ../global/globals.h
 
