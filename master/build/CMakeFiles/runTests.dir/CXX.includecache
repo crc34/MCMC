@@ -83,11 +83,7 @@ DatabaseConnector.h
 -
 gtest/gtest_prod.h
 -
-
-../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
-MCMCDatabaseConnector.h
--
-DatabaseConnectorTests.h
+boost/format.hpp
 -
 
 ../global/globals.h
@@ -137,8 +133,6 @@ iostream
 -
 sstream
 -
-boost/format.hpp
--
 MCMCDatabaseConnector.h
 -
 
@@ -149,8 +143,6 @@ ChainRunnerTests.h
 /media/sf_Documents/Files/Code/MCMC/master/main/src/ChainRunnerTests.h
 DatabaseConnectorTests.h
 /media/sf_Documents/Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
-MCMCDatabaseConnectorTests.h
-/media/sf_Documents/Files/Code/MCMC/master/main/src/MCMCDatabaseConnectorTests.h
 
 /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-actions.h
 errno.h

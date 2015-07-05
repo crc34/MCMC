@@ -3,6 +3,7 @@
 #include <memory>
 #include <DatabaseConnector.h>
 #include <gtest/gtest_prod.h>
+#include <boost/format.hpp>
 
 class MCMCDatabaseConnector
 {
@@ -20,5 +21,7 @@ class MCMCDatabaseConnector
         void insertSample(int runId, int iteration, double theta);
     private:
         std::unique_ptr<DatabaseConnector> m_connection;
-
+        std::unique_ptr<boost::format> createRunQueryFormat;
+        std::unique_ptr<boost::format> selectRunIdQueryFormat;
+        std::unique_ptr<boost::format> insertSamplesQueryFormat;
 };

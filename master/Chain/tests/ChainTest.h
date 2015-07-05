@@ -4,19 +4,17 @@
 
 class ChainTest : public MCMCTest {
 public:
+    std::unique_ptr<Chain<double>> chain;
+    void SetUp()
+    {
+        MCMCTest::SetUp();
+        chain.reset(
+            new Chain<double>(proposalFunction, logPosterior, initialValue));
+    }
+    
 };
 
-TEST_F(ChainTest, fullConstructor) {
-    auto chain =
-            new Chain<double>(proposalFunction, logPosterior, initialValue);
-    ASSERT_EQ(*(chain->currentTheta), initialValue.get()[0]);
-    ASSERT_EQ(*(chain->proposalFunction(initialValue)), initialValue.get()[0]);
-    ASSERT_EQ(chain->logPosterior(initialValue), std::pow(initialValue.get()[0], 2));
-    delete(chain);
-}
-
 TEST_F(ChainTest, AcceptFunction) {
-    auto chain = new Chain<int>();
     auto llCurrent = std::log(0.5);
     auto llProposal = std::log(0.25);
     auto expectedProportion = 0.5;
@@ -28,15 +26,11 @@ TEST_F(ChainTest, AcceptFunction) {
     }
     proportionAccepted /= nSamples;
     ASSERT_LE(std::abs(proportionAccepted - expectedProportion), tolerance);
-    delete(chain);
 }
 
 TEST_F(ChainTest, testConvergence) {
-    auto chain =
-            new Chain<double>(proposalFunction, logPosterior, initialValue);
     double mean = 0.0;
     double secondMoment = 0.0;
-
     for (int i = 0; i < nSamples; i++) {
         auto currentVal = *(chain->currentTheta);
         chain->step();
@@ -50,5 +44,4 @@ TEST_F(ChainTest, testConvergence) {
     std::cout << "variance = " << variance << std::endl;
     ASSERT_LE(mean - trueMean, tolerance);
     ASSERT_LE(variance - trueVariance, tolerance);
-    delete(chain);
 }

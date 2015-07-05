@@ -1,6 +1,5 @@
 #include <iostream> 
 #include <sstream>
-#include <boost/format.hpp>
 #include <MCMCDatabaseConnector.h>
 
 MCMCDatabaseConnector::MCMCDatabaseConnector(const std::string hostName,
@@ -9,6 +8,9 @@ MCMCDatabaseConnector::MCMCDatabaseConnector(const std::string hostName,
 {
     m_connection.reset(new DatabaseConnector(hostName, userName,
         userPassword, database));
+    createRunQueryFormat.reset(new boost::format("insert into run values(NULL, \"%s\")"));
+    selectRunIdQueryFormat.reset(new boost::format("select runId from run where runName =  \"%s\";"));
+    insertSamplesQueryFormat.reset(new boost::format("insert into samples values(%i, %i, %f)"));
 }
 
 MCMCDatabaseConnector::~MCMCDatabaseConnector()
@@ -18,16 +20,15 @@ MCMCDatabaseConnector::~MCMCDatabaseConnector()
 
 int MCMCDatabaseConnector::createRun(std::string runName)
 {
-    boost::format createRunQueryFormat("insert into run values(NULL, \"%s\")");
-    auto query = boost::str(createRunQueryFormat % runName);
+    auto query = boost::str(*(createRunQueryFormat.get()) % runName);
     m_connection->execute(query);
     return getRunId(runName);
 }
 
 int MCMCDatabaseConnector::getRunId(std::string runName)
 {
-    boost::format createRunQueryFormat("select runId from run where runName =  \"%s\";");
-    auto query = boost::str(createRunQueryFormat % runName);
+    boost::format createRunQueryFormat();
+    auto query = boost::str(*(selectRunIdQueryFormat.get()) % runName);
     auto results = m_connection->executeFetchQuery(query);
     results->next();
     auto runId = results->getInt(1);
@@ -36,12 +37,6 @@ int MCMCDatabaseConnector::getRunId(std::string runName)
 
 void MCMCDatabaseConnector::insertSample(int runId, int sampleNumber, double theta)
 {
-    boost::format insertSamplesQueryFormat("insert into samples values(%i, %i, %f)");
-    auto query = boost::str(insertSamplesQueryFormat % runId % sampleNumber % theta);
+    auto query = boost::str(*(insertSamplesQueryFormat.get()) % runId % sampleNumber % theta);
     m_connection->execute(query);
 }
-
-
-
-
-

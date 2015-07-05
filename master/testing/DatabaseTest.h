@@ -4,10 +4,12 @@
 
 class DatabaseTest : public Test {
 public:
-    std::string hostName = "localhost";
-    std::string userName = "user";
-    std::string userPassword = "password";
-    std::string database = "tmp";
-    std::string runName = "firstRun";
-    std::string clearDatabaseQuery = "delete from run; delete from samples;";
+    const std::string hostName = "localhost";
+    const std::string userName = "user";
+    const std::string userPassword = "password";
+    const std::string database = "tmp";
+    const std::string runName = "firstRun";
+    const std::vector<std::string> clearDatabaseQuery = {"delete from samples;", "delete from run;"};
+    const std::string insertQuery = "insert into samples values(NULL, 1, 3.5);";
+    const std::string selectQuery = "select count(*) from samples where Theta=3.5;";
 };
