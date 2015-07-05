@@ -1,24 +1,27 @@
 #pragma once
 #include <testingIncludes.h>
 #include <MCMCDatabaseConnector.h>
+#include "gmock/gmock.h"
 
+using namespace ::testing;
 
-class MCMCDatabaseConnectorTest : Test
+class MCMCDatabaseConnectorTest : public Test
 {
+        public:
 	const std::string hostName = "localhost";
 	const std::string userName = "user";
 	const std::string userPassword = "password";
 	const std::string database = "tmp";
 };
 
-TEST_F(MCMCDatabaseConnectorTest( FullConstructor) {
+TEST_F(MCMCDatabaseConnectorTest, FullConstructor) {
    auto dbConnection =
             new MCMCDatabaseConnector(hostName, userName, userPassword, database);
     delete(dbConnection);
     ASSERT_EQ(1, 1);
 }
 
-TEST_F(MCMCDatabaseConnectorTest( createRun) {
+TEST_F(MCMCDatabaseConnectorTest, createRun) {
     auto mcmcConnection =
             new MCMCDatabaseConnector(hostName, userName, userPassword, database);
     auto dbConnection =
@@ -35,7 +38,7 @@ TEST_F(MCMCDatabaseConnectorTest( createRun) {
     ASSERT_NE(runId, -1);
 }
 
-TEST_F(MCMCDatabaseConnectorTest( insertSample) {
+TEST_F(MCMCDatabaseConnectorTest, insertSample) {
     auto mcmcConnection =
             new MCMCDatabaseConnector(hostName, userName, userPassword, database);
     auto dbConnection =
@@ -54,4 +57,3 @@ TEST_F(MCMCDatabaseConnectorTest( insertSample) {
     delete(dbConnection);
     ASSERT_NE(runId, -1);
 }
-

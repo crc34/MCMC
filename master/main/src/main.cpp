@@ -1,7 +1,7 @@
 #include "ChainTests.h"
-//#include "ChainRunnerTests.h"
+#include "ChainRunnerTests.h"
 #include "DatabaseConnectorTests.h"
-//#include "MCMCDatabaseConnectorTests.h"
+#include "MCMCDatabaseConnectorTests.h"
 
 int main(int argc, char **argv)
 {

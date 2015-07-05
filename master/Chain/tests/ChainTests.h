@@ -2,23 +2,21 @@
 #pragma once
 
 #include <globals.h>
-
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 #include <Chain.h>
 #include "testingIncludes.h"
 #include "gmock/gmock.h"
 
-
 #ifdef MKL
 #include "mkl_vsl.h"
 #endif
 
-using namespace ::testing;
-
 #define BRNG VSL_BRNG_MCG31
 #define METHOD VSL_RNG_METHOD_GAUSSIAN_ICDF
 #define SEED 1
+
+using namespace ::testing;
 
 class ChainTest : public Test
 {
@@ -26,7 +24,7 @@ class ChainTest : public Test
 	double tolerance = 0.009;
 	double trueMean = 4;
 	double trueVariance = 5;
-	const int nSamples = 9000000;
+	const unsigned long long nSamples = 1000000;
         std::unique_ptr<gsl_rng> r;
         const gsl_rng_type* T = gsl_rng_default;
         VSLStreamStatePtr stream;
@@ -34,7 +32,7 @@ class ChainTest : public Test
         // vector of normally distributed random variables.
         // initialized by populateNormalRv() which is called
         // in setup. It is size normalRvSize;
-        int normalRvSize = 9000;
+        const unsigned long long  normalRvSize = 900000;
         std::unique_ptr<double> normalRv;
         int normalRvIndex = 0;
         // Populates the elements of normalRv
@@ -155,6 +153,10 @@ TEST_F(ChainTest, testConvergence)
 	chain->step();
 	mean += currentVal;
 	secondMoment += std::pow(currentVal, 2);
+        if (i%100000 == 0)
+        {
+         std::cout<<i<<std::endl;
+        }
     }
     mean /= nSamples;
     secondMoment /= nSamples;
