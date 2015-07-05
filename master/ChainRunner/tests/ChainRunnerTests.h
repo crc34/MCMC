@@ -3,10 +3,13 @@
 #include <ChainRunner.h>
 #include <MCMCDatabaseConnectorTests.h>
 
-class ChainRunnerTest : public ChainTest, public DatabaseTest{
-    void SetUp() {
+class ChainRunnerTest : public ChainTest, public DatabaseTest
+{
 
-        
+    void SetUp()
+    {
+
+
     }
 };
 

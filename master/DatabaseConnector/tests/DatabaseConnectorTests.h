@@ -2,20 +2,24 @@
 #include <DatabaseTest.h>
 #include "testingIncludes.h"
 
-class DatabaseConnectorTest : public DatabaseTest, public Test {
+class DatabaseConnectorTest : public DatabaseTest, public Test
+{
 public:
 
-    void SetUp() {
+    void SetUp()
+    {
         DatabaseTest::SetUp();
     }
 };
 
-TEST_F(DatabaseConnectorTest, executeQuery) {
+TEST_F(DatabaseConnectorTest, executeQuery)
+{
     dbConnection->execute(insertQuery);
     ASSERT_EQ(1, 1);
 }
 
-TEST_F(DatabaseConnectorTest, executFetchQuery) {
+TEST_F(DatabaseConnectorTest, executFetchQuery)
+{
     dbConnection->execute(insertQuery);
     auto results = dbConnection->executeFetchQuery(selectQuery);
     results->next();

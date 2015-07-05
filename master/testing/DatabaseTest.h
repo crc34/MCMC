@@ -3,7 +3,8 @@
 #include "gmock/gmock.h"
 #include <DatabaseConnector.h>
 
-class DatabaseTest {
+class DatabaseTest
+{
 public:
     const std::string hostName = "localhost";
     const std::string userName = "user";
@@ -16,13 +17,16 @@ public:
     std::shared_ptr<DatabaseConnector> dbConnection;
     std::shared_ptr<MCMCDatabaseConnector> mcmcConnection;
 
-    void clearDatabase() {
-        for (auto query : clearDatabaseQuery) {
+    void clearDatabase()
+    {
+        for (auto query : clearDatabaseQuery)
+        {
             dbConnection.get()->execute(query);
         }
     }
 
-    void SetUp() {
+    void SetUp()
+    {
         dbConnection.reset(
                 new DatabaseConnector(hostName, userName, userPassword, database));
         mcmcConnection.reset(

@@ -2,25 +2,29 @@
 #pragma once
 #include <MCMCTest.h>
 
-class ChainTest : public MCMCTest {
+class ChainTest : public MCMCTest
+{
 public:
     std::unique_ptr<Chain<double>> chain;
+
     void SetUp()
     {
         MCMCTest::SetUp();
         chain.reset(
-            new Chain<double>(proposalFunction, logPosterior, initialValue));
+                new Chain<double>(proposalFunction, logPosterior, initialValue));
     }
-    
+
 };
 
-TEST_F(ChainTest, AcceptFunction) {
+TEST_F(ChainTest, AcceptFunction)
+{
     auto llCurrent = std::log(0.5);
     auto llProposal = std::log(0.25);
     auto expectedProportion = 0.5;
     double proportionAccepted = 0;
 
-    for (int i = 0; i < nSamples; i++) {
+    for (int i = 0; i < nSamples; i++)
+    {
         auto val = chain->accept(llCurrent, llProposal);
         proportionAccepted += val;
     }
@@ -28,10 +32,12 @@ TEST_F(ChainTest, AcceptFunction) {
     ASSERT_LE(std::abs(proportionAccepted - expectedProportion), tolerance);
 }
 
-TEST_F(ChainTest, testConvergence) {
+TEST_F(ChainTest, testConvergence)
+{
     double mean = 0.0;
     double secondMoment = 0.0;
-    for (int i = 0; i < nSamples; i++) {
+    for (int i = 0; i < nSamples; i++)
+    {
         auto currentVal = *(chain->currentTheta);
         chain->step();
         mean += currentVal;

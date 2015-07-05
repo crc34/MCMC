@@ -1,9 +1,10 @@
 #pragma once
 #include <MCMCDatabaseConnector.h>
 #include <DatabaseTest.h>
+
 class MCMCDatabaseConnectorTest : public DatabaseTest, public Test
 {
-    public:
+public:
 
     void SetUp()
     {
@@ -11,12 +12,14 @@ class MCMCDatabaseConnectorTest : public DatabaseTest, public Test
     }
 };
 
-TEST_F(MCMCDatabaseConnectorTest, createRun) {
+TEST_F(MCMCDatabaseConnectorTest, createRun)
+{
     int runId = mcmcConnection.get()->createRun(runName);
     ASSERT_NE(runId, -1);
 }
 
-TEST_F(MCMCDatabaseConnectorTest, insertSample) {
+TEST_F(MCMCDatabaseConnectorTest, insertSample)
+{
     int runId = mcmcConnection->createRun(runName);
     mcmcConnection->insertSample(runId, 1, 1.0);
     ASSERT_NE(runId, -1);

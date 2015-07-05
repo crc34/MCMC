@@ -16,7 +16,8 @@
 
 using namespace ::testing;
 
-class MCMCTest : public Test {
+class MCMCTest : public Test
+{
     using paramType = double;
     using proposalFunctionTemplate = std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)>;
     using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
@@ -44,11 +45,13 @@ protected:
     // Populates the elements of normalRv
     // with draws from the standard normal distribution.
 
-    void setupNormalRv(int n) {
+    void setupNormalRv(int n)
+    {
 #ifdef MKL
         vdRngGaussian(METHOD, stream, n, normalRv.get(), 0, 1);
 #else
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             normalRv.get()[i] = gsl_ran_gaussian(r.get(), 1);
         }
 #endif
@@ -56,8 +59,10 @@ protected:
     // returns the next element of normalRvVec.
     // repopulates it if your at the last element.
 
-    double getStdNormal() {
-        if (normalRvIndex == normalRvSize - 1) {
+    double getStdNormal()
+    {
+        if (normalRvIndex == normalRvSize - 1)
+        {
             normalRvIndex = 0;
             setupNormalRv(normalRvSize);
         }
@@ -65,7 +70,8 @@ protected:
         return normalRv.get()[(normalRvIndex) % normalRvSize];
     }
 
-    virtual void SetUp() {
+    virtual void SetUp()
+    {
         gsl_rng_env_setup();
         r.reset(gsl_rng_alloc(T));
 
