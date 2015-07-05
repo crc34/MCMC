@@ -1,16 +1,13 @@
 #pragma once
 #include <MCMCDatabaseConnector.h>
-#include <DatabaseConnectorTests.h>
-class MCMCDatabaseConnectorTest : public DatabaseConnectorTest
+#include <DatabaseTest.h>
+class MCMCDatabaseConnectorTest : public DatabaseTest, public Test
 {
     public:
-    std::shared_ptr<MCMCDatabaseConnector> mcmcConnection;
+
     void SetUp()
     {
-        DatabaseConnectorTest::SetUp();
-        mcmcConnection.reset(
-            new MCMCDatabaseConnector(
-                hostName, userName, userPassword, database));
+        DatabaseTest::SetUp();
     }
 };
 

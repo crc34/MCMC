@@ -1,17 +1,16 @@
 
 #pragma once
 #include <ChainRunner.h>
-#include "testingIncludes.h"
+#include <MCMCDatabaseConnectorTests.h>
 
-class ChainRunnerTest : public ChainTest {
+class ChainRunnerTest : public ChainTest, public DatabaseTest{
     void SetUp() {
-        ChainTest::SetUp();
+
+        
     }
 };
 
-/**TEST_F(ChainRunner, DefaultConstructor)
+TEST_F(ChainRunnerTest, Constructor)
 {
-   // auto chainRunner = new ChainRunner<int>();
-   // delete(chainRunner);
-    ASSERT_EQ(1, 1);
-}*/
+
+}

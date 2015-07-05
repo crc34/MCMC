@@ -23,7 +23,7 @@ class MCMCTest : public Test {
 
 protected:
     double tolerance = 0.2;
-    const unsigned long long nSamples = 1000000;
+    const unsigned long long nSamples = 200;
     double _initialValue = 12.3;
     std::shared_ptr<double> initialValue;
     double trueMean = 4;
@@ -38,7 +38,7 @@ protected:
     // vector of normally distributed random variables.
     // initialized by populateNormalRv() which is called
     // in setup. It is size normalRvSize;
-    const unsigned long long normalRvSize = 90000;
+    const unsigned long long normalRvSize = 90;
     std::unique_ptr<double> normalRv;
     int normalRvIndex = 0;
     // Populates the elements of normalRv

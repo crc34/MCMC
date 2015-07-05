@@ -47,8 +47,8 @@ Chain.h
 ../ChainRunner/tests/ChainRunnerTests.h
 ChainRunner.h
 -
-testingIncludes.h
-../ChainRunner/tests/testingIncludes.h
+MCMCDatabaseConnectorTests.h
+-
 
 ../DatabaseConnector/include/DatabaseConnector.h
 mysql_connection.h
@@ -67,8 +67,6 @@ gtest/gtest_prod.h
 -
 
 ../DatabaseConnector/tests/DatabaseConnectorTests.h
-DatabaseConnector.h
--
 DatabaseTest.h
 -
 testingIncludes.h
@@ -84,6 +82,12 @@ DatabaseConnector.h
 gtest/gtest_prod.h
 -
 boost/format.hpp
+-
+
+../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
+MCMCDatabaseConnector.h
+-
+DatabaseTest.h
 -
 
 ../global/globals.h
@@ -105,6 +109,8 @@ testingIncludes.h
 -
 gmock/gmock.h
 ../testing/gmock/gmock.h
+DatabaseConnector.h
+-
 
 ../testing/MCMCTest.h
 globals.h
@@ -143,6 +149,8 @@ ChainRunnerTests.h
 /media/sf_Documents/Files/Code/MCMC/master/main/src/ChainRunnerTests.h
 DatabaseConnectorTests.h
 /media/sf_Documents/Files/Code/MCMC/master/main/src/DatabaseConnectorTests.h
+MCMCDatabaseConnectorTests.h
+/media/sf_Documents/Files/Code/MCMC/master/main/src/MCMCDatabaseConnectorTests.h
 
 /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-actions.h
 errno.h

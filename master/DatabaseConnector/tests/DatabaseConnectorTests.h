@@ -1,22 +1,12 @@
 #pragma once
-#include <DatabaseConnector.h>
 #include <DatabaseTest.h>
 #include "testingIncludes.h"
 
-class DatabaseConnectorTest : public DatabaseTest {
+class DatabaseConnectorTest : public DatabaseTest, public Test {
 public:
-    std::shared_ptr<DatabaseConnector> dbConnection;
-    void clearDatabase(){
-        for (auto query : clearDatabaseQuery)
-        {
-            dbConnection.get()->execute(query);
-        }   
-    }
+
     void SetUp() {
         DatabaseTest::SetUp();
-        dbConnection.reset(
-                new DatabaseConnector(hostName, userName, userPassword, database));
-        clearDatabase();
     }
 };
 

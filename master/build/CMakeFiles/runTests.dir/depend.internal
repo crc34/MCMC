@@ -16,6 +16,7 @@ CMakeFiles/runTests.dir/main/src/main.cpp.o
  ../DatabaseConnector/include/DatabaseConnector.h
  ../DatabaseConnector/tests/DatabaseConnectorTests.h
  ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
+ ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
  ../global/globals.h
  ../main/include/testingIncludes.h
  ../testing/DatabaseTest.h
