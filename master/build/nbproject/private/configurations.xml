@@ -13,6 +13,8 @@
         </df>
         <df name="CMakeTmp">
         </df>
+        <df name="Progress">
+        </df>
         <df name="runTests.dir">
           <df name="DatabaseConnector">
             <df name="src">

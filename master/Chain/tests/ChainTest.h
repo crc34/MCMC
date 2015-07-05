@@ -9,24 +9,11 @@ class ChainTest : public MCMCTest
 
 TEST_F(ChainTest, fullConstructor)
 {
-    constexpr double testVal = 12.3;
-    std::shared_ptr<double> initialValue(new double(testVal));
-    std::shared_ptr<double> (*proposalFunction)(std::shared_ptr<double> Theta) =
-	[](std::shared_ptr<double> Theta){
-	    std::shared_ptr<double> proposal(new double(testVal));
-	    return proposal;
-	};
-
-    double (*logPosterior)(std::shared_ptr<double> Theta) =
-	[](std::shared_ptr<double> Theta){
-	return (*Theta)*(*Theta);
-    };
-
     auto chain =
-	new Chain<double>(proposalFunction, logPosterior, initialValue);
-    ASSERT_EQ(*(chain->currentTheta), testVal);
-    ASSERT_EQ(*(chain->proposalFunction(initialValue)), testVal);
-    ASSERT_EQ(chain->logPosterior(initialValue), std::pow(testVal, 2));
+new Chain<double>(proposalFunction, logPosterior, initialValue);
+    ASSERT_EQ(*(chain->currentTheta), initialValue.get()[0]);
+    ASSERT_EQ(*(chain->proposalFunction(initialValue)), initialValue.get()[0]);
+    ASSERT_EQ(chain->logPosterior(initialValue), std::pow(initialValue.get()[0], 2));
     delete(chain);
 }
 
@@ -51,9 +38,6 @@ TEST_F(ChainTest, AcceptFunction)
 
 TEST_F(ChainTest, testConvergence)
 {
-
-    constexpr double testVal = 0.0;
-    std::shared_ptr<double> initialValue(new double(testVal));
     auto chain =
 	new Chain<double>(proposalFunction, logPosterior, initialValue);
     double mean = 0.0;

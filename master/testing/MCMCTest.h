@@ -23,9 +23,11 @@ class MCMCTest : public Test {
 
 protected:
     double tolerance = 0.2;
+    const unsigned long long nSamples = 1000000;
+    double _initialValue = 12.3;
+    std::shared_ptr<double> initialValue;
     double trueMean = 4;
     double trueVariance = 5;
-    const unsigned long long nSamples = 1000000;
     std::unique_ptr<gsl_rng> r;
     const gsl_rng_type* T = gsl_rng_default;
     VSLStreamStatePtr stream;
@@ -85,6 +87,6 @@ protected:
             val = -0.5 * val * val / trueVariance;
             return val;
         };
-
+        initialValue.reset(new double(_initialValue));
     }
 };
