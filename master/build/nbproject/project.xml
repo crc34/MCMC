@@ -15,6 +15,8 @@
                 <sourceRootElem>../ChainRunner</sourceRootElem>
                 <sourceRootElem>../MCMCDatabaseConnection</sourceRootElem>
                 <sourceRootElem>../testing</sourceRootElem>
+                <sourceRootElem>../DatabaseConnector/tests</sourceRootElem>
+                <sourceRootElem>../DatabaseConnector/include</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

@@ -69,6 +69,8 @@ gtest/gtest_prod.h
 ../DatabaseConnector/tests/DatabaseConnectorTests.h
 DatabaseConnector.h
 -
+DatabaseTest.h
+-
 testingIncludes.h
 ../DatabaseConnector/tests/testingIncludes.h
 
@@ -83,12 +85,8 @@ gtest/gtest_prod.h
 -
 
 ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
-testingIncludes.h
--
 MCMCDatabaseConnector.h
 -
-gmock/gmock.h
-../MCMCDatabaseConnection/tests/gmock/gmock.h
 
 ../global/globals.h
 
@@ -103,6 +101,12 @@ math.h
 -
 iostream
 -
+
+../testing/DatabaseTest.h
+testingIncludes.h
+-
+gmock/gmock.h
+../testing/gmock/gmock.h
 
 ../testing/MCMCTest.h
 globals.h

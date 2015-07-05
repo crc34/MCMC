@@ -18,6 +18,7 @@ CMakeFiles/runTests.dir/main/src/main.cpp.o: ../MCMCDatabaseConnection/include/M
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../global/globals.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../main/include/testingIncludes.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../testing/DatabaseTest.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../testing/MCMCTest.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../main/src/main.cpp
 CMakeFiles/runTests.dir/main/src/main.cpp.o: /media/sf_Documents/Files/libraries/gmock-1.7.0/include/gmock/gmock-actions.h

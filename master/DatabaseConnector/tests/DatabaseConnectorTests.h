@@ -1,16 +1,12 @@
 #pragma once
 #include <DatabaseConnector.h>
+#include <DatabaseTest.h>
 #include "testingIncludes.h"
 
-class DatabaseConnectorTest : public Test
+class DatabaseConnectorTest : public DatabaseTest
 {
-public:
-	std::string hostName = "localhost";
-	std::string userName = "user";
-	std::string userPassword = "password";
-	std::string database = "tmp";
-};
 
+};
 
 TEST_F(DatabaseConnectorTest, FullConstructor) {
     auto dbConnection =
