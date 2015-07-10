@@ -1,17 +1,16 @@
 
 #pragma once
 #include <MCMCTest.h>
+#include "testingIncludes.h"
+#include "gmock/gmock.h"
 
-class ChainTest : public MCMCTest
+class ChainTest : public MCMCTest, public Test
 {
 public:
-    std::unique_ptr<Chain<double>> chain;
 
     void SetUp()
     {
         MCMCTest::SetUp();
-        chain.reset(
-                new Chain<double>(proposalFunction, logPosterior, initialValue));
     }
 
 };
@@ -42,6 +41,10 @@ TEST_F(ChainTest, testConvergence)
         chain->step();
         mean += currentVal;
         secondMoment += std::pow(currentVal, 2);
+        if (i % 1000000 == 0)
+        {
+            std::cout << i << std::endl;
+        }
     }
     mean /= nSamples;
     secondMoment /= nSamples;

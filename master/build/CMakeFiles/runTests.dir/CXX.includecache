@@ -31,6 +31,10 @@ gtest/gtest_prod.h
 ../Chain/tests/ChainTest.h
 MCMCTest.h
 -
+testingIncludes.h
+../Chain/tests/testingIncludes.h
+gmock/gmock.h
+../Chain/tests/gmock/gmock.h
 
 ../ChainRunner/include/ChainRunner.h
 random
@@ -47,7 +51,9 @@ Chain.h
 ../ChainRunner/tests/ChainRunnerTests.h
 ChainRunner.h
 -
-MCMCDatabaseConnectorTests.h
+DatabaseTest.h
+-
+MCMCTest.h
 -
 
 ../DatabaseConnector/include/DatabaseConnector.h
@@ -125,6 +131,8 @@ testingIncludes.h
 ../testing/testingIncludes.h
 gmock/gmock.h
 ../testing/gmock/gmock.h
+Chain.h
+../testing/Chain.h
 mkl_vsl.h
 ../testing/mkl_vsl.h
 

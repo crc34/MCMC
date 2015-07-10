@@ -16,14 +16,16 @@ public:
     {
     }
 
-    ChainRunner(
-            std::unique_ptr<MCMCDatabaseConnector> connection,
-            std::unique_ptr<Chain<paramType>> chain
-            ) : m_connection(connector), m_chain(chain)
+    ChainRunner(std::shared_ptr<MCMCDatabaseConnector> connection, std::shared_ptr<Chain<paramType>> chain) 
     {
     }
 
+    //            std::shared_ptr<MCMCDatabaseConnector> connection,
+            //std::shared_ptr<Chain<paramType>> chain
+    //: m_connection(connector), m_chain(chain)        
+    
+    
 private:
-    std::unique_ptr<MCMCDatabaseConnector> m_connection;
-    std::unique_ptr<Chain<paramType>> m_chain;
+    std::shared_ptr<MCMCDatabaseConnector> m_connection;
+    std::shared_ptr<Chain<paramType>> m_chain;
 };

@@ -5,6 +5,8 @@
 #include <Chain.h>
 #include "testingIncludes.h"
 #include "gmock/gmock.h"
+#include "Chain.h"
+
 
 #ifdef MKL
 #include "mkl_vsl.h"
@@ -16,7 +18,7 @@
 
 using namespace ::testing;
 
-class MCMCTest : public Test
+class MCMCTest
 {
     using paramType = double;
     using proposalFunctionTemplate = std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)>;
@@ -24,7 +26,7 @@ class MCMCTest : public Test
 
 protected:
     double tolerance = 0.2;
-    const unsigned long long nSamples = 200;
+    const unsigned long long nSamples = 4000000;
     double _initialValue = 12.3;
     std::shared_ptr<double> initialValue;
     double trueMean = 4;
@@ -39,11 +41,13 @@ protected:
     // vector of normally distributed random variables.
     // initialized by populateNormalRv() which is called
     // in setup. It is size normalRvSize;
-    const unsigned long long normalRvSize = 90;
+    const unsigned long long normalRvSize = 100000;
     std::unique_ptr<double> normalRv;
     int normalRvIndex = 0;
     // Populates the elements of normalRv
     // with draws from the standard normal distribution.
+
+    std::shared_ptr<Chain<double>> chain;
 
     void setupNormalRv(int n)
     {
@@ -94,5 +98,7 @@ protected:
             return val;
         };
         initialValue.reset(new double(_initialValue));
+        chain.reset(
+                new Chain<double>(proposalFunction, logPosterior, initialValue));
     }
 };
