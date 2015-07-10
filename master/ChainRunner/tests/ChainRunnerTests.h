@@ -3,12 +3,14 @@
 #include <ChainRunner.h>
 #include <DatabaseTest.h>
 #include <MCMCTest.h>
+
 class ChainRunnerTest : public MCMCTest, public DatabaseTest, public Test
 {
-    private:
-        std::shared_ptr<ChainRunner<double>> m_chainRunner;
-        
-        public:
+private:
+    std::shared_ptr<ChainRunner<double>> m_chainRunner;
+
+public:
+
     void SetUp()
     {
         MCMCTest::SetUp();
