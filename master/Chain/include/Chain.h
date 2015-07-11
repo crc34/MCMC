@@ -24,28 +24,19 @@ public:
             proposalFunctionTemplate _proposalFunction,
             logPosteriorFunctionTemplate _logPosterior,
             std::shared_ptr<paramType> initialValue
-            ) : proposalFunction(_proposalFunction),
-    logPosterior(_logPosterior)
+            ) : m_proposalFunction(_proposalFunction),
+    m_logPosterior(_logPosterior)
     {
-        currentTheta = initialValue;
-        currentLogPosterior = logPosterior(currentTheta);
+        m_currentTheta = initialValue;
+        m_currentLogPosterior = m_logPosterior(m_currentTheta);
     }
 
     /** iterates the markov chain according to MH and returns true if the proposal was accepted */
-    void step()
-    {
-        auto proposal = proposalFunction(currentTheta);
-        double proposalLogPosterior = logPosterior(proposal);
-        if (accept(currentLogPosterior, proposalLogPosterior))
-        {
-            currentLogPosterior = proposalLogPosterior;
-            currentTheta = proposal;
-        }
-    }
+    void step();
 
     void getCurrentTheta()
     {
-        return currentTheta;
+        return m_currentTheta;
     }
 
 private:
@@ -57,17 +48,28 @@ private:
         return std::log(rnd) < logProposal - logCurrent;
     }
 
-    std::shared_ptr<paramType> currentTheta; // current state of chain
-    double currentLogPosterior = -1; // logPosterior of current state
+    std::shared_ptr<paramType> m_currentTheta; // current state of chain
+    double m_currentLogPosterior = -1; // logPosterior of current state
 
     //updates proposedVal with a proposal
-    proposalFunctionTemplate proposalFunction;
+    proposalFunctionTemplate m_proposalFunction;
 
     /** returns the log posterior of Theta */
-    logPosteriorFunctionTemplate logPosterior;
+    logPosteriorFunctionTemplate m_logPosterior;
 
     FRIEND_TEST(ChainTest, fullConstructor);
     FRIEND_TEST(ChainTest, AcceptFunction);
     FRIEND_TEST(ChainTest, testConvergence);
 };
 
+template<typename paramType>
+void Chain<paramType>::step()
+{
+    auto proposal = m_proposalFunction(m_currentTheta);
+    double proposalLogPosterior = m_logPosterior(proposal);
+    if (accept(m_currentLogPosterior, proposalLogPosterior))
+    {
+        m_currentLogPosterior = proposalLogPosterior;
+        m_currentTheta = proposal;
+    }
+}

@@ -24,7 +24,7 @@ TEST_F(ChainTest, AcceptFunction)
 
     for (int i = 0; i < nSamples; i++)
     {
-        auto val = chain->accept(llCurrent, llProposal);
+        auto val = m_chain->accept(llCurrent, llProposal);
         proportionAccepted += val;
     }
     proportionAccepted /= nSamples;
@@ -37,8 +37,8 @@ TEST_F(ChainTest, testConvergence)
     double secondMoment = 0.0;
     for (int i = 0; i < nSamples; i++)
     {
-        auto currentVal = *(chain->currentTheta);
-        chain->step();
+        auto currentVal = *(m_chain->m_currentTheta);
+        m_chain->step();
         mean += currentVal;
         secondMoment += std::pow(currentVal, 2);
         if (i % 1000000 == 0)

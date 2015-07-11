@@ -15,7 +15,7 @@ public:
     {
         MCMCTest::SetUp();
         DatabaseTest::SetUp();
-        m_chainRunner.reset(new ChainRunner<double>(mcmcConnection, chain));
+        m_chainRunner.reset(new ChainRunner<double>(mcmcConnection, m_chain));
     }
 };
 

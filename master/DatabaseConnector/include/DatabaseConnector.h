@@ -22,8 +22,8 @@ class DatabaseConnector
     private:
         void connect(const std::string hostName, const std::string userName,
             const std::string userPassword, const std::string database);
-        sql::Driver* driver;
-        sql::Connection* con;
+        sql::Driver* m_driver;
+        sql::Connection* m_con;
 
         FRIEND_TEST(DatabaseConnectorTest, FullConstructor);
         FRIEND_TEST(DatabaseConnectorTest, executeQuery);
