@@ -1,8 +1,6 @@
 #pragma once
-#include <random>
 #include <memory>
 #include <random>
-#include <cmath>
 #include <gtest/gtest_prod.h>
 
 template<typename paramType> class Chain

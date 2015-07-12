@@ -4,7 +4,6 @@
 class DatabaseConnectorTest : public DatabaseTest, public Test
 {
 public:
-
     void SetUp()
     {
         DatabaseTest::SetUp();
