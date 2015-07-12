@@ -21,6 +21,6 @@ TEST_F(MCMCDatabaseConnectorTest, createRun)
 TEST_F(MCMCDatabaseConnectorTest, insertSample)
 {
     int runId = mcmcConnection->createRun(runName);
-    mcmcConnection->insertSample(runId, 1, 1.0);
+    mcmcConnection->insertSample(runId, 1, -25.44, 1.0);
     ASSERT_NE(runId, -1);
 }

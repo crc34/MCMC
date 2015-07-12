@@ -35,8 +35,10 @@ int MCMCDatabaseConnector::getRunId(std::string runName)
     return runId;
 }
 
-void MCMCDatabaseConnector::insertSample(int runId, int sampleNumber, double theta)
+void MCMCDatabaseConnector::insertSample(int runId, int sampleNumber,
+        double logPosterior, double theta)
 {
-    auto query = boost::str(*(m_insertSamplesQueryFormat.get()) % runId % sampleNumber % theta);
+    auto query = boost::str(*(m_insertSamplesQueryFormat.get()) % runId
+        % sampleNumber % logPosterior % theta);
     m_connection->execute(query);
 }
