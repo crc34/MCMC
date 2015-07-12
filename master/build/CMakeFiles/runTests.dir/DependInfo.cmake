@@ -14,6 +14,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../main/include"
   "../Chain/include"
+  "../Chain/inl"
   "../Chain/tests"
   "../ChainRunner/include"
   "../ChainRunner/tests"

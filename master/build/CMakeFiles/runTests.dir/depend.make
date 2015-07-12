@@ -9,6 +9,7 @@ CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o: 
 CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o: ../MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
 
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/include/Chain.h
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/inl/Chain.inl
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/tests/ChainTest.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../ChainRunner/include/ChainRunner.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../ChainRunner/tests/ChainRunnerTests.h

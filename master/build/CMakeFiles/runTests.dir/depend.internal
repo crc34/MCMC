@@ -10,6 +10,7 @@ CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o
  /media/sf_Documents/Files/Code/MCMC/master/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
 CMakeFiles/runTests.dir/main/src/main.cpp.o
  ../Chain/include/Chain.h
+ ../Chain/inl/Chain.inl
  ../Chain/tests/ChainTest.h
  ../ChainRunner/include/ChainRunner.h
  ../ChainRunner/tests/ChainRunnerTests.h

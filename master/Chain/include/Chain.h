@@ -1,11 +1,6 @@
 #pragma once
 #include <random>
 #include <memory>
-#include <iostream>
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <map>
 #include <random>
 #include <cmath>
 #include <gtest/gtest_prod.h>
@@ -16,37 +11,27 @@ template<typename paramType> class Chain
     using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
 public:
 
-    Chain()
-    {
-    };
+    Chain() = delete;
 
     Chain(
             proposalFunctionTemplate _proposalFunction,
             logPosteriorFunctionTemplate _logPosterior,
             std::shared_ptr<paramType> initialValue
             ) : m_proposalFunction(_proposalFunction),
-    m_logPosterior(_logPosterior)
+    m_logPosterior(_logPosterior),
+    m_currentTheta(initialValue)
     {
-        m_currentTheta = initialValue;
         m_currentLogPosterior = m_logPosterior(m_currentTheta);
     }
 
     /** iterates the markov chain according to MH and returns true if the proposal was accepted */
     void step();
 
-    void getCurrentTheta()
-    {
-        return m_currentTheta;
-    }
-
+    std::shared_ptr<paramType> getCurrentTheta();
 private:
 
     /** returns true if this proposal is accepted */
-    bool accept(const double logCurrent, const double logProposal)
-    {
-        auto rnd = static_cast<double> (rand()) / static_cast<double> (RAND_MAX);
-        return std::log(rnd) < logProposal - logCurrent;
-    }
+    bool accept(const double logCurrent, const double logProposal);
 
     std::shared_ptr<paramType> m_currentTheta; // current state of chain
     double m_currentLogPosterior = -1; // logPosterior of current state
@@ -61,15 +46,4 @@ private:
     FRIEND_TEST(ChainTest, AcceptFunction);
     FRIEND_TEST(ChainTest, testConvergence);
 };
-
-template<typename paramType>
-void Chain<paramType>::step()
-{
-    auto proposal = m_proposalFunction(m_currentTheta);
-    double proposalLogPosterior = m_logPosterior(proposal);
-    if (accept(m_currentLogPosterior, proposalLogPosterior))
-    {
-        m_currentLogPosterior = proposalLogPosterior;
-        m_currentTheta = proposal;
-    }
-}
+#include <Chain.inl>

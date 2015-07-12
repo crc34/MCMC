@@ -8,6 +8,9 @@
         <logicalFolder name="include" displayName="include" projectFiles="true">
           <itemPath>../Chain/include/Chain.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="inl" displayName="inl" projectFiles="true">
+          <itemPath>../Chain/inl/Chain.inl</itemPath>
+        </logicalFolder>
         <logicalFolder name="tests" displayName="tests" projectFiles="true">
           <itemPath>../Chain/tests/ChainTest.h</itemPath>
         </logicalFolder>
@@ -96,6 +99,7 @@
             <incDir>
               <pElem>../main/include</pElem>
               <pElem>../Chain/include</pElem>
+              <pElem>../Chain/inl</pElem>
               <pElem>../Chain/tests</pElem>
               <pElem>../ChainRunner/include</pElem>
               <pElem>../ChainRunner/tests</pElem>
@@ -111,41 +115,12 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="../Chain/include/Chain.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Chain/tests/ChainTest.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../ChainRunner/include/ChainRunner.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../ChainRunner/tests/ChainRunnerTests.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../DatabaseConnector/include/DatabaseConnector.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="../DatabaseConnector/src/DatabaseConnector.cpp"
             ex="false"
             tool="1"
             flavor2="8">
         <ccTool flags="0">
         </ccTool>
-      </item>
-      <item path="../DatabaseConnector/tests/DatabaseConnectorTests.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="../MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp"
             ex="false"
@@ -154,18 +129,9 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="../main/src/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
-      </item>
-      <item path="../testing/DatabaseTest.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../testing/MCMCTest.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

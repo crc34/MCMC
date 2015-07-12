@@ -11,22 +11,16 @@ random
 -
 memory
 -
-iostream
--
-iostream
--
-iomanip
--
-string
--
-map
--
 random
 -
 cmath
 -
 gtest/gtest_prod.h
 -
+Chain.inl
+-
+
+../Chain/inl/Chain.inl
 
 ../Chain/tests/ChainTest.h
 MCMCTest.h
@@ -37,15 +31,11 @@ gmock/gmock.h
 ../Chain/tests/gmock/gmock.h
 
 ../ChainRunner/include/ChainRunner.h
-random
--
-memory
--
-iostream
--
 MCMCDatabaseConnector.h
 -
 Chain.h
+-
+gtest/gtest_prod.h
 -
 
 ../ChainRunner/tests/ChainRunnerTests.h
