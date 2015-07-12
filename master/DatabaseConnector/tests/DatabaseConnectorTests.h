@@ -1,6 +1,5 @@
 #pragma once
 #include <DatabaseTest.h>
-#include "testingIncludes.h"
 
 class DatabaseConnectorTest : public DatabaseTest, public Test
 {

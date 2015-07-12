@@ -25,8 +25,6 @@ Chain.inl
 ../Chain/tests/ChainTest.h
 MCMCTest.h
 -
-testingIncludes.h
-../Chain/tests/testingIncludes.h
 gmock/gmock.h
 ../Chain/tests/gmock/gmock.h
 
@@ -65,8 +63,6 @@ gtest/gtest_prod.h
 ../DatabaseConnector/tests/DatabaseConnectorTests.h
 DatabaseTest.h
 -
-testingIncludes.h
-../DatabaseConnector/tests/testingIncludes.h
 
 ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
 iostream
@@ -88,21 +84,7 @@ DatabaseTest.h
 
 ../global/globals.h
 
-../main/include/testingIncludes.h
-limits
--
-gtest/gtest.h
--
-cstddef
--
-math.h
--
-iostream
--
-
 ../testing/DatabaseTest.h
-testingIncludes.h
--
 gmock/gmock.h
 ../testing/gmock/gmock.h
 DatabaseConnector.h
@@ -117,8 +99,6 @@ gsl/gsl_randist.h
 -
 Chain.h
 -
-testingIncludes.h
-../testing/testingIncludes.h
 gmock/gmock.h
 ../testing/gmock/gmock.h
 Chain.h

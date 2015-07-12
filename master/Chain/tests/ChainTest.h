@@ -1,7 +1,6 @@
 
 #pragma once
 #include <MCMCTest.h>
-#include "testingIncludes.h"
 #include "gmock/gmock.h"
 
 class ChainTest : public MCMCTest, public Test

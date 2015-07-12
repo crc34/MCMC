@@ -3,7 +3,6 @@
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 #include <Chain.h>
-#include "testingIncludes.h"
 #include "gmock/gmock.h"
 #include "Chain.h"
 
