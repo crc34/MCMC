@@ -80,6 +80,8 @@ DatabaseTest.h
 
 ../global/globals.h
 
+../main/include/GlobalDefines.h
+
 ../testing/DatabaseTest.h
 gmock/gmock.h
 ../testing/gmock/gmock.h
@@ -99,6 +101,8 @@ gmock/gmock.h
 ../testing/gmock/gmock.h
 Chain.h
 ../testing/Chain.h
+GlobalDefines.h
+../testing/GlobalDefines.h
 mkl_vsl.h
 ../testing/mkl_vsl.h
 

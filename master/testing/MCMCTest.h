@@ -5,8 +5,9 @@
 #include <Chain.h>
 #include "gmock/gmock.h"
 #include "Chain.h"
+#include "GlobalDefines.h"
 
-
+#undef MKL
 #ifdef MKL
 #include "mkl_vsl.h"
 #endif
@@ -32,8 +33,9 @@ protected:
     double trueVariance = 5;
     std::unique_ptr<gsl_rng> r;
     const gsl_rng_type* T = gsl_rng_default;
+#ifdef MKL
     VSLStreamStatePtr stream;
-
+#endif
     proposalFunctionTemplate proposalFunction;
     logPosteriorFunctionTemplate logPosterior;
 

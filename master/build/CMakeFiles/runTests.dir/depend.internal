@@ -19,6 +19,7 @@ CMakeFiles/runTests.dir/main/src/main.cpp.o
  ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
  ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
  ../global/globals.h
+ ../main/include/GlobalDefines.h
  ../testing/DatabaseTest.h
  ../testing/MCMCTest.h
  /media/sf_Documents/Files/Code/MCMC/master/main/src/main.cpp
