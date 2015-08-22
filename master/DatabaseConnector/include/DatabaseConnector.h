@@ -17,14 +17,15 @@ class DatabaseConnector
         DatabaseConnector(const std::string hostName,
             const std::string userName, const std::string userPassword,
             const std::string database);
-        void execute(const std::string query);
+        bool execute(const std::string query);
         std::shared_ptr<sql::ResultSet> executeFetchQuery(std::string query);
+        bool isConnected(){return m_connected;}
     private:
-        void connect(const std::string hostName, const std::string userName,
+        bool connect(const std::string hostName, const std::string userName,
             const std::string userPassword, const std::string database);
         sql::Driver* m_driver;
-        sql::Connection* m_con;
-
+        sql::Connection* m_connection;
+        bool m_connected;
         FRIEND_TEST(DatabaseConnectorTest, FullConstructor);
         FRIEND_TEST(DatabaseConnectorTest, executeQuery);
         FRIEND_TEST(DatabaseConnectorTest, executFetchQuery);

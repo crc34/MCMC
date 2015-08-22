@@ -1,0 +1,116 @@
+\hypertarget{classChain}{
+\section{Chain$<$ paramType $>$ Class Template Reference}
+\label{classChain}\index{Chain@{Chain}}
+}
+
+
+{\ttfamily \#include $<$Chain.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classChain_aa81d495a22785798908076ef5e3191a6}{Chain} ()
+\item 
+\hyperlink{classChain_ad4bad1f133e8be218275f2b900146840}{Chain} (proposalFunctionTemplate \_\-proposalFunction, logPosteriorFunctionTemplate \_\-logPosterior, std::shared\_\-ptr$<$ paramType $>$ initialValue)
+\item 
+void \hyperlink{classChain_ad6c694578319523237aa7ee355e9d044}{step} ()
+\item 
+std::shared\_\-ptr$<$ paramType $>$ \hyperlink{classChain_a44e04b0bc061e651dec369b09b23c226}{getCurrentTheta} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classChain_a64914a49d1beaea22ef0b3f6464dde8e}{accept} (const double logCurrent, const double logProposal)
+\item 
+\hyperlink{classChain_ae738aa544270ab0d3c8e3b03872e1cd0}{FRIEND\_\-TEST} (\hyperlink{classChainTest}{ChainTest}, fullConstructor)
+\item 
+\hyperlink{classChain_ae504fe7678e62b1ee82aff0ebca3e02b}{FRIEND\_\-TEST} (\hyperlink{classChainTest}{ChainTest}, AcceptFunction)
+\item 
+\hyperlink{classChain_a35c0fda2749e3cfa99a51bb7488e1849}{FRIEND\_\-TEST} (\hyperlink{classChainTest}{ChainTest}, testConvergence)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::shared\_\-ptr$<$ paramType $>$ \hyperlink{classChain_a5c622bbc0157b867ec3cee1d398d8675}{m\_\-currentTheta}
+\item 
+double \hyperlink{classChain_a1ce0a9a0fa6263b3285696a856ce6f4c}{m\_\-currentLogPosterior} = -\/1
+\item 
+proposalFunctionTemplate \hyperlink{classChain_aa674eece174b4da338182f4eee458b3e}{m\_\-proposalFunction}
+\item 
+logPosteriorFunctionTemplate \hyperlink{classChain_a00ed020668792957c11c7e8b6b9eb0bd}{m\_\-logPosterior}
+\end{DoxyCompactItemize}
+\subsubsection*{template$<$typename paramType$>$ class Chain$<$ paramType $>$}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classChain_aa81d495a22785798908076ef5e3191a6}{
+\index{Chain@{Chain}!Chain@{Chain}}
+\index{Chain@{Chain}!Chain@{Chain}}
+\subsubsection[{Chain}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ {\bf Chain}$<$ paramType $>$::{\bf Chain} ()}}
+\label{classChain_aa81d495a22785798908076ef5e3191a6}
+\hypertarget{classChain_ad4bad1f133e8be218275f2b900146840}{
+\index{Chain@{Chain}!Chain@{Chain}}
+\index{Chain@{Chain}!Chain@{Chain}}
+\subsubsection[{Chain}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ {\bf Chain}$<$ paramType $>$::{\bf Chain} (proposalFunctionTemplate {\em \_\-proposalFunction}, \/  logPosteriorFunctionTemplate {\em \_\-logPosterior}, \/  std::shared\_\-ptr$<$ paramType $>$ {\em initialValue})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChain_ad4bad1f133e8be218275f2b900146840}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classChain_a64914a49d1beaea22ef0b3f6464dde8e}{
+\index{Chain@{Chain}!accept@{accept}}
+\index{accept@{accept}!Chain@{Chain}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ bool {\bf Chain}$<$ paramType $>$::accept (const double {\em logCurrent}, \/  const double {\em logProposal})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classChain_a64914a49d1beaea22ef0b3f6464dde8e}
+returns true if this proposal is accepted \hypertarget{classChain_a35c0fda2749e3cfa99a51bb7488e1849}{
+\index{Chain@{Chain}!FRIEND\_\-TEST@{FRIEND\_\-TEST}}
+\index{FRIEND\_\-TEST@{FRIEND\_\-TEST}!Chain@{Chain}}
+\subsubsection[{FRIEND\_\-TEST}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ {\bf Chain}$<$ paramType $>$::FRIEND\_\-TEST ({\bf ChainTest}, \/  testConvergence)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classChain_a35c0fda2749e3cfa99a51bb7488e1849}
+\hypertarget{classChain_ae504fe7678e62b1ee82aff0ebca3e02b}{
+\index{Chain@{Chain}!FRIEND\_\-TEST@{FRIEND\_\-TEST}}
+\index{FRIEND\_\-TEST@{FRIEND\_\-TEST}!Chain@{Chain}}
+\subsubsection[{FRIEND\_\-TEST}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ {\bf Chain}$<$ paramType $>$::FRIEND\_\-TEST ({\bf ChainTest}, \/  AcceptFunction)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classChain_ae504fe7678e62b1ee82aff0ebca3e02b}
+\hypertarget{classChain_ae738aa544270ab0d3c8e3b03872e1cd0}{
+\index{Chain@{Chain}!FRIEND\_\-TEST@{FRIEND\_\-TEST}}
+\index{FRIEND\_\-TEST@{FRIEND\_\-TEST}!Chain@{Chain}}
+\subsubsection[{FRIEND\_\-TEST}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ {\bf Chain}$<$ paramType $>$::FRIEND\_\-TEST ({\bf ChainTest}, \/  fullConstructor)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classChain_ae738aa544270ab0d3c8e3b03872e1cd0}
+\hypertarget{classChain_a44e04b0bc061e651dec369b09b23c226}{
+\index{Chain@{Chain}!getCurrentTheta@{getCurrentTheta}}
+\index{getCurrentTheta@{getCurrentTheta}!Chain@{Chain}}
+\subsubsection[{getCurrentTheta}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ std::shared\_\-ptr$<$ paramType $>$ {\bf Chain}$<$ paramType $>$::getCurrentTheta ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChain_a44e04b0bc061e651dec369b09b23c226}
+\hypertarget{classChain_ad6c694578319523237aa7ee355e9d044}{
+\index{Chain@{Chain}!step@{step}}
+\index{step@{step}!Chain@{Chain}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ void {\bf Chain}$<$ paramType $>$::step ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChain_ad6c694578319523237aa7ee355e9d044}
+iterates the markov chain according to MH 
+
+\subsection{Field Documentation}
+\hypertarget{classChain_a1ce0a9a0fa6263b3285696a856ce6f4c}{
+\index{Chain@{Chain}!m\_\-currentLogPosterior@{m\_\-currentLogPosterior}}
+\index{m\_\-currentLogPosterior@{m\_\-currentLogPosterior}!Chain@{Chain}}
+\subsubsection[{m\_\-currentLogPosterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ double {\bf Chain}$<$ paramType $>$::{\bf m\_\-currentLogPosterior} = -\/1\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classChain_a1ce0a9a0fa6263b3285696a856ce6f4c}
+\hypertarget{classChain_a5c622bbc0157b867ec3cee1d398d8675}{
+\index{Chain@{Chain}!m\_\-currentTheta@{m\_\-currentTheta}}
+\index{m\_\-currentTheta@{m\_\-currentTheta}!Chain@{Chain}}
+\subsubsection[{m\_\-currentTheta}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ std::shared\_\-ptr$<$paramType$>$ {\bf Chain}$<$ paramType $>$::{\bf m\_\-currentTheta}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classChain_a5c622bbc0157b867ec3cee1d398d8675}
+\hypertarget{classChain_a00ed020668792957c11c7e8b6b9eb0bd}{
+\index{Chain@{Chain}!m\_\-logPosterior@{m\_\-logPosterior}}
+\index{m\_\-logPosterior@{m\_\-logPosterior}!Chain@{Chain}}
+\subsubsection[{m\_\-logPosterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ logPosteriorFunctionTemplate {\bf Chain}$<$ paramType $>$::{\bf m\_\-logPosterior}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classChain_a00ed020668792957c11c7e8b6b9eb0bd}
+returns the log posterior of Theta \hypertarget{classChain_aa674eece174b4da338182f4eee458b3e}{
+\index{Chain@{Chain}!m\_\-proposalFunction@{m\_\-proposalFunction}}
+\index{m\_\-proposalFunction@{m\_\-proposalFunction}!Chain@{Chain}}
+\subsubsection[{m\_\-proposalFunction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename paramType $>$ proposalFunctionTemplate {\bf Chain}$<$ paramType $>$::{\bf m\_\-proposalFunction}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classChain_aa674eece174b4da338182f4eee458b3e}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Chain/include/\hyperlink{Chain_8h}{Chain.h}\item 
+Chain/inl/\hyperlink{Chain_8inl}{Chain.inl}\end{DoxyCompactItemize}

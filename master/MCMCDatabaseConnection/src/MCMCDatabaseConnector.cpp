@@ -35,6 +35,7 @@ int MCMCDatabaseConnector::getRunId(std::string runName)
     return runId;
 }
 
+/** inserts a sample*/
 void MCMCDatabaseConnector::insertSample(int runId, int sampleNumber,
         double logPosterior, double theta)
 {

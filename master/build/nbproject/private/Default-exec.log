@@ -7,6 +7,7 @@ called: /opt/intel/bin/icpc
 	-static-intel
 	-I/media/sf_Documents/Files/Code/MCMC/master/main/include
 	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/include
+	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/inl
 	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/tests
 	-I/media/sf_Documents/Files/Code/MCMC/master/ChainRunner/include
 	-I/media/sf_Documents/Files/Code/MCMC/master/ChainRunner/tests
@@ -28,7 +29,7 @@ called: gcc
 	-m64
 	-v
 	-E
-	/tmp/icpcdummyHGFl7l.c
+	/tmp/icpcdummyEl3iIA.c
 
 called: g++
 	/media/sf_Documents/Files/Code/MCMC/master/build
@@ -56,6 +57,7 @@ called: /opt/intel/bin/icpc
 	-static-intel
 	-I/media/sf_Documents/Files/Code/MCMC/master/main/include
 	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/include
+	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/inl
 	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/tests
 	-I/media/sf_Documents/Files/Code/MCMC/master/ChainRunner/include
 	-I/media/sf_Documents/Files/Code/MCMC/master/ChainRunner/tests
@@ -77,7 +79,7 @@ called: gcc
 	-m64
 	-v
 	-E
-	/tmp/icpcdummyzPW8zC.c
+	/tmp/icpcdummy9U7ZbT.c
 
 called: g++
 	/media/sf_Documents/Files/Code/MCMC/master/build
@@ -105,6 +107,7 @@ called: /opt/intel/bin/icpc
 	-static-intel
 	-I/media/sf_Documents/Files/Code/MCMC/master/main/include
 	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/include
+	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/inl
 	-I/media/sf_Documents/Files/Code/MCMC/master/Chain/tests
 	-I/media/sf_Documents/Files/Code/MCMC/master/ChainRunner/include
 	-I/media/sf_Documents/Files/Code/MCMC/master/ChainRunner/tests
@@ -126,7 +129,7 @@ called: gcc
 	-m64
 	-v
 	-E
-	/tmp/icpcdummyce1NxR.c
+	/tmp/icpcdummywNs2oy.c
 
 called: g++
 	/media/sf_Documents/Files/Code/MCMC/master/build
@@ -174,7 +177,7 @@ called: gcc
 	-m64
 	-v
 	-E
-	/tmp/icpcdummygjfhi0.c
+	/tmp/icpcdummyxV42ph.c
 
 called: g++
 	/media/sf_Documents/Files/Code/MCMC/master/build
@@ -186,7 +189,7 @@ called: g++
 	/media/sf_Documents/Files/Code/MCMC/master/build
 	g++
 	-###
-	/tmp/icpcdummym3vost.c
+	/tmp/icpcdummyMP7JhZ.c
 	-m64
 
 called: g++

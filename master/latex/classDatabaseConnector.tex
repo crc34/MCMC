@@ -1,0 +1,120 @@
+\hypertarget{classDatabaseConnector}{
+\section{DatabaseConnector Class Reference}
+\label{classDatabaseConnector}\index{DatabaseConnector@{DatabaseConnector}}
+}
+
+
+{\ttfamily \#include $<$DatabaseConnector.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDatabaseConnector_af371bd32e0f186f1de9fa487872eb1c1}{DatabaseConnector} ()
+\item 
+\hyperlink{classDatabaseConnector_a4312f4426fbfd8519bea54c919c27c6a}{$\sim$DatabaseConnector} ()
+\item 
+\hyperlink{classDatabaseConnector_a502670eae16b1bcf0e102b337b27217c}{DatabaseConnector} (const std::string hostName, const std::string userName, const std::string userPassword, const std::string database)
+\item 
+bool \hyperlink{classDatabaseConnector_afe792ae1d992ef8ad46b4d9d96e4f046}{execute} (const std::string query)
+\item 
+std::shared\_\-ptr$<$ sql::ResultSet $>$ \hyperlink{classDatabaseConnector_afa1229f85d1ce3aa08a8efe20355f1a8}{executeFetchQuery} (std::string query)
+\item 
+bool \hyperlink{classDatabaseConnector_afa04c403cef3e677957fe6a95b196856}{isConnected} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classDatabaseConnector_aa1ee4bc9db8a6a0649cb0445f603bc3d}{connect} (const std::string hostName, const std::string userName, const std::string userPassword, const std::string database)
+\item 
+\hyperlink{classDatabaseConnector_ab0a36921c33a4a57e3d9f45b246d3a00}{FRIEND\_\-TEST} (DatabaseConnectorTest, FullConstructor)
+\item 
+\hyperlink{classDatabaseConnector_ac413c913beb4dc0539a40383def2e750}{FRIEND\_\-TEST} (DatabaseConnectorTest, executeQuery)
+\item 
+\hyperlink{classDatabaseConnector_a1b954199c3e493a12edb9b339ad26103}{FRIEND\_\-TEST} (DatabaseConnectorTest, executFetchQuery)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sql::Driver $\ast$ \hyperlink{classDatabaseConnector_aacae9f4fcb377b458e210f8aa87d0759}{m\_\-driver}
+\item 
+sql::Connection $\ast$ \hyperlink{classDatabaseConnector_a82c3e58f461abecf645352205dc7d83d}{m\_\-connection}
+\item 
+bool \hyperlink{classDatabaseConnector_aa6eff9e87635230d6b6aaa675312aaf1}{m\_\-connected}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDatabaseConnector_af371bd32e0f186f1de9fa487872eb1c1}{
+\index{DatabaseConnector@{DatabaseConnector}!DatabaseConnector@{DatabaseConnector}}
+\index{DatabaseConnector@{DatabaseConnector}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{DatabaseConnector}]{\setlength{\rightskip}{0pt plus 5cm}DatabaseConnector::DatabaseConnector ()}}
+\label{classDatabaseConnector_af371bd32e0f186f1de9fa487872eb1c1}
+\hypertarget{classDatabaseConnector_a4312f4426fbfd8519bea54c919c27c6a}{
+\index{DatabaseConnector@{DatabaseConnector}!$\sim$DatabaseConnector@{$\sim$DatabaseConnector}}
+\index{$\sim$DatabaseConnector@{$\sim$DatabaseConnector}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{$\sim$DatabaseConnector}]{\setlength{\rightskip}{0pt plus 5cm}DatabaseConnector::$\sim$DatabaseConnector ()}}
+\label{classDatabaseConnector_a4312f4426fbfd8519bea54c919c27c6a}
+\hypertarget{classDatabaseConnector_a502670eae16b1bcf0e102b337b27217c}{
+\index{DatabaseConnector@{DatabaseConnector}!DatabaseConnector@{DatabaseConnector}}
+\index{DatabaseConnector@{DatabaseConnector}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{DatabaseConnector}]{\setlength{\rightskip}{0pt plus 5cm}DatabaseConnector::DatabaseConnector (const std::string {\em hostName}, \/  const std::string {\em userName}, \/  const std::string {\em userPassword}, \/  const std::string {\em database})}}
+\label{classDatabaseConnector_a502670eae16b1bcf0e102b337b27217c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDatabaseConnector_aa1ee4bc9db8a6a0649cb0445f603bc3d}{
+\index{DatabaseConnector@{DatabaseConnector}!connect@{connect}}
+\index{connect@{connect}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}bool DatabaseConnector::connect (const std::string {\em hostName}, \/  const std::string {\em userName}, \/  const std::string {\em userPassword}, \/  const std::string {\em database})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classDatabaseConnector_aa1ee4bc9db8a6a0649cb0445f603bc3d}
+\hypertarget{classDatabaseConnector_afe792ae1d992ef8ad46b4d9d96e4f046}{
+\index{DatabaseConnector@{DatabaseConnector}!execute@{execute}}
+\index{execute@{execute}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}bool DatabaseConnector::execute (const std::string {\em query})}}
+\label{classDatabaseConnector_afe792ae1d992ef8ad46b4d9d96e4f046}
+\hypertarget{classDatabaseConnector_afa1229f85d1ce3aa08a8efe20355f1a8}{
+\index{DatabaseConnector@{DatabaseConnector}!executeFetchQuery@{executeFetchQuery}}
+\index{executeFetchQuery@{executeFetchQuery}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{executeFetchQuery}]{\setlength{\rightskip}{0pt plus 5cm}std::shared\_\-ptr$<$sql::ResultSet$>$ DatabaseConnector::executeFetchQuery (std::string {\em query})}}
+\label{classDatabaseConnector_afa1229f85d1ce3aa08a8efe20355f1a8}
+\hypertarget{classDatabaseConnector_a1b954199c3e493a12edb9b339ad26103}{
+\index{DatabaseConnector@{DatabaseConnector}!FRIEND\_\-TEST@{FRIEND\_\-TEST}}
+\index{FRIEND\_\-TEST@{FRIEND\_\-TEST}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{FRIEND\_\-TEST}]{\setlength{\rightskip}{0pt plus 5cm}DatabaseConnector::FRIEND\_\-TEST (DatabaseConnectorTest, \/  executFetchQuery)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classDatabaseConnector_a1b954199c3e493a12edb9b339ad26103}
+\hypertarget{classDatabaseConnector_ac413c913beb4dc0539a40383def2e750}{
+\index{DatabaseConnector@{DatabaseConnector}!FRIEND\_\-TEST@{FRIEND\_\-TEST}}
+\index{FRIEND\_\-TEST@{FRIEND\_\-TEST}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{FRIEND\_\-TEST}]{\setlength{\rightskip}{0pt plus 5cm}DatabaseConnector::FRIEND\_\-TEST (DatabaseConnectorTest, \/  executeQuery)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classDatabaseConnector_ac413c913beb4dc0539a40383def2e750}
+\hypertarget{classDatabaseConnector_ab0a36921c33a4a57e3d9f45b246d3a00}{
+\index{DatabaseConnector@{DatabaseConnector}!FRIEND\_\-TEST@{FRIEND\_\-TEST}}
+\index{FRIEND\_\-TEST@{FRIEND\_\-TEST}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{FRIEND\_\-TEST}]{\setlength{\rightskip}{0pt plus 5cm}DatabaseConnector::FRIEND\_\-TEST (DatabaseConnectorTest, \/  FullConstructor)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classDatabaseConnector_ab0a36921c33a4a57e3d9f45b246d3a00}
+\hypertarget{classDatabaseConnector_afa04c403cef3e677957fe6a95b196856}{
+\index{DatabaseConnector@{DatabaseConnector}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{isConnected}]{\setlength{\rightskip}{0pt plus 5cm}bool DatabaseConnector::isConnected ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classDatabaseConnector_afa04c403cef3e677957fe6a95b196856}
+
+
+\subsection{Field Documentation}
+\hypertarget{classDatabaseConnector_aa6eff9e87635230d6b6aaa675312aaf1}{
+\index{DatabaseConnector@{DatabaseConnector}!m\_\-connected@{m\_\-connected}}
+\index{m\_\-connected@{m\_\-connected}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{m\_\-connected}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf DatabaseConnector::m\_\-connected}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classDatabaseConnector_aa6eff9e87635230d6b6aaa675312aaf1}
+\hypertarget{classDatabaseConnector_a82c3e58f461abecf645352205dc7d83d}{
+\index{DatabaseConnector@{DatabaseConnector}!m\_\-connection@{m\_\-connection}}
+\index{m\_\-connection@{m\_\-connection}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{m\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}sql::Connection$\ast$ {\bf DatabaseConnector::m\_\-connection}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classDatabaseConnector_a82c3e58f461abecf645352205dc7d83d}
+\hypertarget{classDatabaseConnector_aacae9f4fcb377b458e210f8aa87d0759}{
+\index{DatabaseConnector@{DatabaseConnector}!m\_\-driver@{m\_\-driver}}
+\index{m\_\-driver@{m\_\-driver}!DatabaseConnector@{DatabaseConnector}}
+\subsubsection[{m\_\-driver}]{\setlength{\rightskip}{0pt plus 5cm}sql::Driver$\ast$ {\bf DatabaseConnector::m\_\-driver}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classDatabaseConnector_aacae9f4fcb377b458e210f8aa87d0759}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+DatabaseConnector/include/\hyperlink{DatabaseConnector_8h}{DatabaseConnector.h}\end{DoxyCompactItemize}

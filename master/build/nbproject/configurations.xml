@@ -4,17 +4,6 @@
     <df root="." name="0">
     </df>
     <logicalFolder name="master" displayName="master" projectFiles="true" root="..">
-      <logicalFolder name="Chain" displayName="Chain" projectFiles="true">
-        <logicalFolder name="include" displayName="include" projectFiles="true">
-          <itemPath>../Chain/include/Chain.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="inl" displayName="inl" projectFiles="true">
-          <itemPath>../Chain/inl/Chain.inl</itemPath>
-        </logicalFolder>
-        <logicalFolder name="tests" displayName="tests" projectFiles="true">
-          <itemPath>../Chain/tests/ChainTest.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
       <logicalFolder name="ChainRunner" displayName="ChainRunner" projectFiles="true">
         <logicalFolder name="include" displayName="include" projectFiles="true">
           <itemPath>../ChainRunner/include/ChainRunner.h</itemPath>
@@ -26,14 +15,8 @@
       <logicalFolder name="DatabaseConnector"
                      displayName="DatabaseConnector"
                      projectFiles="true">
-        <logicalFolder name="include" displayName="include" projectFiles="true">
-          <itemPath>../DatabaseConnector/include/DatabaseConnector.h</itemPath>
-        </logicalFolder>
         <logicalFolder name="src" displayName="src" projectFiles="true">
           <itemPath>../DatabaseConnector/src/DatabaseConnector.cpp</itemPath>
-        </logicalFolder>
-        <logicalFolder name="tests" displayName="tests" projectFiles="true">
-          <itemPath>../DatabaseConnector/tests/DatabaseConnectorTests.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="main" displayName="main" projectFiles="true">
@@ -44,19 +27,9 @@
       <logicalFolder name="MCMCDatabaseConnection"
                      displayName="MCMCDatabaseConnection"
                      projectFiles="true">
-        <logicalFolder name="include" displayName="include" projectFiles="true">
-          <itemPath>../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h</itemPath>
-        </logicalFolder>
         <logicalFolder name="src" displayName="src" projectFiles="true">
           <itemPath>../MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp</itemPath>
         </logicalFolder>
-        <logicalFolder name="tests" displayName="tests" projectFiles="true">
-          <itemPath>../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="testing" displayName="testing" projectFiles="true">
-        <itemPath>../testing/DatabaseTest.h</itemPath>
-        <itemPath>../testing/MCMCTest.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -69,12 +42,7 @@
   <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
   <sourceRootList>
     <Elem>.</Elem>
-    <Elem>../Chain</Elem>
     <Elem>../ChainRunner</Elem>
-    <Elem>../MCMCDatabaseConnection</Elem>
-    <Elem>../testing</Elem>
-    <Elem>../DatabaseConnector/tests</Elem>
-    <Elem>../DatabaseConnector/include</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -115,6 +83,16 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../ChainRunner/include/ChainRunner.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../ChainRunner/tests/ChainRunnerTests.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="../DatabaseConnector/src/DatabaseConnector.cpp"
             ex="false"
             tool="1"

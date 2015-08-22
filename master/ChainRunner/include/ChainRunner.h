@@ -9,14 +9,26 @@ template<typename paramType> class ChainRunner
     using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
 public:
     ChainRunner() = delete;
+    
+    /** connection should already be established*/
     ChainRunner(std::shared_ptr<MCMCDatabaseConnector> connection,
-            std::shared_ptr<Chain<paramType>> chain) :
-            m_chain(chain), m_connection(connection){}
-    std::shared_ptr<MCMCDatabaseConnector> getConnection(){return m_connection;}
-    std::shared_ptr<MCMCDatabaseConnector> getChain(){return m_chain;}
+            std::shared_ptr<Chain<paramType>> chain):
+            m_chain(chain), m_connection(connection)
+    {
+
+    }
+    
+    bool stepAndWrite()
+    {
+        auto chain = m_chain.get();
+        auto connection = m_connection.get();
+        chain->step();
+        auto currentVal = getCurrentTheta();
+    }
 
 private:
     std::shared_ptr<MCMCDatabaseConnector> m_connection;
     std::shared_ptr<Chain<paramType>> m_chain;
+    int m_runId;
     FRIEND_TEST(ChainRunnerTest, constructor);
 };

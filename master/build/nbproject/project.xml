@@ -6,17 +6,12 @@
             <name>build</name>
             <c-extensions>c</c-extensions>
             <cpp-extensions>cpp,cxx</cpp-extensions>
-            <header-extensions>h,inl</header-extensions>
+            <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
-                <sourceRootElem>../Chain</sourceRootElem>
                 <sourceRootElem>../ChainRunner</sourceRootElem>
-                <sourceRootElem>../MCMCDatabaseConnection</sourceRootElem>
-                <sourceRootElem>../testing</sourceRootElem>
-                <sourceRootElem>../DatabaseConnector/tests</sourceRootElem>
-                <sourceRootElem>../DatabaseConnector/include</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

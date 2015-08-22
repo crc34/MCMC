@@ -22,9 +22,8 @@ public:
         m_currentLogPosterior = m_logPosterior(m_currentTheta);
     }
 
-    /** iterates the markov chain according to MH and returns true if the proposal was accepted */
+    /** iterates the markov chain according to MH*/
     void step();
-
     std::shared_ptr<paramType> getCurrentTheta();
 private:
 

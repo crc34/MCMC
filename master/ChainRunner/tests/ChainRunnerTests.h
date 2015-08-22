@@ -7,12 +7,8 @@
 class ChainRunnerTest : public MCMCTest, public DatabaseTest, public Test
 {
 
-private:
-
 public:
-
     std::shared_ptr<ChainRunner<double>> m_chainRunner;
-
     void SetUp()
     {
         MCMCTest::SetUp();
@@ -24,4 +20,11 @@ TEST_F(ChainRunnerTest, Constructor)
 {
     m_chainRunner.reset(new ChainRunner<double>(mcmcConnection, m_chain));
     ASSERT_EQ(1, 1);
+}
+
+TEST_F(ChainRunnerTest, RunChain)
+{
+    auto chainRunner = m_chainRunner.get();
+
+
 }
