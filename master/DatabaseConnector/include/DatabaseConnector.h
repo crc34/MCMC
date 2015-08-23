@@ -9,11 +9,21 @@
 #include <cppconn/prepared_statement.h>
 #include <gtest/gtest_prod.h>
 
+/**
+Interacts with a mysql database. 
+ */
 class DatabaseConnector
 {
     public:
         DatabaseConnector() =  delete;
         ~DatabaseConnector();
+
+        /*! Create a new connector and connects to the database. 
+        *     \param hostName name of host.` 
+        *     \param userName user name.` 
+        *     \param userPassword password.` 
+        *     \param database databaseName.`   
+        **/ 
         DatabaseConnector(const std::string hostName,
             const std::string userName, const std::string userPassword,
             const std::string database);
