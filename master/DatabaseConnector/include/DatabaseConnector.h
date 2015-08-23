@@ -42,12 +42,26 @@ class DatabaseConnector
 
         /** returns true if the connector is connected*/ 
         bool isConnected(){return m_connected;}
+
     private:
-        bool connect(const std::string hostName, const std::string userName,
-            const std::string userPassword, const std::string database);
+
+        /*! connects to the input database**/
+        bool connect(
+                const std::string hostName,
+                const std::string userName,
+                const std::string userPassword,
+                const std::string database);
+
+        /*! driver object */
         sql::Driver* m_driver;
+
+        /*! Connection object*/
         sql::Connection* m_connection;
+
+        /*! indicates whether or not the database is connected*/
         bool m_connected;
+
+        // Tests
         FRIEND_TEST(DatabaseConnectorTest, FullConstructor);
         FRIEND_TEST(DatabaseConnectorTest, executeQuery);
         FRIEND_TEST(DatabaseConnectorTest, executFetchQuery);
