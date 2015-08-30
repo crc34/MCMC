@@ -8,7 +8,6 @@ project (MCMC)
   SET(CMAKE_CXX_FLAGS_DEBUG "-pg")
 #ENDIF ()
 
-
 # Locate GTest
 include_directories(ThirdParty/gmock-1.6.0/include)
 include_directories(ThirdParty/gmock-1.6.0/gtest/include)
@@ -24,12 +23,16 @@ include_directories(DatabaseConnector/tests)
 include_directories(DatabaseConnector/include)
 include_directories(testing)
 include_directories(global)
-link_directories(ThirdParty/gmock-1.6.0/build ThirdParty/gmock/gtest/build)
+link_directories($ENV{GMOCK_HOME}/build $ENV{GMOCK_HOME}/gtest/build)
 set(CMAKE_CXX_FLAGS "${CMAXE_CXX_FLAGS} -Wall -std=c++0x")
 
 # Link runTests with what we want to test and the GTest and pthread library
 add_executable(runTests main/src/main.cpp MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp DatabaseConnector/src/DatabaseConnector.cpp)
-target_link_libraries(runTests ${GTEST_LIBRARIES} gmock pthread mysqlcppconn -lgsl -lgslcblas)
+
+target_link_libraries(runTests -lmysqlcppconn -lgsl -lgslcblas)
+target_link_libraries(runTests pthread)
+target_link_libraries(runTests gmock)
+target_link_libraries(runTests gtest)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "-std=gnu++0x -g -mkl:parallel -static-intel")

@@ -1,23 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp
+Change Dir: /home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/gmake "cmTryCompileExec2536057355/fast"
-/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2536057355.dir/build.make CMakeFiles/cmTryCompileExec2536057355.dir/build
-gmake[1]: Entering directory `/home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2536057355.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2536057355.dir/CheckSymbolExists.c.o   -c /home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec2536057355
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2536057355.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec2536057355.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2536057355 -rdynamic 
-CMakeFiles/cmTryCompileExec2536057355.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:/usr/bin/gmake "cmTryCompileExec849135683/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec849135683.dir/build.make CMakeFiles/cmTryCompileExec849135683.dir/build
+gmake[1]: Entering directory `/home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec849135683.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec849135683.dir/CheckSymbolExists.c.o   -c /home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec849135683
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec849135683.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec849135683.dir/CheckSymbolExists.c.o  -o cmTryCompileExec849135683 -rdynamic 
+CMakeFiles/cmTryCompileExec849135683.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0xc): undefined reference to `pthread_create'
 collect2: ld returned 1 exit status
-gmake[1]: Leaving directory `/home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp'
-gmake[1]: *** [cmTryCompileExec2536057355] Error 1
-gmake: *** [cmTryCompileExec2536057355/fast] Error 2
+gmake[1]: Leaving directory `/home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTryCompileExec849135683] Error 1
+gmake: *** [cmTryCompileExec849135683/fast] Error 2
 
-File /home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -33,21 +33,21 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp
+Change Dir: /home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/gmake "cmTryCompileExec833641109/fast"
-/usr/bin/gmake -f CMakeFiles/cmTryCompileExec833641109.dir/build.make CMakeFiles/cmTryCompileExec833641109.dir/build
-gmake[1]: Entering directory `/home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec833641109.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec833641109.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec833641109
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec833641109.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec833641109.dir/CheckFunctionExists.c.o  -o cmTryCompileExec833641109 -rdynamic -lpthreads 
+Run Build Command:/usr/bin/gmake "cmTryCompileExec3432532711/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3432532711.dir/build.make CMakeFiles/cmTryCompileExec3432532711.dir/build
+gmake[1]: Entering directory `/home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3432532711.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3432532711.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3432532711
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3432532711.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3432532711.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3432532711 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: ld returned 1 exit status
-gmake[1]: Leaving directory `/home/user/Desktop/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp'
-gmake[1]: *** [cmTryCompileExec833641109] Error 1
-gmake: *** [cmTryCompileExec833641109/fast] Error 2
+gmake[1]: Leaving directory `/home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTryCompileExec3432532711] Error 1
+gmake: *** [cmTryCompileExec3432532711/fast] Error 2
 
 
