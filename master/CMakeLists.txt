@@ -10,8 +10,8 @@ project (MCMC)
 
 
 # Locate GTest
-find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
+include_directories(ThirdParty/gmock-1.6.0/include)
+include_directories(ThirdParty/gmock-1.6.0/gtest/include)
 include_directories(main/include)
 include_directories(Chain/include)
 include_directories(Chain/inl)
@@ -23,9 +23,8 @@ include_directories(MCMCDatabaseConnection/include)
 include_directories(DatabaseConnector/tests)
 include_directories(DatabaseConnector/include)
 include_directories(testing)
-include_directories($ENV{GMOCK_HOME}/include)
 include_directories(global)
-link_directories($ENV{GMOCK_HOME}/build)
+link_directories(ThirdParty/gmock-1.6.0/build ThirdParty/gmock/gtest/build)
 set(CMAKE_CXX_FLAGS "${CMAXE_CXX_FLAGS} -Wall -std=c++0x")
 
 # Link runTests with what we want to test and the GTest and pthread library
