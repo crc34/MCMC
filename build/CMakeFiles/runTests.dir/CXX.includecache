@@ -18,12 +18,6 @@ Chain.inl
 
 ../Chain/inl/Chain.inl
 
-../Chain/tests/ChainTest.h
-MCMCTest.h
--
-gmock/gmock.h
-../Chain/tests/gmock/gmock.h
-
 ../ChainRunner/include/ChainRunner.h
 MCMCDatabaseConnector.h
 -
@@ -56,10 +50,6 @@ cppconn/prepared_statement.h
 gtest/gtest_prod.h
 -
 
-../DatabaseConnector/tests/DatabaseConnectorTests.h
-DatabaseTest.h
--
-
 ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
 iostream
 -
@@ -70,12 +60,6 @@ DatabaseConnector.h
 gtest/gtest_prod.h
 -
 boost/format.hpp
--
-
-../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
-MCMCDatabaseConnector.h
--
-DatabaseTest.h
 -
 
 ../ThirdParty/gmock-1.6.0/gtest/include/gtest/gtest-death-test.h
@@ -487,12 +471,6 @@ mkl_vsl.h
 ../testing/mkl_vsl.h
 
 /home/user/Documents/MCMC/main/src/main.cpp
-ChainTest.h
-/home/user/Documents/MCMC/main/src/ChainTest.h
 ChainRunnerTests.h
 /home/user/Documents/MCMC/main/src/ChainRunnerTests.h
-DatabaseConnectorTests.h
-/home/user/Documents/MCMC/main/src/DatabaseConnectorTests.h
-MCMCDatabaseConnectorTests.h
-/home/user/Documents/MCMC/main/src/MCMCDatabaseConnectorTests.h
 

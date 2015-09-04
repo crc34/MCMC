@@ -12,13 +12,10 @@ CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o: 
 
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/include/Chain.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/inl/Chain.inl
-CMakeFiles/runTests.dir/main/src/main.cpp.o: ../Chain/tests/ChainTest.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../ChainRunner/include/ChainRunner.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../ChainRunner/tests/ChainRunnerTests.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../DatabaseConnector/include/DatabaseConnector.h
-CMakeFiles/runTests.dir/main/src/main.cpp.o: ../DatabaseConnector/tests/DatabaseConnectorTests.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
-CMakeFiles/runTests.dir/main/src/main.cpp.o: ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../ThirdParty/gmock-1.6.0/gtest/include/gtest/gtest-death-test.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../ThirdParty/gmock-1.6.0/gtest/include/gtest/gtest-message.h
 CMakeFiles/runTests.dir/main/src/main.cpp.o: ../ThirdParty/gmock-1.6.0/gtest/include/gtest/gtest-param-test.h

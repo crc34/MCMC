@@ -13,13 +13,10 @@ CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o
 CMakeFiles/runTests.dir/main/src/main.cpp.o
  ../Chain/include/Chain.h
  ../Chain/inl/Chain.inl
- ../Chain/tests/ChainTest.h
  ../ChainRunner/include/ChainRunner.h
  ../ChainRunner/tests/ChainRunnerTests.h
  ../DatabaseConnector/include/DatabaseConnector.h
- ../DatabaseConnector/tests/DatabaseConnectorTests.h
  ../MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
- ../MCMCDatabaseConnection/tests/MCMCDatabaseConnectorTests.h
  ../ThirdParty/gmock-1.6.0/gtest/include/gtest/gtest-death-test.h
  ../ThirdParty/gmock-1.6.0/gtest/include/gtest/gtest-message.h
  ../ThirdParty/gmock-1.6.0/gtest/include/gtest/gtest-param-test.h
