@@ -5,7 +5,7 @@ project (MCMC)
   MESSAGE(STATUS "** Compiling with Intel settings **")
   SET(CMAKE_CXX_COMPILER "/opt/intel/bin/icpc")
   SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -w")
-  SET(CMAKE_CXX_FLAGS_DEBUG "-pg")
+  SET(CMAKE_CXX_FLAGS_DEBUG "-ggdb")
 #ENDIF ()
 
 # Locate GTest

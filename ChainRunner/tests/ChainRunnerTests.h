@@ -12,18 +12,12 @@ public:
     {
         MCMCTest::SetUp();
         DatabaseTest::SetUp();
+        m_chainRunner.reset(new ChainRunner<double>(mcmcConnection, m_chain));
     }
 };
 
-TEST_F(ChainRunnerTest, Constructor)
-{
-    m_chainRunner.reset(new ChainRunner<double>(mcmcConnection, m_chain));
-    ASSERT_EQ(1, 1);
-}
-
 TEST_F(ChainRunnerTest, RunChain)
 {
-    auto chainRunner = m_chainRunner.get();
-
-
+    auto tmp = m_chainRunner.get();
+    std::cout << "pointer = " <<  tmp << std::endl;
 }
