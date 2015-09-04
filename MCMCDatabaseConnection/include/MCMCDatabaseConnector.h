@@ -15,13 +15,12 @@ class MCMCDatabaseConnector
             const std::string database);
         // Creates a run and returns its id
         int createRun(std::string runName);
-
         /** Gets a runId associated with a runName
             returns -1 if it doesn't exist*/
         int getRunId(std::string runName);
-
-        void insertSample(int iteration, double logPosterior,
+        void insertSample(double logPosterior,
             double theta);
+        int getRunId(){return m_runId;}
 
     private:
         int m_runId{-1};
@@ -33,6 +32,6 @@ class MCMCDatabaseConnector
              "select runId from run where runName =  \"%s\";";
         std::unique_ptr<boost::format> m_selectRunIdQueryFormat;
         std::string m_insertSamplesQueryString =
-            "insert into samples values(%i, %i, %f, %f)";
+            "insert into samples values(NULL, %i, %f, %f)";
         std::unique_ptr<boost::format> m_insertSamplesQueryFormat;
 };

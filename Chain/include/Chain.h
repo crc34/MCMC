@@ -24,14 +24,18 @@ public:
 
     /** iterates the markov chain according to MH*/
     void step();
+
     std::shared_ptr<paramType> getCurrentTheta();
+
+    double getCurrentLogPosterior() {return m_currentLogPosterior;}
+
 private:
 
     /** returns true if this proposal is accepted */
     bool accept(const double logCurrent, const double logProposal);
 
     std::shared_ptr<paramType> m_currentTheta; // current state of chain
-    double m_currentLogPosterior = -1; // logPosterior of current state
+    double m_currentLogPosterior{-1}; // logPosterior of current state
 
     //updates proposedVal with a proposal
     proposalFunctionTemplate m_proposalFunction;

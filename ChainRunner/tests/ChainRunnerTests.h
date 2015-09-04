@@ -18,5 +18,6 @@ public:
 
 TEST_F(ChainRunnerTest, RunChain)
 {
-    m_chainRunner->stepAndWrite();
+    for (int i = 0; i < 10000000; i++)
+        m_chainRunner->stepAndWrite();
 }

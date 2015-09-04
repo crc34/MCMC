@@ -5,8 +5,10 @@
 
 template<typename paramType> class ChainRunner
 {
-    using proposalFunctionTemplate = std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)>;
-    using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
+    using proposalFunctionTemplate =
+        std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)>;
+    using logPosteriorFunctionTemplate =
+        std::function<double(const std::shared_ptr<paramType> Theta)>;
 public:
     ChainRunner();
     
@@ -23,8 +25,11 @@ public:
     {
         auto chain = m_chain.get();
         auto connection = m_connection.get();
+        auto runId = m_connection->getRunId();
         chain->step();
         auto currentVal = chain->getCurrentTheta();
+        auto currentLogPosterior = chain->getCurrentLogPosterior(); 
+        connection->insertSample(currentLogPosterior, *currentVal);
     }
 
 private:
