@@ -18,11 +18,20 @@ class MCMCDatabaseConnector
         /** Gets a runId associated with a runName
             returns -1 if it doesn't exist*/
         int getRunId(std::string runName);
+        /**
+         * 
+         * @param logPosterior log of the posterior
+         * @param theta sampled value
+         * @param flushPreparedStatement true if the insert sample
+         * prepared statement should be flushed to the database.
+         * @return void
+         */
         void insertSample(double logPosterior,
             double theta, bool flushPreparedStatement);
         int getRunId(){return m_runId;}
 
     private:
+
         int m_runId{-1};
  
         std::unique_ptr<DatabaseConnector> m_connection;
@@ -33,8 +42,7 @@ class MCMCDatabaseConnector
         const std::string m_selectRunIdQueryString{
              "select runId from run where runName =  \"%s\";"};
         std::unique_ptr<boost::format> m_selectRunIdQueryFormat;
-
-        std::unique_ptr<sql::PreparedStatement>  insertSamplePreparedStatement;
-        std::string insertSamplePreparedStatementString{
+        const std::string insertSamplePreparedStatementString{
             "insert into samples values(NULL, ?, ?, ?)"};
+        std::unique_ptr<sql::PreparedStatement>  insertSamplePreparedStatement;
 };
