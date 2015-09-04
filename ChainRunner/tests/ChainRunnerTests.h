@@ -1,4 +1,3 @@
-
 #pragma once
 #include <ChainRunner.h>
 #include <DatabaseTest.h>
