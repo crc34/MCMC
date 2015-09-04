@@ -21,7 +21,7 @@ public:
 
     }
  
-    bool stepAndWrite()
+    bool stepAndWrite(bool flushPreparedStatement)
     {
         auto chain = m_chain.get();
         auto connection = m_connection.get();
@@ -29,7 +29,8 @@ public:
         chain->step();
         auto currentVal = chain->getCurrentTheta();
         auto currentLogPosterior = chain->getCurrentLogPosterior(); 
-        connection->insertSample(currentLogPosterior, *currentVal);
+        connection->insertSample(currentLogPosterior, *currentVal,
+            flushPreparedStatement);
     }
 
 private:

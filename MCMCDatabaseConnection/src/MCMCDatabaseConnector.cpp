@@ -1,6 +1,7 @@
 #include <iostream> 
 #include <sstream>
 #include <MCMCDatabaseConnector.h>
+#include <bits/unique_ptr.h>
 
 MCMCDatabaseConnector::MCMCDatabaseConnector(const std::string hostName,
             const std::string userName, const std::string userPassword,
@@ -10,7 +11,8 @@ MCMCDatabaseConnector::MCMCDatabaseConnector(const std::string hostName,
         userPassword, database));
     m_createRunQueryFormat.reset(new boost::format(m_createRunQueryString));
     m_selectRunIdQueryFormat.reset(new boost::format(m_selectRunIdQueryString));
-    m_insertSamplesQueryFormat.reset(new boost::format(m_insertSamplesQueryString));
+    insertSamplePreparedStatement =
+            m_connection->getPreparedStatement(insertSamplePreparedStatementString);
 }
 
 MCMCDatabaseConnector::~MCMCDatabaseConnector()
@@ -37,8 +39,12 @@ int MCMCDatabaseConnector::getRunId(std::string runName)
 }
 
 /** inserts a sample*/
-void MCMCDatabaseConnector::insertSample(double logPosterior, double theta)
+void MCMCDatabaseConnector::insertSample(double logPosterior, double theta, bool flushPreparedStatement)
 {
-    auto query = boost::str(*m_insertSamplesQueryFormat % m_runId  % logPosterior % theta);
-    m_connection->execute(query);
+    insertSamplePreparedStatement->setInt(1, m_runId);
+    insertSamplePreparedStatement->setDouble(2, logPosterior);
+    insertSamplePreparedStatement->setDouble(3, theta);
+    insertSamplePreparedStatement->executeUpdate();
+    if (flushPreparedStatement)
+        insertSamplePreparedStatement->execute();
 }

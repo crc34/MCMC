@@ -8,6 +8,8 @@ class ChainRunnerTest : public MCMCTest, public DatabaseTest, public Test
 
 public:
     std::shared_ptr<ChainRunner<double>> m_chainRunner;
+    const int m_nSamples = 2000000;
+    const int m_flushingFrequency = 50000;
     void SetUp()
     {
         MCMCTest::SetUp();
@@ -18,6 +20,6 @@ public:
 
 TEST_F(ChainRunnerTest, RunChain)
 {
-    for (int i = 0; i < 10000000; i++)
-        m_chainRunner->stepAndWrite();
+    for (int i = 0; i < m_nSamples; i++)
+        m_chainRunner->stepAndWrite((i % m_flushingFrequency) != 0);
 }

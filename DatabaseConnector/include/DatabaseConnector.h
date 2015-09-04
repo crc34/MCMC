@@ -9,6 +9,7 @@
 #include <cppconn/prepared_statement.h>
 #include <gtest/gtest_prod.h>
 
+
 /**
 Interacts with a mysql database. 
  */
@@ -43,6 +44,13 @@ class DatabaseConnector
         /** returns true if the connector is connected*/ 
         bool isConnected(){return m_connected;}
 
+        std::unique_ptr<sql::PreparedStatement> getPreparedStatement(const std::string preparedStatementString)
+        {
+            std::unique_ptr<sql::PreparedStatement> preparedStatement;
+            preparedStatement.reset(m_connection->prepareStatement(preparedStatementString));
+            return preparedStatement;
+        }
+        
     private:
 
         /*! connects to the input database**/

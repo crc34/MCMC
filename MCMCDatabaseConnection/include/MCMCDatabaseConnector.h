@@ -19,19 +19,22 @@ class MCMCDatabaseConnector
             returns -1 if it doesn't exist*/
         int getRunId(std::string runName);
         void insertSample(double logPosterior,
-            double theta);
+            double theta, bool flushPreparedStatement);
         int getRunId(){return m_runId;}
 
     private:
         int m_runId{-1};
+ 
         std::unique_ptr<DatabaseConnector> m_connection;
-        std::string m_createRunQueryString =
-             "insert into run values(NULL, \"%s\")";
+
+        const std::string m_createRunQueryString{
+             "insert into run values(NULL, \"%s\")"};
         std::unique_ptr<boost::format> m_createRunQueryFormat;
-        std::string m_selectRunIdQueryString =
-             "select runId from run where runName =  \"%s\";";
+        const std::string m_selectRunIdQueryString{
+             "select runId from run where runName =  \"%s\";"};
         std::unique_ptr<boost::format> m_selectRunIdQueryFormat;
-        std::string m_insertSamplesQueryString =
-            "insert into samples values(NULL, %i, %f, %f)";
-        std::unique_ptr<boost::format> m_insertSamplesQueryFormat;
+
+        std::unique_ptr<sql::PreparedStatement>  insertSamplePreparedStatement;
+        std::string insertSamplePreparedStatementString{
+            "insert into samples values(NULL, ?, ?, ?)"};
 };

@@ -5,7 +5,6 @@
 class MCMCDatabaseConnectorTest : public DatabaseTest, public Test
 {
 public:
-
     void SetUp()
     {
         DatabaseTest::SetUp();
