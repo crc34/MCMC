@@ -15,13 +15,16 @@ class MCMCDatabaseConnector
             const std::string database);
         // Creates a run and returns its id
         int createRun(std::string runName);
-        // Gets a runId associated with a runName
-        // returns -1 if it doesn't exist
+
+        /** Gets a runId associated with a runName
+            returns -1 if it doesn't exist*/
         int getRunId(std::string runName);
-        void insertSample(int runId, int iteration, double logPosterior,
+
+        void insertSample(int iteration, double logPosterior,
             double theta);
 
     private:
+        int m_runId{-1};
         std::unique_ptr<DatabaseConnector> m_connection;
         std::string m_createRunQueryString =
              "insert into run values(NULL, \"%s\")";

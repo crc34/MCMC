@@ -20,15 +20,16 @@ MCMCDatabaseConnector::~MCMCDatabaseConnector()
 
 int MCMCDatabaseConnector::createRun(std::string runName)
 {
-    auto query = boost::str(*(m_createRunQueryFormat.get()) % runName);
+    auto query = boost::str(*m_createRunQueryFormat % runName);
     m_connection->execute(query);
-    return getRunId(runName);
+    m_runId = getRunId(runName); 
+    return m_runId;
 }
 
 int MCMCDatabaseConnector::getRunId(std::string runName)
 {
     boost::format createRunQueryFormat();
-    auto query = boost::str(*(m_selectRunIdQueryFormat.get()) % runName);
+    auto query = boost::str(*m_selectRunIdQueryFormat % runName);
     auto results = m_connection->executeFetchQuery(query);
     results->next();
     auto runId = results->getInt(1);
@@ -36,10 +37,10 @@ int MCMCDatabaseConnector::getRunId(std::string runName)
 }
 
 /** inserts a sample*/
-void MCMCDatabaseConnector::insertSample(int runId, int sampleNumber,
+void MCMCDatabaseConnector::insertSample(int sampleNumber,
         double logPosterior, double theta)
 {
-    auto query = boost::str(*(m_insertSamplesQueryFormat.get()) % runId
+    auto query = boost::str(*m_insertSamplesQueryFormat % m_runId
         % sampleNumber % logPosterior % theta);
     m_connection->execute(query);
 }

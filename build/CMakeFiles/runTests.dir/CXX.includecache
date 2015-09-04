@@ -486,20 +486,6 @@ GlobalDefines.h
 mkl_vsl.h
 ../testing/mkl_vsl.h
 
-/home/user/Documents/MCMC/DatabaseConnector/src/DatabaseConnector.cpp
-DatabaseConnector.h
-/home/user/Documents/MCMC/DatabaseConnector/src/DatabaseConnector.h
-sstream
--
-
-/home/user/Documents/MCMC/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
-iostream
--
-sstream
--
-MCMCDatabaseConnector.h
--
-
 /home/user/Documents/MCMC/main/src/main.cpp
 ChainTest.h
 /home/user/Documents/MCMC/main/src/ChainTest.h

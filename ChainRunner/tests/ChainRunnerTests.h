@@ -18,6 +18,5 @@ public:
 
 TEST_F(ChainRunnerTest, RunChain)
 {
-    auto tmp = m_chainRunner.get();
-    std::cout << "pointer = " <<  tmp << std::endl;
+    m_chainRunner->stepAndWrite();
 }

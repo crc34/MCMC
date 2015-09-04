@@ -25,7 +25,6 @@ public:
         auto connection = m_connection.get();
         chain->step();
         auto currentVal = chain->getCurrentTheta();
-        std::cout << "current val = " << *currentVal << std::endl;
     }
 
 private:
