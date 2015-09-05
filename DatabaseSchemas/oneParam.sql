@@ -8,7 +8,7 @@ CREATE TABLE run (
 
 DROP TABLE IF EXISTS samples;
 CREATE TABLE samples (
-    iteration INT KEY AUTO_INCREMENT,
+    iteration INT KEY,
     runId INT,
     logPosterior DOUBLE,
     theta DOUBLE
