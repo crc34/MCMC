@@ -1,12 +1,13 @@
 #pragma once
-#include <memory>
+
 #include <random>
-#include <gtest/gtest_prod.h>
 
 template<typename paramType> class Chain
 {
-    using proposalFunctionTemplate = std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)>;
-    using logPosteriorFunctionTemplate = std::function<double(const std::shared_ptr<paramType> Theta)>;
+    using proposalFunctionTemplate =
+        std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)>;
+    using logPosteriorFunctionTemplate =
+        std::function<double(const std::shared_ptr<paramType> Theta)>;
 public:
 
     Chain() = delete;
@@ -25,14 +26,14 @@ public:
     /** iterates the markov chain according to MH*/
     void step();
 
-    std::shared_ptr<paramType> getCurrentTheta();
+    std::shared_ptr<paramType> getCurrentTheta() const;
 
-    double getCurrentLogPosterior() {return m_currentLogPosterior;}
+    double getCurrentLogPosterior() const {return m_currentLogPosterior;}
 
 private:
 
     /** returns true if this proposal is accepted */
-    bool accept(const double logCurrent, const double logProposal);
+    bool accept(const double logCurrent, const double logProposal) const;
 
     std::shared_ptr<paramType> m_currentTheta; // current state of chain
     double m_currentLogPosterior{-1}; // logPosterior of current state

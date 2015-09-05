@@ -1,7 +1,7 @@
-#include <iostream> 
-#include <sstream>
 #include <MCMCDatabaseConnector.h>
-#include <bits/unique_ptr.h>
+#include <iostream>
+#include <memory>
+#include <gtest/gtest_prod.h>
 
 MCMCDatabaseConnector::MCMCDatabaseConnector(const std::string hostName,
             const std::string userName, const std::string userPassword,
@@ -12,7 +12,8 @@ MCMCDatabaseConnector::MCMCDatabaseConnector(const std::string hostName,
     m_createRunQueryFormat.reset(new boost::format(m_createRunQueryString));
     m_selectRunIdQueryFormat.reset(new boost::format(m_selectRunIdQueryString));
     insertSamplePreparedStatement =
-            m_connection->getPreparedStatement(insertSamplePreparedStatementString);
+            m_connection->getPreparedStatement(
+                insertSamplePreparedStatementString);
 }
 
 MCMCDatabaseConnector::~MCMCDatabaseConnector()
@@ -20,17 +21,16 @@ MCMCDatabaseConnector::~MCMCDatabaseConnector()
 
 }
 
-int MCMCDatabaseConnector::createRun(std::string runName)
+int MCMCDatabaseConnector::createRun(const std::string runName)
 {
     auto query = boost::str(*m_createRunQueryFormat % runName);
     m_connection->execute(query);
-    m_runId = getRunId(runName); 
+    m_runId = getRunId(runName);
     return m_runId;
 }
 
-int MCMCDatabaseConnector::getRunId(std::string runName)
+int MCMCDatabaseConnector::getRunId(const std::string runName) const
 {
-    boost::format createRunQueryFormat();
     auto query = boost::str(*m_selectRunIdQueryFormat % runName);
     auto results = m_connection->executeFetchQuery(query);
     results->next();
@@ -39,12 +39,16 @@ int MCMCDatabaseConnector::getRunId(std::string runName)
 }
 
 /** inserts a sample*/
-void MCMCDatabaseConnector::insertSample(double logPosterior, double theta, bool flushPreparedStatement)
+void MCMCDatabaseConnector::insertSample(const int iteration,
+        const double logPosterior, const double theta,
+        const bool flushPreparedStatement)
 {
     insertSamplePreparedStatement->setInt(1, m_runId);
     insertSamplePreparedStatement->setDouble(2, logPosterior);
     insertSamplePreparedStatement->setDouble(3, theta);
     insertSamplePreparedStatement->executeUpdate();
     if (flushPreparedStatement)
+    {
         insertSamplePreparedStatement->execute();
+    }
 }

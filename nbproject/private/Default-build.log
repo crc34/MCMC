@@ -1,0 +1,7 @@
+Scanning dependencies of target runTests
+[ 33%] Building CXX object CMakeFiles/runTests.dir/main/src/main.cpp.o
+[ 66%] Building CXX object CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o
+[100%] Building CXX object CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.o
+Linking CXX executable runTests
+icpc: warning #10237: -lcilkrts linked in dynamically, static library not available
+[100%] Built target runTests

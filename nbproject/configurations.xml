@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="DatabaseConnector">
+        <df name="src">
+          <in>DatabaseConnector.cpp</in>
+        </df>
+      </df>
+      <df name="main">
+        <df name="src">
+          <in>main.cpp</in>
+        </df>
+      </df>
+      <df name="MCMCDatabaseConnection">
+        <df name="src">
+          <in>MCMCDatabaseConnector.cpp</in>
+        </df>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>CMakeLists.txt</itemPath>
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-std=gnu++0x"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>ThirdParty/gmock-1.6.0/include</pElem>
+              <pElem>ThirdParty/gmock-1.6.0/gtest/include</pElem>
+              <pElem>main/include</pElem>
+              <pElem>Chain/include</pElem>
+              <pElem>Chain/inl</pElem>
+              <pElem>Chain/tests</pElem>
+              <pElem>ChainRunner/include</pElem>
+              <pElem>ChainRunner/tests</pElem>
+              <pElem>MCMCDatabaseConnection/tests</pElem>
+              <pElem>MCMCDatabaseConnection/include</pElem>
+              <pElem>DatabaseConnector/tests</pElem>
+              <pElem>DatabaseConnector/include</pElem>
+              <pElem>testing</pElem>
+              <pElem>global</pElem>
+              <pElem>.</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="DatabaseConnector/src/DatabaseConnector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="main/src/main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

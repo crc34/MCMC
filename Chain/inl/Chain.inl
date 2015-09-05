@@ -12,7 +12,7 @@ void Chain<paramType>::step()
 
 template<typename paramType>
 bool Chain<paramType>::accept(const double logCurrent,
-        const double logProposal)
+        const double logProposal) const
 {
     auto rnd =
             static_cast<double> (rand()) / static_cast<double> (RAND_MAX);
@@ -20,7 +20,7 @@ bool Chain<paramType>::accept(const double logCurrent,
 }
 
 template<typename paramType>
-std::shared_ptr<paramType> Chain<paramType>::getCurrentTheta()
+std::shared_ptr<paramType> Chain<paramType>::getCurrentTheta() const
 {
     return m_currentTheta;
 }

@@ -1,5 +1,7 @@
 #include "DatabaseConnector.h"
 #include <sstream>
+#include <cppconn/driver.h>
+
 
 DatabaseConnector::DatabaseConnector(
         std::string hostName,

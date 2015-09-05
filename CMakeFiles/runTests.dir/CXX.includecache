@@ -6,16 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/user/Documents/MCMC/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
+MCMCDatabaseConnector.h
+-
+iostream
+-
+memory
+-
+gtest/gtest_prod.h
+-
+
 /home/user/Documents/MCMC/main/src/main.cpp
 ChainRunnerTests.h
 /home/user/Documents/MCMC/main/src/ChainRunnerTests.h
 
 Chain/include/Chain.h
-memory
--
 random
--
-gtest/gtest_prod.h
 -
 Chain.inl
 -
@@ -41,27 +47,13 @@ MCMCTest.h
 DatabaseConnector/include/DatabaseConnector.h
 mysql_connection.h
 DatabaseConnector/include/mysql_connection.h
-cppconn/driver.h
--
-cppconn/exception.h
--
-cppconn/resultset.h
--
-cppconn/statement.h
--
 cppconn/prepared_statement.h
 -
 gtest/gtest_prod.h
 -
 
 MCMCDatabaseConnection/include/MCMCDatabaseConnector.h
-iostream
--
-memory
--
 DatabaseConnector.h
--
-gtest/gtest_prod.h
 -
 boost/format.hpp
 -
