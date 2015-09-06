@@ -50,10 +50,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/Documents/MPI
+CMAKE_SOURCE_DIR = /home/user/Documents/MCMC/sandbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/Documents/MPI/build
+CMAKE_BINARY_DIR = /home/user/Documents/MCMC/sandbox/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/run.dir
@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /home/user/Documents/MPI/build
 CMakeFiles/run.dir/all:
 	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/depend
 	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MPI/build/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/sandbox/build/CMakeFiles  1
 	@echo "Built target run"
 .PHONY : CMakeFiles/run.dir/all
 
@@ -72,9 +72,9 @@ all: CMakeFiles/run.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/run.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/MPI/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/MCMC/sandbox/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/run.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/MPI/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/MCMC/sandbox/build/CMakeFiles 0
 .PHONY : CMakeFiles/run.dir/rule
 
 # Convenience name for target.

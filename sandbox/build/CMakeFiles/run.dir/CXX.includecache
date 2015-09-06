@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/user/Documents/MPI/src/main.cpp
+/home/user/Documents/MCMC/sandbox/src/main.cpp
 stdio.h
 -
 opencv2/opencv.hpp
@@ -35,8 +35,6 @@ cmath
 -
 stdio.h
 -
-mkl_vsl.h
-/home/user/Documents/MPI/src/mkl_vsl.h
 
 /usr/local/include/opencv2/calib3d/calib3d.hpp
 opencv2/core/core.hpp

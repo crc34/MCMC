@@ -1,1 +1,1 @@
-/home/user/Documents/MPI/build/CMakeFiles/run.dir
+/home/user/Documents/MCMC/sandbox/build/CMakeFiles/run.dir

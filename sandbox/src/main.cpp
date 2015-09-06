@@ -12,9 +12,8 @@
 #include <random>
 #include <cmath>
 #include <stdio.h>
-#include "mkl_vsl.h"
 using namespace cv;
-int n = 100000;
+int n = 20000;
 
 std::shared_ptr<Mat> readImage()
 {
@@ -51,13 +50,15 @@ bool displayImage(const Mat image)
 
 int main(int argc, char** argv )
 {
+    std::shared_ptr<unsigned char> bits;
+    bits.reset(  (unsigned char *)calloc(n*n, sizeof(unsigned char))  );
+    draw(bits.get());
 
-    unsigned char * bits = (unsigned char *)calloc(n*n, sizeof(unsigned char));
-    draw(bits);
-
-	Size size(1000, 1000);//the dst image size,e.g.100x100
-    Mat image(n, n, CV_8UC1, bits);
+	Size size(1000, 1000);
+    Mat image(n, n, CV_8UC1, bits.get());
 	resize(image, image, size);//resize image
     displayImage(image);
+
     return 0;
+
 }

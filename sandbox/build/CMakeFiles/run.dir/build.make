@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/Documents/MPI
+CMAKE_SOURCE_DIR = /home/user/Documents/MCMC/sandbox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/Documents/MPI/build
+CMAKE_BINARY_DIR = /home/user/Documents/MCMC/sandbox/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/run.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/run.dir/flags.make
 
 CMakeFiles/run.dir/src/main.cpp.o: CMakeFiles/run.dir/flags.make
 CMakeFiles/run.dir/src/main.cpp.o: ../src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MPI/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/sandbox/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run.dir/src/main.cpp.o"
-	/opt/intel/bin/icpc   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/src/main.cpp.o -c /home/user/Documents/MPI/src/main.cpp
+	mpicc   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/src/main.cpp.o -c /home/user/Documents/MCMC/sandbox/src/main.cpp
 
 CMakeFiles/run.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run.dir/src/main.cpp.i"
-	/opt/intel/bin/icpc  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/user/Documents/MPI/src/main.cpp > CMakeFiles/run.dir/src/main.cpp.i
+	mpicc  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/user/Documents/MCMC/sandbox/src/main.cpp > CMakeFiles/run.dir/src/main.cpp.i
 
 CMakeFiles/run.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run.dir/src/main.cpp.s"
-	/opt/intel/bin/icpc  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/user/Documents/MPI/src/main.cpp -o CMakeFiles/run.dir/src/main.cpp.s
+	mpicc  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/user/Documents/MCMC/sandbox/src/main.cpp -o CMakeFiles/run.dir/src/main.cpp.s
 
 CMakeFiles/run.dir/src/main.cpp.o.requires:
 .PHONY : CMakeFiles/run.dir/src/main.cpp.o.requires
@@ -133,6 +133,6 @@ CMakeFiles/run.dir/clean:
 .PHONY : CMakeFiles/run.dir/clean
 
 CMakeFiles/run.dir/depend:
-	cd /home/user/Documents/MPI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Documents/MPI /home/user/Documents/MPI /home/user/Documents/MPI/build /home/user/Documents/MPI/build /home/user/Documents/MPI/build/CMakeFiles/run.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/user/Documents/MCMC/sandbox/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Documents/MCMC/sandbox /home/user/Documents/MCMC/sandbox /home/user/Documents/MCMC/sandbox/build /home/user/Documents/MCMC/sandbox/build /home/user/Documents/MCMC/sandbox/build/CMakeFiles/run.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run.dir/depend
 
