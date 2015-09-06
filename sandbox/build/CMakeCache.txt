@@ -176,6 +176,59 @@ MCMC_BINARY_DIR:STATIC=/home/user/Documents/MCMC/sandbox/build
 //Value Computed by CMake
 MCMC_SOURCE_DIR:STATIC=/home/user/Documents/MCMC/sandbox
 
+//Executable for running MPI programs.
+MPIEXEC:FILEPATH=/usr/local/bin/mpiexec
+
+//Maximum number of processors available to run MPI applications.
+MPIEXEC_MAX_NUMPROCS:STRING=2
+
+//Flag used by MPI to specify the number of processes for MPIEXEC;
+// the next option will be the number of processes.
+MPIEXEC_NUMPROC_FLAG:STRING=-np
+
+//These flags will come after all flags given to MPIEXEC.
+MPIEXEC_POSTFLAGS:STRING=
+
+//These flags will be directly before the executable that is being
+// run by MPIEXEC.
+MPIEXEC_PREFLAGS:STRING=
+
+//Path to a program.
+MPI_CXX_COMPILER:FILEPATH=/usr/local/bin/mpicxx
+
+//MPI CXX compilation flags
+MPI_CXX_COMPILE_FLAGS:STRING=
+
+//MPI CXX include path
+MPI_CXX_INCLUDE_PATH:STRING=/usr/local/include
+
+//MPI CXX libraries to link against
+MPI_CXX_LIBRARIES:STRING=/usr/local/lib/libmpi_cxx.so;/usr/local/lib/libmpi.so
+
+//MPI CXX linking flags
+MPI_CXX_LINK_FLAGS:STRING= -Wl,-rpath  -Wl,/usr/local/lib  -Wl,--enable-new-dtags
+
+//Path to a program.
+MPI_C_COMPILER:FILEPATH=/usr/local/bin/mpicc
+
+//MPI C compilation flags
+MPI_C_COMPILE_FLAGS:STRING=
+
+//MPI C include path
+MPI_C_INCLUDE_PATH:STRING=/usr/local/include
+
+//MPI C libraries to link against
+MPI_C_LIBRARIES:STRING=/usr/local/lib/libmpi.so
+
+//MPI C linking flags
+MPI_C_LINK_FLAGS:STRING= -Wl,-rpath  -Wl,/usr/local/lib  -Wl,--enable-new-dtags
+
+//Extra MPI libraries to link against
+MPI_EXTRA_LIBRARY:STRING=/usr/local/lib/libmpi.so
+
+//MPI library to link against
+MPI_LIBRARY:FILEPATH=/usr/local/lib/libmpi_cxx.so
+
 //Path where debug 3rdpaty OpenCV dependencies are located
 OpenCV_3RDPARTY_LIB_DIR_DBG:PATH=
 
@@ -327,6 +380,44 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding MPI_C
+FIND_PACKAGE_MESSAGE_DETAILS_MPI_C:INTERNAL=[/usr/local/lib/libmpi.so][/usr/local/include][v()]
+//Details about finding MPI_CXX
+FIND_PACKAGE_MESSAGE_DETAILS_MPI_CXX:INTERNAL=[/usr/local/lib/libmpi_cxx.so;/usr/local/lib/libmpi.so][/usr/local/include][v()]
+//ADVANCED property for variable: MPIEXEC
+MPIEXEC-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPIEXEC_MAX_NUMPROCS
+MPIEXEC_MAX_NUMPROCS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPIEXEC_NUMPROC_FLAG
+MPIEXEC_NUMPROC_FLAG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPIEXEC_POSTFLAGS
+MPIEXEC_POSTFLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPIEXEC_PREFLAGS
+MPIEXEC_PREFLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_CXX_COMPILER
+MPI_CXX_COMPILER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_CXX_COMPILE_FLAGS
+MPI_CXX_COMPILE_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_CXX_INCLUDE_PATH
+MPI_CXX_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_CXX_LIBRARIES
+MPI_CXX_LIBRARIES-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_CXX_LINK_FLAGS
+MPI_CXX_LINK_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_C_COMPILER
+MPI_C_COMPILER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_C_COMPILE_FLAGS
+MPI_C_COMPILE_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_C_INCLUDE_PATH
+MPI_C_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_C_LIBRARIES
+MPI_C_LIBRARIES-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPI_C_LINK_FLAGS
+MPI_C_LINK_FLAGS-ADVANCED:INTERNAL=1
+//Scratch variable for MPI header detection
+MPI_HEADER_PATH:INTERNAL=MPI_HEADER_PATH-NOTFOUND
+//Scratch variable for MPI lib detection
+MPI_LIB:INTERNAL=MPI_LIB-NOTFOUND
 //ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_DBG
 OpenCV_3RDPARTY_LIB_DIR_DBG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_OPT

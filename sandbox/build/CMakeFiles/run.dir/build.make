@@ -103,6 +103,8 @@ run: /usr/local/lib/libopencv_features2d.so.2.4.11
 run: /usr/local/lib/libopencv_core.so.2.4.11
 run: /usr/local/lib/libopencv_contrib.so.2.4.11
 run: /usr/local/lib/libopencv_calib3d.so.2.4.11
+run: /usr/local/lib/libmpi_cxx.so
+run: /usr/local/lib/libmpi.so
 run: /usr/local/lib/libopencv_nonfree.so.2.4.11
 run: /usr/local/lib/libopencv_ocl.so.2.4.11
 run: /usr/local/lib/libopencv_gpu.so.2.4.11
