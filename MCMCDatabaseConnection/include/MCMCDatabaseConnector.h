@@ -39,7 +39,7 @@ class MCMCDatabaseConnector
              "select runId from run where runName =  \"%s\";"};
         std::unique_ptr<boost::format> m_selectRunIdQueryFormat;
         const std::string insertSamplePreparedStatementString{
-            "insert into samples values(NULL, ?, ?, ?)"};
+            "insert into samples values(?, ?, ?, ?)"};
         std::unique_ptr<sql::PreparedStatement>  insertSamplePreparedStatement;
         
         /** Gets a runId associated with a runName

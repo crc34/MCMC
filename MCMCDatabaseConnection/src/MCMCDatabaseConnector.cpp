@@ -43,9 +43,10 @@ void MCMCDatabaseConnector::insertSample(const int iteration,
         const double logPosterior, const double theta,
         const bool flushPreparedStatement)
 {
-    insertSamplePreparedStatement->setInt(1, m_runId);
-    insertSamplePreparedStatement->setDouble(2, logPosterior);
-    insertSamplePreparedStatement->setDouble(3, theta);
+    insertSamplePreparedStatement->setInt(1, iteration);
+    insertSamplePreparedStatement->setInt(2, m_runId);
+    insertSamplePreparedStatement->setDouble(3, logPosterior);
+    insertSamplePreparedStatement->setDouble(4, theta);
     insertSamplePreparedStatement->executeUpdate();
     if (flushPreparedStatement)
     {
