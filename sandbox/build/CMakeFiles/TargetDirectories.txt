@@ -1,1 +1,0 @@
-/home/user/Documents/MCMC/sandbox/build/CMakeFiles/run.dir

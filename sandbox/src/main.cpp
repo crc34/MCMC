@@ -13,6 +13,9 @@ Size size(1000, 1000);
 int rank;
 char hostname[256];
 MPI_Status* status;
+int nProcesses;
+
+enum class TAGS {BITS}; 
 
 std::shared_ptr<Mat> readImage()
 {
@@ -53,12 +56,12 @@ int main(int argc, char** argv )
     MPI_Init(&argc,&argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     gethostname(hostname, 255);
-
+    MPI_Comm_size(MPI_COMM_WORLD, &nProcesses);
     if (rank == 0)
     {
         unsigned char* bits =  (unsigned char *)calloc(n*n, sizeof(unsigned char));
-        auto retVal = MPI_Send( &bits[0], n*n, MPI_UNSIGNED_CHAR, 1, 1, MPI_COMM_WORLD  );
-        MPI_Recv(bits, n*n, MPI_UNSIGNED_CHAR, 1, 1, MPI_COMM_WORLD, status);
+        auto retVal = MPI_Send( &bits[0], n*n, MPI_UNSIGNED_CHAR, 1, static_cast<int>(TAGS::BITS), MPI_COMM_WORLD  );
+        MPI_Recv(bits, n*n, MPI_UNSIGNED_CHAR, 1, static_cast<int>(TAGS::BITS), MPI_COMM_WORLD, status);
         Mat image(n, n, CV_8UC1, bits);
         resize(image, image, size);
         displayImage(image);
@@ -68,9 +71,9 @@ int main(int argc, char** argv )
     else
     {
         unsigned char* bits =  (unsigned char *)calloc(n*n, sizeof(unsigned char));
-        MPI_Recv(bits, n*n, MPI_UNSIGNED_CHAR, 0, 1, MPI_COMM_WORLD, status);
+        MPI_Recv(bits, n*n, MPI_UNSIGNED_CHAR, 0, static_cast<int>(TAGS::BITS), MPI_COMM_WORLD, status);
         draw(bits, 0, n*n);
-        auto retVal = MPI_Send( &bits[0], n*n, MPI_UNSIGNED_CHAR, 0, 1, MPI_COMM_WORLD);
+        auto retVal = MPI_Send( &bits[0], n*n, MPI_UNSIGNED_CHAR, 0, static_cast<int>(TAGS::BITS), MPI_COMM_WORLD);
     }
     MPI_Finalize();
 }
