@@ -13,8 +13,9 @@ public:
 
 TEST_F(MCMCDatabaseConnectorTest, createRun)
 {
-    int runId = mcmcConnection.get()->createRun(runName);
-    ASSERT_NE(runId, -1);
+    int runId = mcmcConnection->createRun(runName);
+
+    ASSERT_NE(mcmcConnection, runId);
 }
 
 TEST_F(MCMCDatabaseConnectorTest, insertSample)

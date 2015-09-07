@@ -6,11 +6,15 @@
 class MCMCDatabaseConnector
 {
     public:
+
         MCMCDatabaseConnector() =  delete;
+
         ~MCMCDatabaseConnector();
+
         MCMCDatabaseConnector(const std::string hostName,
             const std::string userName, const std::string userPassword,
             const std::string database);
+
         // Creates a run and returns its id
         int createRun(const std::string runName);
 
@@ -24,6 +28,7 @@ class MCMCDatabaseConnector
          */
         void insertSample(const int iteration, const double logPosterior,
             const double theta, const bool flushPreparedStatement);
+
         int getRunId() const {return m_runId;}
 
     private:
