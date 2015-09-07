@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 2.6)
 project (MCMC)
 
 find_package( OpenCV REQUIRED )
+find_package(MPI REQUIRED)
+
+include_directories(${MPI_INCLUDE_PATH})
 
 #IF (MY_COMPILER_OPTION STREQUAL "Intel")
   MESSAGE(STATUS "** Compiling with Intel settings **")
@@ -18,6 +21,7 @@ add_executable(run src/main.cpp)
 target_link_libraries(run -lmysqlcppconn -lgsl -lgslcblas)
 target_link_libraries(run pthread)
 target_link_libraries(run ${OpenCV_LIBS} )
+target_link_libraries(run ${MPI_LIBRARIES})
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "-std=gnu++0x")

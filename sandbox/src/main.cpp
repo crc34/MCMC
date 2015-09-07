@@ -1,19 +1,18 @@
-#include <stdio.h>
 #include <opencv2/opencv.hpp>
-#include <iostream>
 #include <memory>
 #include <thread>
-#include <chrono>
-#include <mutex>
-#include <iostream>
-#include <iomanip>
-#include <string>
 #include <map>
-#include <random>
 #include <cmath>
-#include <stdio.h>
+#include <mpi.h>
 using namespace cv;
-int n = 20000;
+
+int n = 2000;
+double p = 0.05;
+
+Size size(1000, 1000);
+int rank;
+char hostname[256];
+MPI_Status* status;
 
 std::shared_ptr<Mat> readImage()
 {
@@ -26,12 +25,12 @@ std::shared_ptr<Mat> readImage()
     return pImage;
 }
 
-bool draw(unsigned char * bits)
+bool draw(unsigned char * bits, int startIndex, int endIndex)
 {
-    for (int i = 0; i < n*n; i++)
+    for (int i = startIndex; i < endIndex; i++)
     {
         auto draw =  ((double) rand() / ((double)RAND_MAX));
-        if(draw > 0.05)
+        if(draw > p)
 		{
 			bits[i] = 255*draw;
 		}
@@ -41,6 +40,7 @@ bool draw(unsigned char * bits)
 
 bool displayImage(const Mat image)
 {
+
     namedWindow("Display Image", WINDOW_AUTOSIZE );
     imshow("Display Image", image);
     waitKey(0);
@@ -50,15 +50,27 @@ bool displayImage(const Mat image)
 
 int main(int argc, char** argv )
 {
-    std::shared_ptr<unsigned char> bits;
-    bits.reset(  (unsigned char *)calloc(n*n, sizeof(unsigned char))  );
-    draw(bits.get());
+    MPI_Init(&argc,&argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    gethostname(hostname, 255);
 
-	Size size(1000, 1000);
-    Mat image(n, n, CV_8UC1, bits.get());
-	resize(image, image, size);//resize image
-    displayImage(image);
-
-    return 0;
-
+    if (rank == 0)
+    {
+        unsigned char* bits =  (unsigned char *)calloc(n*n, sizeof(unsigned char));
+        auto retVal = MPI_Send( &bits[0], n*n, MPI_UNSIGNED_CHAR, 1, 1, MPI_COMM_WORLD  );
+        MPI_Recv(bits, n*n, MPI_UNSIGNED_CHAR, 1, 1, MPI_COMM_WORLD, status);
+        Mat image(n, n, CV_8UC1, bits);
+        resize(image, image, size);
+        displayImage(image);
+        delete(bits);
+        return 0;
+    }
+    else
+    {
+        unsigned char* bits =  (unsigned char *)calloc(n*n, sizeof(unsigned char));
+        MPI_Recv(bits, n*n, MPI_UNSIGNED_CHAR, 0, 1, MPI_COMM_WORLD, status);
+        draw(bits, 0, n*n);
+        auto retVal = MPI_Send( &bits[0], n*n, MPI_UNSIGNED_CHAR, 0, 1, MPI_COMM_WORLD);
+    }
+    MPI_Finalize();
 }
