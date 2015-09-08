@@ -40,16 +40,10 @@ TEST_F(ChainTest, testConvergence)
         m_chain->step();
         mean += currentVal;
         secondMoment += std::pow(currentVal, 2);
-        if (i % 1000000 == 0)
-        {
-            std::cout << i << std::endl;
-        }
     }
     mean /= nSamples;
     secondMoment /= nSamples;
     double variance = secondMoment - std::pow(mean, 2);
-    std::cout << "mean = " << mean << std::endl;
-    std::cout << "variance = " << variance << std::endl;
     ASSERT_LE(mean - trueMean, tolerance);
     ASSERT_LE(variance - trueVariance, tolerance);
 }

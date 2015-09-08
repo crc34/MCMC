@@ -1,7 +1,9 @@
 #pragma once
-
+#include <ChainTest.h>
 #include <random>
-
+#include <functional>
+#include <memory>
+#include <gtest/gtest_prod.h>
 template<typename paramType> class Chain
 {
     using proposalFunctionTemplate =
@@ -44,7 +46,6 @@ private:
     /** returns the log posterior of Theta */
     logPosteriorFunctionTemplate m_logPosterior;
 
-    FRIEND_TEST(ChainTest, fullConstructor);
     FRIEND_TEST(ChainTest, AcceptFunction);
     FRIEND_TEST(ChainTest, testConvergence);
 };

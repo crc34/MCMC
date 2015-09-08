@@ -1,5 +1,4 @@
 #pragma once
-
 #include <DatabaseConnector.h>
 #include <boost/format.hpp>
 
@@ -33,7 +32,7 @@ class MCMCDatabaseConnector
 
     private:
 
-        int m_runId{-1};
+        int m_runId{100};
  
         std::unique_ptr<DatabaseConnector> m_connection;
 

@@ -14,13 +14,12 @@ public:
 TEST_F(MCMCDatabaseConnectorTest, createRun)
 {
     int runId = mcmcConnection->createRun(runName);
-
-    ASSERT_NE(mcmcConnection, runId);
+    ASSERT_EQ(mcmcConnection->getRunId(), runId);
 }
 
 TEST_F(MCMCDatabaseConnectorTest, insertSample)
 {
     int runId = mcmcConnection->createRun(runName);
-    mcmcConnection->insertSample(1, -25.44, 1.0);
+    mcmcConnection->insertSample(1, 1, -25.44, 1.0);
     ASSERT_NE(runId, -1);
 }

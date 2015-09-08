@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/user/Documents/MCMC/DatabaseConnector/src/DatabaseConnector.cpp
+DatabaseConnector.h
+/home/user/Documents/MCMC/DatabaseConnector/src/DatabaseConnector.h
+sstream
+-
+cppconn/driver.h
+-
+
 /home/user/Documents/MCMC/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
 MCMCDatabaseConnector.h
 -
