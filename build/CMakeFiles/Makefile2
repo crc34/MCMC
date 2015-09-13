@@ -53,7 +53,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 CMAKE_SOURCE_DIR = /home/user/Documents/MCMC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/Documents/MCMC
+CMAKE_BINARY_DIR = /home/user/Documents/MCMC/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/runTests.dir
@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /home/user/Documents/MCMC
 CMakeFiles/runTests.dir/all:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/depend
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/CMakeFiles  1 2 3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/build/CMakeFiles  1 2 3
 	@echo "Built target runTests"
 .PHONY : CMakeFiles/runTests.dir/all
 
@@ -72,9 +72,9 @@ all: CMakeFiles/runTests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/runTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/MCMC/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/MCMC/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/runTests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/MCMC/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/MCMC/build/CMakeFiles 0
 .PHONY : CMakeFiles/runTests.dir/rule
 
 # Convenience name for target.

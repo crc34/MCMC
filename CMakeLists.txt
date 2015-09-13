@@ -9,8 +9,8 @@ project (MCMC)
 #ENDIF ()
 
 # Locate GTest
-include_directories(ThirdParty/gmock-1.6.0/include)
-include_directories(ThirdParty/gmock-1.6.0/gtest/include)
+include_directories($ENV{GMOCK_HOME}/include)
+include_directories($ENV{GMOCK_HOME}/gtest/include)
 include_directories(main/include)
 include_directories(Chain/include)
 include_directories(Chain/inl)

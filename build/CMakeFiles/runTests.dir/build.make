@@ -41,7 +41,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 CMAKE_SOURCE_DIR = /home/user/Documents/MCMC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/Documents/MCMC
+CMAKE_BINARY_DIR = /home/user/Documents/MCMC/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/runTests.dir/depend.make
@@ -53,8 +53,8 @@ include CMakeFiles/runTests.dir/progress.make
 include CMakeFiles/runTests.dir/flags.make
 
 CMakeFiles/runTests.dir/main/src/main.cpp.o: CMakeFiles/runTests.dir/flags.make
-CMakeFiles/runTests.dir/main/src/main.cpp.o: main/src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/runTests.dir/main/src/main.cpp.o: ../main/src/main.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/runTests.dir/main/src/main.cpp.o"
 	/opt/intel/bin/icpc   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/main/src/main.cpp.o -c /home/user/Documents/MCMC/main/src/main.cpp
 
@@ -76,8 +76,8 @@ CMakeFiles/runTests.dir/main/src/main.cpp.o.provides: CMakeFiles/runTests.dir/ma
 CMakeFiles/runTests.dir/main/src/main.cpp.o.provides.build: CMakeFiles/runTests.dir/main/src/main.cpp.o
 
 CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o: CMakeFiles/runTests.dir/flags.make
-CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o: MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/CMakeFiles $(CMAKE_PROGRESS_2)
+CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o: ../MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o"
 	/opt/intel/bin/icpc   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o -c /home/user/Documents/MCMC/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp
 
@@ -99,8 +99,8 @@ CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o.p
 CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o.provides.build: CMakeFiles/runTests.dir/MCMCDatabaseConnection/src/MCMCDatabaseConnector.cpp.o
 
 CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.o: CMakeFiles/runTests.dir/flags.make
-CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.o: DatabaseConnector/src/DatabaseConnector.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/CMakeFiles $(CMAKE_PROGRESS_3)
+CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.o: ../DatabaseConnector/src/DatabaseConnector.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/Documents/MCMC/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.o"
 	/opt/intel/bin/icpc   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/DatabaseConnector/src/DatabaseConnector.cpp.o -c /home/user/Documents/MCMC/DatabaseConnector/src/DatabaseConnector.cpp
 
@@ -152,6 +152,6 @@ CMakeFiles/runTests.dir/clean:
 .PHONY : CMakeFiles/runTests.dir/clean
 
 CMakeFiles/runTests.dir/depend:
-	cd /home/user/Documents/MCMC && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Documents/MCMC /home/user/Documents/MCMC /home/user/Documents/MCMC /home/user/Documents/MCMC /home/user/Documents/MCMC/CMakeFiles/runTests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/user/Documents/MCMC/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Documents/MCMC /home/user/Documents/MCMC /home/user/Documents/MCMC/build /home/user/Documents/MCMC/build /home/user/Documents/MCMC/build/CMakeFiles/runTests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/runTests.dir/depend
 
