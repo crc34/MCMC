@@ -1,2 +1,0 @@
-/home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/gtest.dir
-/home/user/Documents/MCMC/ThirdParty/gmock-1.6.0/gtest/build/CMakeFiles/gtest_main.dir
