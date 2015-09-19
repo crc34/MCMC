@@ -2,7 +2,7 @@ template<typename paramType>
 void Chain<paramType>::step()
 {
     auto proposal = m_proposalFunction(m_currentTheta);
-    double proposalLogPosterior = m_logPosterior(proposal);
+    auto proposalLogPosterior = m_logPosterior(proposal);
     if (accept(m_currentLogPosterior, proposalLogPosterior))
     {
         m_currentLogPosterior = proposalLogPosterior;

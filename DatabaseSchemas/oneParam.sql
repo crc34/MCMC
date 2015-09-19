@@ -11,10 +11,6 @@ CREATE TABLE samples (
     iteration INT,
     runId INT,
     logPosterior DOUBLE,
-    theta Blob
+    theta double
 );
-
-
-
-
 

@@ -40,16 +40,11 @@ int MCMCDatabaseConnector::getRunId(const std::string runName) const
 
 /** inserts a sample*/
 void MCMCDatabaseConnector::insertSample(const int iteration,
-        const double logPosterior, const double theta,
-        const bool flushPreparedStatement)
+        const double logPosterior, const double theta)
 {
     insertSamplePreparedStatement->setInt(1, iteration);
     insertSamplePreparedStatement->setInt(2, m_runId);
     insertSamplePreparedStatement->setDouble(3, logPosterior);
     insertSamplePreparedStatement->setDouble(4, theta);
     insertSamplePreparedStatement->executeUpdate();
-    if (flushPreparedStatement)
-    {
-        insertSamplePreparedStatement->execute();
-    }
 }

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="build">
+        <df name="CMakeFiles">
+          <df name="2.8.12.2">
+            <df name="CompilerIdC">
+              <in>CMakeCCompilerId.c</in>
+            </df>
+            <df name="CompilerIdCXX">
+              <in>CMakeCXXCompilerId.cpp</in>
+            </df>
+          </df>
+          <df name="CMakeTmp">
+          </df>
+          <df name="runTests.dir">
+            <df name="DatabaseConnector">
+              <df name="src">
+              </df>
+            </df>
+            <df name="main">
+              <df name="src">
+              </df>
+            </df>
+            <df name="MCMCDatabaseConnection">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="Chain">
+        <df name="include">
+          <in>Chain.h</in>
+        </df>
+        <df name="inl">
+          <in>Chain.inl</in>
+        </df>
+        <df name="tests">
+          <in>ChainTest.h</in>
+        </df>
+      </df>
+      <df name="ChainRunner">
+        <df name="include">
+          <in>ChainRunner.h</in>
+        </df>
+        <df name="tests">
+          <in>ChainRunnerTests.h</in>
+        </df>
+      </df>
+      <df name="CMakeFiles">
+        <df name="2.8.12.2">
+          <df name="CompilerIdC">
+            <in>CMakeCCompilerId.c</in>
+          </df>
+          <df name="CompilerIdCXX">
+            <in>CMakeCXXCompilerId.cpp</in>
+          </df>
+        </df>
+        <df name="CMakeTmp">
+        </df>
+        <df name="runTests.dir">
+          <df name="DatabaseConnector">
+            <df name="src">
+            </df>
+          </df>
+          <df name="main">
+            <df name="src">
+            </df>
+          </df>
+          <df name="MCMCDatabaseConnection">
+            <df name="src">
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="DatabaseConnector">
+        <df name="include">
+          <in>DatabaseConnector.h</in>
+        </df>
+        <df name="src">
+          <in>DatabaseConnector.cpp</in>
+        </df>
+        <df name="tests">
+          <in>DatabaseConnectorTests.h</in>
+        </df>
+      </df>
+      <df name="DatabaseSchemas">
+      </df>
+      <df name="global">
+        <in>globals.h</in>
+      </df>
+      <df name="html">
+        <df name="search">
+        </df>
+      </df>
+      <df name="latex">
+      </df>
+      <df name="main">
+        <df name="include">
+          <in>GlobalDefines.h</in>
+          <in>testingIncludes.h</in>
+        </df>
+        <df name="src">
+          <in>main.cpp</in>
+        </df>
+      </df>
+      <df name="MCMCDatabaseConnection">
+        <df name="include">
+          <in>MCMCDatabaseConnector.h</in>
+        </df>
+        <df name="src">
+          <in>MCMCDatabaseConnector.cpp</in>
+        </df>
+        <df name="tests">
+          <in>MCMCDatabaseConnectorTests.h</in>
+        </df>
+      </df>
+      <df name="sandbox">
+        <df name="build">
+          <df name="CMakeFiles">
+            <df name="2.8.12.2">
+              <df name="CompilerIdC">
+                <in>CMakeCCompilerId.c</in>
+              </df>
+              <df name="CompilerIdCXX">
+                <in>CMakeCXXCompilerId.cpp</in>
+              </df>
+            </df>
+            <df name="run.dir">
+            </df>
+          </df>
+        </df>
+        <df name="cpp">
+          <df name="build">
+            <df name="CMakeFiles">
+              <df name="2.8.12.2">
+                <df name="CompilerIdC">
+                  <in>CMakeCCompilerId.c</in>
+                </df>
+                <df name="CompilerIdCXX">
+                  <in>CMakeCXXCompilerId.cpp</in>
+                </df>
+              </df>
+              <df name="DisplayImage.dir">
+              </df>
+            </df>
+          </df>
+          <df name="images">
+          </df>
+          <df name="src">
+            <in>DisplayImage.cpp</in>
+          </df>
+        </df>
+        <df name="src">
+          <in>main.cpp</in>
+        </df>
+      </df>
+      <df name="testing">
+        <in>DatabaseTest.h</in>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

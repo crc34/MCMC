@@ -12,7 +12,6 @@ template<typename paramType> class ChainRunner
 public:
     ChainRunner();
     
-    /** connection should already be established*/
     ChainRunner(std::shared_ptr<MCMCDatabaseConnector> connection,
             std::shared_ptr<Chain<paramType>> chain):
             m_chain(std::move(chain)), m_connection(std::move(connection))
@@ -21,7 +20,7 @@ public:
 
     }
  
-    bool stepAndWrite(const int iteration, const bool flushPreparedStatement)
+    bool stepAndWrite(const int iteration)
     {
         auto chain = m_chain.get();
         auto connection = m_connection.get();
@@ -29,8 +28,7 @@ public:
         chain->step();
         auto currentVal = chain->getCurrentTheta();
         auto currentLogPosterior = chain->getCurrentLogPosterior(); 
-        connection->insertSample(iteration, currentLogPosterior, *currentVal,
-            flushPreparedStatement);
+        connection->insertSample(iteration, currentLogPosterior, *currentVal);
     }
 
 private:

@@ -10,12 +10,6 @@ public:
     }
 };
 
-TEST_F(DatabaseConnectorTest, executeQuery)
-{
-    dbConnection->execute(insertQuery);
-    ASSERT_EQ(1, 1);
-}
-
 TEST_F(DatabaseConnectorTest, executFetchQuery)
 {
     dbConnection->execute(insertQuery);

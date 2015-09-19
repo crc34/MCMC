@@ -18,7 +18,7 @@ class MCMCDatabaseConnector
         int createRun(const std::string runName);
 
         /**
-         * 
+         *
          * @param logPosterior log of the posterior
          * @param theta sampled value
          * @param flushPreparedStatement true if the insert sample
@@ -26,14 +26,24 @@ class MCMCDatabaseConnector
          * @return void
          */
         void insertSample(const int iteration, const double logPosterior,
-            const double theta, const bool flushPreparedStatement);
+            const double theta);
 
         int getRunId() const {return m_runId;}
 
+        std::shared_ptr<sql::ResultSet> executeFetchQuery(std::string query)
+        {
+            return m_connection->executeFetchQuery(query);
+        }
+
+        bool executeQuery(std::string query)
+        {
+            return m_connection->execute(query);
+        }
+
     private:
 
-        int m_runId{100};
- 
+        int m_runId{0};
+
         std::unique_ptr<DatabaseConnector> m_connection;
 
         const std::string m_createRunQueryString{
@@ -45,7 +55,7 @@ class MCMCDatabaseConnector
         const std::string insertSamplePreparedStatementString{
             "insert into samples values(?, ?, ?, ?)"};
         std::unique_ptr<sql::PreparedStatement>  insertSamplePreparedStatement;
-        
+
         /** Gets a runId associated with a runName
             returns -1 if it doesn't exist*/
         int getRunId(const std::string runName) const;
