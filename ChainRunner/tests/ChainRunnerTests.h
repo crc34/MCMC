@@ -15,7 +15,7 @@ class ChainRunnerTest : public Test
 {
 public:
 
-    const int m_nSamples = 100000000;
+    const int m_nSamples = 1000000000;
     
     const std::vector<std::string> clearDatabaseQuery =
         {"delete from samples;", "delete from run;"};
