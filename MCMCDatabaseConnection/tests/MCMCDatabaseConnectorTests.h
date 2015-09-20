@@ -13,13 +13,13 @@ public:
 
 TEST_F(MCMCDatabaseConnectorTest, createRun)
 {
-    int runId = mcmcConnection->createRun(runName);
-    ASSERT_EQ(mcmcConnection->getRunId(), runId);
+	std::string runUUID = mcmcConnection->createRun(runName);
+    ASSERT_EQ(mcmcConnection->getRunId(), runUUID);
 }
 
 TEST_F(MCMCDatabaseConnectorTest, insertSample)
 {
-    int runId = mcmcConnection->createRun(runName);
-    mcmcConnection->insertSample(1, 1, -25.44, 1.0);
-    ASSERT_NE(runId, -1);
+    auto runId = mcmcConnection->createRun(runName);
+    mcmcConnection->insertSample(1, -25.44, 1.0);
+    ASSERT_EQ(1, 1);
 }

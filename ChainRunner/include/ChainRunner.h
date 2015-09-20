@@ -6,7 +6,8 @@
 template<typename paramType> class ChainRunner
 {
     using proposalFunctionTemplate =
-        std::function<std::shared_ptr<paramType> (const std::shared_ptr<paramType> currentVal)>;
+        std::function<std::shared_ptr<paramType>
+		    (const std::shared_ptr<paramType> currentVal)>;
     using logPosteriorFunctionTemplate =
         std::function<double(const std::shared_ptr<paramType> Theta)>;
 public:

@@ -2,14 +2,14 @@ DROP TABLE IF EXISTS samples;
 
 DROP TABLE IF EXISTS run;
 CREATE TABLE run (
-    runId INT KEY AUTO_INCREMENT,
-    runName varchar(255)
+    runName varchar(255) KEY NOT NULL,
+	runUUID VARCHAR(50) NOT NULL DEFAULT 'UUID()'
 );
 
 DROP TABLE IF EXISTS samples;
 CREATE TABLE samples (
     iteration INT,
-    runId INT,
+	runUUID VARCHAR(50) NOT NULL,
     logPosterior DOUBLE,
     theta double
 );

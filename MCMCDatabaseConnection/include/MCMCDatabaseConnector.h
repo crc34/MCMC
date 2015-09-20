@@ -14,8 +14,8 @@ class MCMCDatabaseConnector
             const std::string userName, const std::string userPassword,
             const std::string database);
 
-        // Creates a run and returns its id
-        int createRun(const std::string runName);
+        // Creates a run and returns its runUUID
+		std::string createRun(const std::string runName);
 
         /**
          *
@@ -28,8 +28,8 @@ class MCMCDatabaseConnector
         void insertSample(const int iteration, const double logPosterior,
             const double theta);
 
-        int getRunId() const {return m_runId;}
-
+		std::string getRunId() const;
+		std::string queryRunId(const std::string runName) const; 
         std::shared_ptr<sql::ResultSet> executeFetchQuery(std::string query)
         {
             return m_connection->executeFetchQuery(query);
@@ -42,15 +42,15 @@ class MCMCDatabaseConnector
 
     private:
 
-        int m_runId{0};
+		std::string m_runId{""};
 
         std::unique_ptr<DatabaseConnector> m_connection;
 
         const std::string m_createRunQueryString{
-             "insert into run values(NULL, \"%s\")"};
+             "insert into run values(\"%s\", NULL)"};
         std::unique_ptr<boost::format> m_createRunQueryFormat;
         const std::string m_selectRunIdQueryString{
-             "select runId from run where runName =  \"%s\";"};
+             "select runUUID from run where runName =  \"%s\";"};
         std::unique_ptr<boost::format> m_selectRunIdQueryFormat;
         const std::string insertSamplePreparedStatementString{
             "insert into samples values(?, ?, ?, ?)"};

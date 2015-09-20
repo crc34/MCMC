@@ -15,7 +15,7 @@ class ChainRunnerTest : public Test
 {
 public:
 
-    const int m_nSamples = 1000000000;
+    const int m_nSamples = 100000;
     
     const std::vector<std::string> clearDatabaseQuery =
         {"delete from samples;", "delete from run;"};
@@ -34,10 +34,10 @@ public:
     using logPosteriorFunctionTemplate =
             std::function<double(const std::shared_ptr<paramType> Theta)>;
     double tolerance = 0.001;
-    double _initialValue = 44;
+    double _initialValue = 4;
     std::shared_ptr<double> initialValue;
-    double trueMean = 0;
-    double trueVariance = 1;
+    double trueMean = 30;
+    double trueVariance = 5;
     std::unique_ptr<gsl_rng> r;
     const gsl_rng_type* T = gsl_rng_default;
 
@@ -54,7 +54,12 @@ public:
             m_mcmcConnection->executeQuery(query);
         }
     }
-    
+   
+    double drawStdNormal()
+	{
+		return gsl_ran_gaussian_ziggurat(r.get(), 1);
+	}
+
     void SetUp()
     {
         m_mcmcConnection.reset(
@@ -64,7 +69,7 @@ public:
         r.reset(gsl_rng_alloc(T));
         clearDatabase();
         proposalFunction = [this](std::shared_ptr<double> Theta) {
-            double draw = *Theta + 1.5*sqrt(trueVariance)*gsl_ran_gaussian_ziggurat(r.get(), 1);
+            double draw = *Theta + 1.5*sqrt(trueVariance)*drawStdNormal();
             std::shared_ptr<double> proposal(new double(draw));
             return proposal;
         };
@@ -76,7 +81,8 @@ public:
         };
         initialValue.reset(new double(_initialValue));
         m_chain.reset(
-                new Chain<double>(proposalFunction, logPosterior, initialValue));
+                new Chain<double>(proposalFunction, logPosterior,
+					initialValue));
         m_chainRunner.reset(
         new ChainRunner<double>(m_mcmcConnection, m_chain)
         );
@@ -92,14 +98,10 @@ TEST_F(ChainRunnerTest, RunChain)
  
     const std::string firstMomentQuery{
                         "select sum(theta), sum(theta*theta) from samples"};
-
     auto result = m_mcmcConnection->executeFetchQuery(firstMomentQuery);
     result->next();
     auto mean = result->getDouble(1)/m_nSamples;
     auto secondMoment = result->getDouble(2)/m_nSamples;
     auto variance = secondMoment - std::pow(mean, 2);
-    
-    std::cout << "mean = " << mean << std::endl;
-    std::cout << "variance = " << variance << std::endl;
-    
+    ASSERT_LE(abs(mean - trueMean), tolerance);  
 }
