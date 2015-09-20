@@ -26,8 +26,8 @@ std::string MCMCDatabaseConnector::createRun(const std::string runName)
 {
     auto query = boost::str(*m_createRunQueryFormat % runName);
     m_connection->execute(query);
-    m_runId = queryRunId(runName);
-    return m_runId;
+    m_runUUID = queryRunId(runName);
+    return m_runUUID;
 }
 
 std::string MCMCDatabaseConnector::queryRunId(const std::string runName) const
@@ -44,10 +44,10 @@ void MCMCDatabaseConnector::insertSample(const int iteration,
         const double logPosterior, const double theta)
 {
     insertSamplePreparedStatement->setInt(1, iteration);
-    insertSamplePreparedStatement->setString(2, m_runId);
+    insertSamplePreparedStatement->setString(2, m_runUUID);
     insertSamplePreparedStatement->setDouble(3, logPosterior);
     insertSamplePreparedStatement->setDouble(4, theta);
     insertSamplePreparedStatement->executeUpdate();
 }
 
-std::string MCMCDatabaseConnector::getRunId() const {return m_runId;}
+std::string MCMCDatabaseConnector::getRunId() const {return m_runUUID;}

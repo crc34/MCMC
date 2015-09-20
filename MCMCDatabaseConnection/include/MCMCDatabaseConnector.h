@@ -42,7 +42,7 @@ class MCMCDatabaseConnector
 
     private:
 
-		std::string m_runId{""};
+		std::string m_runUUID{""};
 
         std::unique_ptr<DatabaseConnector> m_connection;
 
