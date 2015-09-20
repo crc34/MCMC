@@ -11,6 +11,6 @@ CREATE TABLE samples (
     iteration INT,
 	runUUID VARCHAR(50) NOT NULL,
     logPosterior DOUBLE,
-    theta double
+    theta BLOB
 );
 
