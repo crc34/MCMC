@@ -56,7 +56,5 @@ class MCMCDatabaseConnector
             "insert into samples values(?, ?, ?, ?)"};
         std::unique_ptr<sql::PreparedStatement>  insertSamplePreparedStatement;
 
-        /** Gets a runId associated with a runName
-            returns -1 if it doesn't exist*/
-        int getRunId(const std::string runName) const;
+		std::string getRunUUID(const std::string runName) const;
 };
