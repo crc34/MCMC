@@ -28,7 +28,7 @@ class MCMCDatabaseConnector
         void insertSample(const int iteration, const double logPosterior,
             const double theta);
 
-		std::string getRunId() const;
+		std::string getRunUUID() const;
 		std::string queryRunId(const std::string runName) const; 
         std::shared_ptr<sql::ResultSet> executeFetchQuery(std::string query)
         {

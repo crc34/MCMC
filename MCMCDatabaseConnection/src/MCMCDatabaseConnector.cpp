@@ -50,4 +50,4 @@ void MCMCDatabaseConnector::insertSample(const int iteration,
     insertSamplePreparedStatement->executeUpdate();
 }
 
-std::string MCMCDatabaseConnector::getRunId() const {return m_runUUID;}
+std::string MCMCDatabaseConnector::getRunUUID() const {return m_runUUID;}

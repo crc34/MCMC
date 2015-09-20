@@ -25,7 +25,7 @@ public:
     {
         auto chain = m_chain.get();
         auto connection = m_connection.get();
-        auto runId = m_connection->getRunId();
+        auto runId = m_connection->getRunUUID();
         chain->step();
         auto currentVal = chain->getCurrentTheta();
         auto currentLogPosterior = chain->getCurrentLogPosterior(); 

@@ -14,7 +14,7 @@ public:
 TEST_F(MCMCDatabaseConnectorTest, createRun)
 {
 	std::string runUUID = mcmcConnection->createRun(runName);
-    ASSERT_EQ(mcmcConnection->getRunId(), runUUID);
+    ASSERT_EQ(mcmcConnection->getRunUUID(), runUUID);
 }
 
 TEST_F(MCMCDatabaseConnectorTest, insertSample)
